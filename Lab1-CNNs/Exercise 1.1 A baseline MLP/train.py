@@ -16,6 +16,7 @@ NUM_WORKERS = 8
 PIN_MEMORY = True
 LOAD_MODEL = False
 WEIGHT_DIR = "result/checkpoint.pth.tar"
+# TODO: add Weight and bias
 
 
 def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection):
