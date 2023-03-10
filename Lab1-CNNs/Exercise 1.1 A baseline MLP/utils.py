@@ -1,9 +1,10 @@
 import torch
+import torchmetrics
 from torch.utils.data import DataLoader
-from dataset import COCODataset, CustomDataset
 import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
+from torchvision.datasets import MNIST
 
 
 def save_checkpoint(state, filename="result/checkpoint.pth.tar"):
@@ -16,11 +17,16 @@ def load_checkpoint(checkpoint, model):
     model.load_state_dict(checkpoint["state_dict"])
 
 
-def get_loaders(train_dir, test_dir, batch_size, num_workers, pin_memory):
+def get_loaders(batch_size, num_workers, pin_memory):
+    transform = T.Compose([
+        T.ToTensor(),
+        T.Normalize((0.1307,), (0.3081,))])
 
-    train_ds = CustomDataset(
-        img_path=train_dir,
-        dataType='train'
+    train_ds = MNIST(
+        root='./Dataset/',
+        train=True,
+        download=False,
+        transform=transform
     )
 
     train_loader = DataLoader(
@@ -31,9 +37,11 @@ def get_loaders(train_dir, test_dir, batch_size, num_workers, pin_memory):
         shuffle=True,
     )
 
-    test_ds = CustomDataset(
-        img_path=test_dir,
-        dataType='val'
+    test_ds = MNIST(
+        root='./Dataset/',
+        train=False,
+        download=False,
+        transform=transform
     )
 
     test_loader = DataLoader(
@@ -46,41 +54,43 @@ def get_loaders(train_dir, test_dir, batch_size, num_workers, pin_memory):
     return train_loader, test_loader
 
 
-def check_accuracy(loader, model, loss_fn, device):
-    running_loss = 0
-    num_correct = 0
-    num_pixels = 0
-    dice_score = 0
+def metrics(device):
+    metric_collection = torchmetrics.MetricCollection([
+        torchmetrics.classification.MulticlassAccuracy(num_classes=10).to(device=device),
+    ])
+    return metric_collection
+
+
+def eval_fn(loader, model, loss_fn, metric_collection, device):
     model.eval()
+    running_loss = 0
 
     with torch.no_grad():
         for data, target in loader:
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
-            prediction = torch.sigmoid(model(data))
+            prediction = model(data)
             loss = loss_fn(prediction, target)
             running_loss += loss.item()
-            prediction = (prediction > 0.5).float()
-            num_correct += (prediction == target).sum()
-            num_pixels += torch.numel(prediction)
-            dice_score += ((2 * (prediction * target).sum()) / ((prediction + target).sum() + 1e-8)).detach().cpu()
+            metric_collection(prediction, target)
 
     loss = running_loss / len(loader)
-    accuracy = num_correct/num_pixels*100
-    dice_score = dice_score/len(loader)
-    print(f"Got on test set --> Dice score: {dice_score:.6f}, Accuracy: {accuracy:.3f} and Loss: {loss:.3f}")
-    model.train()
-    return loss, dice_score
+    accuracy = metric_collection['MulticlassAccuracy'].compute().cpu() * 100
+
+    print(f"Got on test set --> Accuracy: {accuracy:.3f} and Loss: {loss:.3f}")
+
+    metric_collection.reset()
+    return loss, accuracy
 
 
 def save_plot(train_l, train_a, test_l, test_a):
     plt.plot(train_a, '-')
     plt.plot(test_a, '-')
     plt.xlabel('epoch')
-    plt.ylabel('dice score')
+    plt.ylabel('accuracy')
     plt.legend(['Train', 'Valid'])
-    plt.title('Train vs Valid Dice Score')
-    plt.savefig('result/dice')
+    plt.title('Train vs Valid accuracy')
+    plt.savefig('result/accuracy')
     plt.close()
 
     plt.plot(train_l, '-')
