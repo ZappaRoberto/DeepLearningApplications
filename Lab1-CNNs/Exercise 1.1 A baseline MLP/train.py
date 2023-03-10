@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
-from model import UNet
+from model import MultilayerPerceptron
 from utils import (
     get_loaders,
     save_checkpoint,
