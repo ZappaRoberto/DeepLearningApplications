@@ -4,12 +4,13 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
+import os
 from torchvision.datasets import MNIST
 
 
 def save_checkpoint(string, state, directory):
     print(string)
-    torch.save(state, directory)
+    torch.save(state, "".join([directory, "model.pth.tar"]))
 
 
 def load_checkpoint(checkpoint, model, optimizer):
@@ -17,6 +18,13 @@ def load_checkpoint(checkpoint, model, optimizer):
     model.load_state_dict(checkpoint["state_dict"])
     optimizer.load_state_dict(checkpoint['optimizer'])
     return checkpoint['start'], checkpoint['max_accuracy'], checkpoint['count']
+
+
+def create_directory_if_does_not_exist(check_dir, w_dir):
+    if not os.path.exists(check_dir):
+        os.makedirs(check_dir)
+    if not os.path.exists(w_dir):
+        os.makedirs(w_dir)
 
 
 def load_best_model(checkpoint, model):

@@ -6,10 +6,10 @@ from tqdm import tqdm
 from model import MultilayerPerceptron
 from utils import (get_loaders, save_checkpoint, load_checkpoint,
                    load_best_model, metrics, eval_fn,
-                   EarlyStopping, Lion)
+                   create_directory_if_does_not_exist, EarlyStopping, Lion)
 
 
-def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection):
+def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection, device):
     model.train()
     running_loss = 0
 
@@ -73,7 +73,7 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
 
     for epoch in range(start, wb.config['num_epochs']):
         train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
-                                              metric_collection)
+                                              metric_collection, device)
 
         test_loss, test_accuracy = eval_fn(test_loader, model, criterion, metric_collection, device)
 
@@ -106,10 +106,10 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
 
 
 if __name__ == "__main__":
-    wb = wandb.init(
+    wab = wandb.init(
         # set the wandb project where this run will be logged
         project="A baseline MLP",
-        group='MultiLayerPerceptron',
+        # group='MultiLayerPerceptron',
         tags=[],
         resume=False,
         name='experiment-1',
@@ -137,9 +137,9 @@ if __name__ == "__main__":
             "evaluation": False,
         })
     # Local parameters
-    checkpoint_dir = ''.join(["checkpoint/", wb.name, "/", "checkpoint.pth.tar"])
-    weight_dir = ''.join(["result/", wb.name, "/", "model.pth.tar"])
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    num_workers = 8
-    main(wb, checkpoint_dir, weight_dir, device, num_workers)
-
+    check_dir = ''.join(["checkpoint/", wab.name, "/"])
+    w_dir = ''.join(["result/", wab.name, "/"])
+    create_directory_if_does_not_exist(check_dir, w_dir)
+    dev = 'cuda' if torch.cuda.is_available() else 'cpu'
+    n_workers = 8
+    main(wab, check_dir, w_dir, dev, n_workers)
