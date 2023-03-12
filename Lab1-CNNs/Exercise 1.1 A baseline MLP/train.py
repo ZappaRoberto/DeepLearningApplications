@@ -1,25 +1,17 @@
 import sys
 import torch
 import torch.nn as nn
+import wandb
 from tqdm import tqdm
 from model import MultilayerPerceptron
-from utils import (get_loaders, save_checkpoint, load_checkpoint, metrics, eval_fn, save_plot, Lion)
-import wandb
+from utils import (get_loaders, save_checkpoint, load_checkpoint, load_best_model, metrics, eval_fn, Lion)
 
-# Hyperparameters and other settings
-LEARNING_RATE = 1e-3
-WEIGHT_DECAY = 1e-2
+# Local parameters
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-BATCH_SIZE = 16384
-NUM_EPOCHS = 5
-PATIENCE = 20
 NUM_WORKERS = 8
 PIN_MEMORY = True
-LOAD_MODEL = False
 WEIGHT_DIR = "result/checkpoint.pth.tar"
-
-
-# TODO: add Weight and bias
+CHECKPOINT_DIR = "checkpoint/checkpoint.pth.tar"
 
 
 def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection):
@@ -52,72 +44,105 @@ def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric
     return train_loss, train_accuracy
 
 
-def main():
-    prova = wandb.init(
-        # set the wandb project where this run will be logged
-        project="MultilayerPerceptron",
-        group='Multi Layer Perceptron',
-        tags=["baseline"],
-        name='0',
+def main(wb):
+    model = MultilayerPerceptron(in_channel=wb.config['in_channel'],
+                                 num_layer=wb.config['num_layer'],
+                                 n_class=wb.config['n_class']).to(DEVICE)
 
-        # track hyperparameters and run metadata
-        config={
-            "learning_rate": 1e-3,
-            "architecture": "Multi Layer Perceptron",
-            "dataset": "Mnist",
-            "epochs": 5,
-        }
-    )
-    model = MultilayerPerceptron(in_channel=28 * 28, num_layer=2, n_class=10).to(DEVICE)
-    if LOAD_MODEL:
-        load_checkpoint(torch.load(WEIGHT_DIR), model)
-
-    optimizer = Lion(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
-    loss_fn = nn.CrossEntropyLoss()
+    optimizer = Lion(model.parameters(), lr=wb.config['learning_rate'], weight_decay=wb.config['weight_decay'])
+    criterion = nn.CrossEntropyLoss()
     scaler = torch.cuda.amp.GradScaler()
-    train_loader, test_loader = get_loaders(BATCH_SIZE, NUM_WORKERS, PIN_MEMORY)
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
-                                                    max_lr=1e-2,
-                                                    steps_per_epoch=len(train_loader),
-                                                    epochs=NUM_EPOCHS)
+    if wb.resumed:
+        start, max_accuracy, patience = load_checkpoint(torch.load(CHECKPOINT_DIR), model, optimizer)
+    else:
+        start = 0
+        max_accuracy = 0
+        patience = wb.config['patience']
+
     metric_collection = metrics(DEVICE)
-    wandb.watch(model, criterion=loss_fn, log="all", log_freq=2, log_graph=True)
 
-    train_l, train_d, test_l, test_d = [], [], [], []
-    patience = PATIENCE
-    max_accuracy = 0
+    if wb.config['evaluation']:
+        load_best_model(torch.load(WEIGHT_DIR), model)
+        test_loader = get_loaders(wb.config['batch_size'], NUM_WORKERS, PIN_MEMORY, training=False)
+        eval_fn(test_loader, model, criterion, metric_collection, DEVICE)
+        sys.exit()
 
-    for epoch in range(NUM_EPOCHS):
-        train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, loss_fn, scaler,
+    train_loader, test_loader = get_loaders(wb.config['batch_size'], NUM_WORKERS, PIN_MEMORY)
+    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
+                                                    max_lr=wb.config['max_lr'],
+                                                    steps_per_epoch=len(train_loader),
+                                                    epochs=wb.config['num_epochs'] - start)
+
+    wb.watch(model, criterion=criterion, log="all", log_freq=2, log_graph=True)
+
+    for epoch in range(start, wb.config['num_epochs']):
+        train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
                                               metric_collection)
-        # check accuracy
-        test_loss, test_accuracy = eval_fn(test_loader, model, loss_fn, metric_collection, DEVICE)
-        wandb.log({"train_loss": train_loss,
-                   "train_accuracy": train_accuracy,
-                   'test_loss': test_loss,
-                   'test_accuracy': test_accuracy,
-                   })
-        train_l.append(train_loss)
-        train_d.append(train_accuracy)
-        test_l.append(test_loss)
-        test_d.append(test_accuracy)
-        # save model
+
+        test_loss, test_accuracy = eval_fn(test_loader, model, criterion, metric_collection, DEVICE)
+
+        wb.log({"train_loss": train_loss,
+                "train_accuracy": train_accuracy,
+                'test_loss': test_loss,
+                'test_accuracy': test_accuracy,
+                })
+
+        # save best model
         if test_accuracy > max_accuracy:
             max_accuracy = test_accuracy
-            patience = PATIENCE
-            checkpoint = {
+            patience = wb.config['patience']  # reset patience
+            checkpoint = {"state_dict": model.state_dict()}
+            save_checkpoint("=> Best Model found ! Don't Stop Me Now", checkpoint, WEIGHT_DIR)
+        # early stopping
+        if patience == 0:
+            print("=> My Patience is Finished ! It's Time to Stop this Shit")
+            break
+        else:
+            patience -= 1
+
+        # save checkpoint
+        checkpoint = {
+                'start': epoch + 1,
                 "state_dict": model.state_dict(),
                 "optimizer": optimizer.state_dict(),
+                "max_accuracy": max_accuracy,
+                "patience": patience,
             }
-            save_checkpoint(checkpoint)
-        if patience == 0:
-            break
-        patience -= 1
+        save_checkpoint("=> Saving checkpoint", checkpoint, CHECKPOINT_DIR)
 
-    save_plot(train_l, train_d, test_l, test_d)
-    wandb.finish()
     sys.exit()
 
 
 if __name__ == "__main__":
-    main()
+    main(wandb.init(
+        # set the wandb project where this run will be logged
+        project="A baseline MLP",
+        group='MultiLayerPerceptron',
+        tags=[],
+        resume=False,
+        name='experiment-1',
+
+        config={
+            # model parameters
+            "architecture": "Multi Layer Perceptron",
+            'in_channel': 28 * 28,
+            'num_layer': 2,
+            'n_class': 10,
+
+            # datasets
+            "dataset": "Mnist",
+
+            # hyperparameters
+            "learning_rate": 1e-3,
+            "batch_size": 16384,
+            "optimizer": 'Lion',
+            "weight_decay": 1e-2,
+            "scheduler": "One Cycle Learning",
+            "max_lr": 1e-2,
+            "num_epochs": 150,
+            "patience": 20,
+
+            # run type
+            "evaluation": False,
+        }
+    ))

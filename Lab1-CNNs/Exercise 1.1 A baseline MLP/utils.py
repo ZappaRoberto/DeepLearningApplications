@@ -7,35 +7,27 @@ import torchvision.transforms as T
 from torchvision.datasets import MNIST
 
 
-def save_checkpoint(state, filename="result/checkpoint.pth.tar"):
-    print("=> Saving checkpoint")
+def save_checkpoint(string, state, filename):
+    print(string)
     torch.save(state, filename)
 
 
-def load_checkpoint(checkpoint, model):
+def load_checkpoint(checkpoint, model, optimizer):
     print("=> Loading checkpoint")
+    model.load_state_dict(checkpoint["state_dict"])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    return checkpoint['start'], checkpoint['max_accuracy'], checkpoint['patience']
+
+
+def load_best_model(checkpoint, model):
+    print("=> Loading best model")
     model.load_state_dict(checkpoint["state_dict"])
 
 
-def get_loaders(batch_size, num_workers, pin_memory):
+def get_loaders(batch_size, num_workers, pin_memory, training=True):
     transform = T.Compose([
         T.ToTensor(),
         T.Normalize((0.1307,), (0.3081,))])
-
-    train_ds = MNIST(
-        root='./Dataset/',
-        train=True,
-        download=False,
-        transform=transform
-    )
-
-    train_loader = DataLoader(
-        train_ds,
-        batch_size=batch_size,
-        num_workers=num_workers,
-        pin_memory=pin_memory,
-        shuffle=True,
-    )
 
     test_ds = MNIST(
         root='./Dataset/',
@@ -51,7 +43,28 @@ def get_loaders(batch_size, num_workers, pin_memory):
         pin_memory=pin_memory,
         shuffle=False,
     )
-    return train_loader, test_loader
+
+    if training:
+        train_ds = MNIST(
+            root='./Dataset/',
+            train=True,
+            download=False,
+            transform=transform
+        )
+
+        train_loader = DataLoader(
+            train_ds,
+            batch_size=batch_size,
+            num_workers=num_workers,
+            pin_memory=pin_memory,
+            shuffle=True,
+        )
+        return train_loader, test_loader
+
+    return test_loader
+
+
+
 
 
 def metrics(device):
@@ -61,7 +74,7 @@ def metrics(device):
     return metric_collection
 
 
-def eval_fn(loader, model, loss_fn, metric_collection, device):
+def eval_fn(loader, model, criterion, metric_collection, device):
     model.eval()
     running_loss = 0
 
@@ -70,7 +83,7 @@ def eval_fn(loader, model, loss_fn, metric_collection, device):
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
             prediction = model(data)
-            loss = loss_fn(prediction, target)
+            loss = criterion(prediction, target)
             running_loss += loss.item()
             metric_collection(prediction, target)
 
