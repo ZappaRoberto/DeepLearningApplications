@@ -7,16 +7,16 @@ import torchvision.transforms as T
 from torchvision.datasets import MNIST
 
 
-def save_checkpoint(string, state, filename):
+def save_checkpoint(string, state, directory):
     print(string)
-    torch.save(state, filename)
+    torch.save(state, directory)
 
 
 def load_checkpoint(checkpoint, model, optimizer):
     print("=> Loading checkpoint")
     model.load_state_dict(checkpoint["state_dict"])
-    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-    return checkpoint['start'], checkpoint['max_accuracy'], checkpoint['patience']
+    optimizer.load_state_dict(checkpoint['optimizer'])
+    return checkpoint['start'], checkpoint['max_accuracy'], checkpoint['count']
 
 
 def load_best_model(checkpoint, model):
@@ -24,7 +24,7 @@ def load_best_model(checkpoint, model):
     model.load_state_dict(checkpoint["state_dict"])
 
 
-def get_loaders(batch_size, num_workers, pin_memory, training=True):
+def get_loaders(batch_size, num_workers, training=True):
     transform = T.Compose([
         T.ToTensor(),
         T.Normalize((0.1307,), (0.3081,))])
@@ -40,8 +40,9 @@ def get_loaders(batch_size, num_workers, pin_memory, training=True):
         test_ds,
         batch_size=batch_size,
         num_workers=num_workers,
-        pin_memory=pin_memory,
+        pin_memory=True,
         shuffle=False,
+        persistent_workers=True,
     )
 
     if training:
@@ -56,21 +57,21 @@ def get_loaders(batch_size, num_workers, pin_memory, training=True):
             train_ds,
             batch_size=batch_size,
             num_workers=num_workers,
-            pin_memory=pin_memory,
+            pin_memory=True,
             shuffle=True,
+            persistent_workers=True,
         )
         return train_loader, test_loader
 
     return test_loader
 
 
-
-
-
-def metrics(device):
+def metrics(wb, device):
     metric_collection = torchmetrics.MetricCollection([
-        torchmetrics.classification.MulticlassAccuracy(num_classes=10).to(device=device),
+        torchmetrics.classification.MulticlassAccuracy(num_classes=wb.config['n_class']).to(device=device),
     ])
+    wb.define_metric("test_loss", summary="min")
+    wb.define_metric("test_accuracy", summary="max")
     return metric_collection
 
 
@@ -114,6 +115,39 @@ def save_plot(train_l, train_a, test_l, test_a):
     plt.title('Train vs Valid Losses')
     plt.savefig('result/losses')
     plt.close()
+
+
+class EarlyStopping:
+    def __init__(self, mod, patience, count=None, baseline=None):
+        self.patience = patience
+        self.count = patience if count is None else count
+        if mod == 'max':
+            self.baseline = 0
+            self.operation = self.max
+        if mod == 'min':
+            self.baseline = baseline
+            self.operation = self.min
+
+    def max(self, monitored_value):
+        if monitored_value > self.baseline:
+            self.baseline = monitored_value
+            self.count = self.patience
+            return True
+        else:
+            self.count -= 1
+            return False
+
+    def min(self, monitored_value):
+        if monitored_value < self.baseline:
+            self.baseline = monitored_value
+            self.count = self.patience
+            return True
+        else:
+            self.count -= 1
+            return False
+
+    def __call__(self, monitored_value):
+        return self.operation(monitored_value)
 
 
 class Lion(optim.Optimizer):

@@ -4,14 +4,9 @@ import torch.nn as nn
 import wandb
 from tqdm import tqdm
 from model import MultilayerPerceptron
-from utils import (get_loaders, save_checkpoint, load_checkpoint, load_best_model, metrics, eval_fn, Lion)
-
-# Local parameters
-DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-NUM_WORKERS = 8
-PIN_MEMORY = True
-WEIGHT_DIR = "result/checkpoint.pth.tar"
-CHECKPOINT_DIR = "checkpoint/checkpoint.pth.tar"
+from utils import (get_loaders, save_checkpoint, load_checkpoint,
+                   load_best_model, metrics, eval_fn,
+                   EarlyStopping, Lion)
 
 
 def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection):
@@ -19,8 +14,8 @@ def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric
     running_loss = 0
 
     for (data, target) in tqdm(loader, desc=f"Epoch {epoch + 1}"):
-        data = data.to(DEVICE, non_blocking=True)
-        target = target.to(DEVICE, non_blocking=True)
+        data = data.to(device, non_blocking=True)
+        target = target.to(device, non_blocking=True)
 
         # forward
         with torch.cuda.amp.autocast():
@@ -44,30 +39,31 @@ def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric
     return train_loss, train_accuracy
 
 
-def main(wb):
+def main(wb, checkpoint_dir, weight_dir, device, num_workers):
     model = MultilayerPerceptron(in_channel=wb.config['in_channel'],
                                  num_layer=wb.config['num_layer'],
-                                 n_class=wb.config['n_class']).to(DEVICE)
+                                 n_class=wb.config['n_class']).to(device)
 
     optimizer = Lion(model.parameters(), lr=wb.config['learning_rate'], weight_decay=wb.config['weight_decay'])
     criterion = nn.CrossEntropyLoss()
     scaler = torch.cuda.amp.GradScaler()
-    if wb.resumed:
-        start, max_accuracy, patience = load_checkpoint(torch.load(CHECKPOINT_DIR), model, optimizer)
-    else:
-        start = 0
-        max_accuracy = 0
-        patience = wb.config['patience']
-
-    metric_collection = metrics(DEVICE)
+    metric_collection = metrics(wb, device)
 
     if wb.config['evaluation']:
-        load_best_model(torch.load(WEIGHT_DIR), model)
-        test_loader = get_loaders(wb.config['batch_size'], NUM_WORKERS, PIN_MEMORY, training=False)
-        eval_fn(test_loader, model, criterion, metric_collection, DEVICE)
+        load_best_model(torch.load(weight_dir), model)
+        test_loader = get_loaders(wb.config['batch_size'], num_workers, training=False)
+        eval_fn(test_loader, model, criterion, metric_collection, device)
         sys.exit()
 
-    train_loader, test_loader = get_loaders(wb.config['batch_size'], NUM_WORKERS, PIN_MEMORY)
+    if wb.resumed:
+        start, monitored_value, count = load_checkpoint(torch.load(checkpoint_dir), model, optimizer)
+        patience = EarlyStopping('max', wb.config['patience'], count, monitored_value)
+
+    else:
+        start = 0
+        patience = EarlyStopping('max', wb.config['patience'])
+
+    train_loader, test_loader = get_loaders(wb.config['batch_size'], num_workers)
     scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
                                                     max_lr=wb.config['max_lr'],
                                                     steps_per_epoch=len(train_loader),
@@ -79,7 +75,7 @@ def main(wb):
         train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
                                               metric_collection)
 
-        test_loss, test_accuracy = eval_fn(test_loader, model, criterion, metric_collection, DEVICE)
+        test_loss, test_accuracy = eval_fn(test_loader, model, criterion, metric_collection, device)
 
         wb.log({"train_loss": train_loss,
                 "train_accuracy": train_accuracy,
@@ -88,40 +84,35 @@ def main(wb):
                 })
 
         # save best model
-        if test_accuracy > max_accuracy:
-            max_accuracy = test_accuracy
-            patience = wb.config['patience']  # reset patience
+        if patience(test_accuracy):
             checkpoint = {"state_dict": model.state_dict()}
-            save_checkpoint("=> Best Model found ! Don't Stop Me Now", checkpoint, WEIGHT_DIR)
-        # early stopping
-        if patience == 0:
-            print("=> My Patience is Finished ! It's Time to Stop this Shit")
-            break
-        else:
-            patience -= 1
+            save_checkpoint("=> Best Model found ! Don't Stop Me Now", checkpoint, weight_dir)
 
         # save checkpoint
         checkpoint = {
-                'start': epoch + 1,
-                "state_dict": model.state_dict(),
-                "optimizer": optimizer.state_dict(),
-                "max_accuracy": max_accuracy,
-                "patience": patience,
-            }
-        save_checkpoint("=> Saving checkpoint", checkpoint, CHECKPOINT_DIR)
+            'start': epoch + 1,
+            "state_dict": model.state_dict(),
+            "optimizer": optimizer.state_dict(),
+            "max_accuracy": getattr(patience, 'baseline'),
+            "count": getattr(patience, 'count'),
+        }
+        save_checkpoint("=> Saving checkpoint", checkpoint, checkpoint_dir)
+        # early stopping
+        if getattr(patience, 'count') == 0:
+            print("=> My Patience is Finished ! It's Time to Stop this Shit")
+            break
 
     sys.exit()
 
 
 if __name__ == "__main__":
-    main(wandb.init(
+    wb = wandb.init(
         # set the wandb project where this run will be logged
         project="A baseline MLP",
         group='MultiLayerPerceptron',
         tags=[],
         resume=False,
         name='experiment-1',
-
         config={
             # model parameters
             "architecture": "Multi Layer Perceptron",
@@ -144,5 +135,11 @@ if __name__ == "__main__":
 
             # run type
             "evaluation": False,
-        }
-    ))
+        })
+    # Local parameters
+    checkpoint_dir = ''.join(["checkpoint/", wb.name, "/", "checkpoint.pth.tar"])
+    weight_dir = ''.join(["result/", wb.name, "/", "model.pth.tar"])
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    num_workers = 8
+    main(wb, checkpoint_dir, weight_dir, device, num_workers)
+
