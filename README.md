@@ -35,16 +35,17 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 
 In this first laboratory you will get some practice working with Deep Models in (somewhat) sophisticated ways. We will reproduce (on a small scale) the results of the Residual Networks paper, demonstrating that deeper does not always mean better. Subsequent exercises will ask you to delve deeper into the inner workings of CNNs.
 Try to implement your own training pipeline and use my code only as inspiration.
+> **Note**
+> 
+> This would be a good time to think about abstracting your model definition, and training and evaluation pipelines in order to make it easier to compare performance of different models.
+> This would also be a great point to study how Tensorboard or Weights and Biases can be used for performance monitoring.
+> In my code I will use Weights and Biases.
 
 
 ### Exercise 1: A baseline MLP
 
 Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g. two narrow layers). Train this model to convergence, monitoring (at least) the loss and accuracy on the training and validation sets for every epoch.
-> **Note**
-> 
-> This would be a good time to think about abstracting your model definition, and training and evaluation pipelines in order to make it easier to compare performance of different models.
-> This would also be a great point to study how Tensorboard or Weights and Biases can be used for performance monitoring.
-> In my code I will use Weights and Biases
+
 
 
 
