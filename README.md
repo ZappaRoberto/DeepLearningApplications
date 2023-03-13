@@ -31,7 +31,7 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 - [How to use](#How-to-use)
 
 
-## Architecture Analysis
+## Laboratory 1: Convolutional Neural Networks
 
 The overall architecture of this network is shown in the following figure:
 <p align="center">
