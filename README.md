@@ -15,12 +15,12 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 
 ## Table Of Content
 
-- [Laboratory-1: Convolutional Neural Networks](#Laboratory-1: Convolutional Neural Networks)
-    - [Exercise 1: A baseline MLP](#Exercise 1: A baseline MLP)
-    - [Exercise 2:Rinse and Repeat](#Rinse and Repeat)
-    - [Exercise 3:Rinse and Repeat](#Rinse and Repeat)
-    - [Exercise 4:Rinse and Repeat](#Rinse and Repeat)
-    - [Exercise 5:Rinse and Repeat](#Rinse and Repeat)
+- [Laboratory-1: Convolutional Neural Networks](#Laboratory-1:-Convolutional-Neural-Networks)
+    - [Exercise 1: A baseline MLP](#Exercise-1:-A-baseline-MLP)
+    - [Exercise 2: Rinse and Repeat](#Exercise-2:-Rinse-and-Repeat)
+    - [Exercise 3: Why Residual Connections are so effective](#Exercise-3:-Why-Residual-Connections-are-so-effective)
+    - [Exercise 4: Fully-convolutionalize a network](#Exercise-4:-Fully-convolutionalize-a-network)
+    - [Exercise 5: Rinse and Repeat](#Rinse and Repeat)
 - [Dataset](#Dataset)
     - [Yahoo! Answer topic classification](#Yahoo!-Answer-topic-classification)
     - [Amazon Reviews](#Amazon-Reviews)
