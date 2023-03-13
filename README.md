@@ -15,7 +15,12 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 
 ## Table Of Content
 
-- [Architecture Analysis](#Architecture-Analysis)
+- [Laboratory-1: Convolutional Neural Networks](#Laboratory-1: Convolutional Neural Networks)
+    - [Exercise 1: A baseline MLP](#Exercise 1: A baseline MLP)
+    - [Exercise 2:Rinse and Repeat](#Rinse and Repeat)
+    - [Exercise 3:Rinse and Repeat](#Rinse and Repeat)
+    - [Exercise 4:Rinse and Repeat](#Rinse and Repeat)
+    - [Exercise 5:Rinse and Repeat](#Rinse and Repeat)
 - [Dataset](#Dataset)
     - [Yahoo! Answer topic classification](#Yahoo!-Answer-topic-classification)
     - [Amazon Reviews](#Amazon-Reviews)
