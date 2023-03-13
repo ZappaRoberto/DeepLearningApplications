@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-Welcome to DeppLearningApplications!, a repository that contains multiple beginner exercises in deep learning! This repository is designed to provide you with a variety of exercises that cover different aspects of deep learning, including computer vision, natural language processing, reinforcement learning, and more.
+Welcome to DeppLearningApplications!, a repository that contains multiple beginner exercises in deep learning! This repository is designed to provide you with a variety of exercises that cover different aspects of deep learning, including computer vision, natural language processing, deep reinforcement learning, and more.
 Whether you are a beginner in deep learning or an experienced practitioner looking for a fun and challenging way to practice your skills, these exercises are designed to help you improve your understanding and develop your expertise in this exciting field.
 Each exercise is accompanied by detailed instructions and solutions to help others learn and grow. So, let's get started and explore the fascinating world of deep learning together!
  
