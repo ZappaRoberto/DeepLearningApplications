@@ -43,7 +43,8 @@ Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g
 > **Note**
 > 
 > This would be a good time to think about abstracting your model definition, and training and evaluation pipelines in order to make it easier to compare performance of different models.
-> This would also be a great point to study how Tensorboard or Weights and Biases can be used for performance monitoring. I choose Weights and Biases
+> This would also be a great point to study how Tensorboard or Weights and Biases can be used for performance monitoring.
+> In my code I will use Weights and Biases
 
 
 
