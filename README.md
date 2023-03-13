@@ -15,7 +15,7 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 
 ## Table Of Content
 
-- [Laboratory 1: Convolutional Neural Networks](#Laboratory-1-:-Convolutional-Neural-Networks)
+- [Laboratory 1 Convolutional Neural Networks](#Laboratory-1-Convolutional-Neural-Networks)
     - [Exercise 1: A baseline MLP](#Exercise-1:-A-baseline-MLP)
     - [Exercise 2: Rinse and Repeat](#Exercise-2:-Rinse-and-Repeat)
     - [Exercise 3: Why Residual Connections are so effective](#Exercise-3:-Why-Residual-Connections-are-so-effective)
