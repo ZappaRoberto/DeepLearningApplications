@@ -1,4 +1,5 @@
 import torch.nn as nn
+import torch
 
 
 class FirstConvLayer(nn.Module):
@@ -35,18 +36,16 @@ class ConvolutionalBlock(nn.Module):
         if downsample:
             if last_layer:
                 self.want_shortcut = False
-                self.sequential.append(nn.AdaptiveMaxPool2d(2))
+            elif pool_type == 'convolution':
+                self.conv1 = nn.Conv2d(in_channels=in_channels, out_channels=in_channels,
+                                       kernel_size=3, stride=2, padding=1, bias=False)
+            elif pool_type == 'kmax':
+                channels = [64, 128, 256, 512]
+                dimension = [511, 256, 128]
+                index = channels.index(in_channels)
+                self.sequential.append(nn.AdaptiveMaxPool2d(dimension[index]))
             else:
-                if pool_type == 'convolution':
-                    self.conv1 = nn.Conv2d(in_channels=in_channels, out_channels=in_channels,
-                                           kernel_size=3, stride=2, padding=1, bias=False)
-                elif pool_type == 'kmax':
-                    channels = [64, 128, 256, 512]
-                    dimension = [511, 256, 128]
-                    index = channels.index(in_channels)
-                    self.sequential.append(nn.AdaptiveMaxPool2d(dimension[index]))
-                else:
-                    self.sequential.append(nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+                self.sequential.append(nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
 
         self.relu = nn.ReLU()
 
@@ -64,25 +63,20 @@ class ConvolutionalBlock(nn.Module):
             return self.sequential(out)
 
 
-class FullyConnectedBlock(nn.Module):
-    def __init__(self, n_class):
-        super(FullyConnectedBlock, self).__init__()
+class LastLayer(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(LastLayer, self).__init__()
         self.sequential = nn.Sequential(
-            nn.Linear(2048, 1024),
-            nn.ReLU(),
-            nn.Linear(1024, 1024),
-            nn.ReLU(),
-            nn.Linear(1024, n_class),
-            # nn.Softmax(dim=1)
+            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(1, 1))
         )
 
     def forward(self, x):
         return self.sequential(x)
 
 
-class ConvolutionalNeuralNetworks(nn.Module):
+class SegConvolutionalNeuralNetworks(nn.Module):
     def __init__(self, depth, n_classes, want_shortcut, pool_type):
-        super(ConvolutionalNeuralNetworks, self).__init__()
+        super(SegConvolutionalNeuralNetworks, self).__init__()
         channels = [64, 128, 256, 512]
         if depth == 9:
             num_conv_block = [1, 1, 1, 1]
@@ -111,9 +105,9 @@ class ConvolutionalNeuralNetworks(nn.Module):
                     self.sequential.append(ConvolutionalBlock(channels[x], channels[x],
                                                               want_shortcut, False, last_layer, pool_type))
 
-        self.fc = FullyConnectedBlock(n_classes)
+        self.last = LastLayer(512, n_classes)
 
     def forward(self, x):
         out = self.sequential(x)
-        out = out.view(out.size(0), -1)
+        out = self.last(out)
         return self.fc(out)

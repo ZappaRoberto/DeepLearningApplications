@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import wandb
 from tqdm import tqdm
-from model import ConvolutionalNeuralNetworks
+from model import SegConvolutionalNeuralNetworks
 from utils import (get_loaders, save_checkpoint, load_checkpoint,
                    load_best_model, metrics, eval_fn,
                    create_directory_if_does_not_exist, EarlyStopping, Lion)
@@ -40,10 +40,10 @@ def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric
 
 
 def main(wb, checkpoint_dir, weight_dir, device, num_workers):
-    model = ConvolutionalNeuralNetworks(depth=wb.config['depth'],
-                                        n_classes=wb.config['n_class'],
-                                        want_shortcut=wb.config['want_shortcut'],
-                                        pool_type=wb.config['pool_type']).to(device)
+    model = SegConvolutionalNeuralNetworks(depth=wb.config['depth'],
+                                           n_classes=wb.config['n_class'],
+                                           want_shortcut=wb.config['want_shortcut'],
+                                           pool_type=wb.config['pool_type']).to(device)
 
     optimizer = Lion(model.parameters(), lr=wb.config['learning_rate'], weight_decay=wb.config['weight_decay'])
     criterion = nn.CrossEntropyLoss()
@@ -59,7 +59,6 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
     if wb.resumed:
         start, monitored_value, count = load_checkpoint(torch.load(checkpoint_dir), model, optimizer)
         patience = EarlyStopping('max', wb.config['patience'], count, monitored_value)
-
     else:
         start = 0
         patience = EarlyStopping('max', wb.config['patience'])
@@ -116,11 +115,11 @@ if __name__ == "__main__":
         # group='Experiment',
         tags=[],
         resume=False,
-        name='depth-48-skip',
+        name='depth-9-skip',
         config={
             # model parameters
             "architecture": "Convolutional Neural Networks",
-            'depth': 48,
+            'depth': 9,
             'n_class': 10,
             'want_shortcut': True,
             'pool_type': 'max',
