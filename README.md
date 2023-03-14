@@ -111,6 +111,34 @@ The following table summarize all the previously results:
 | Depth-48-skip |    87.96   |  0.5245   |
 
 
+### Exercise 3: Why Residual Connections are so effective
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 The overall architecture of this network is shown in the following figure:
