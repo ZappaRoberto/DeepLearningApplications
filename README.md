@@ -56,17 +56,38 @@ Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g
 
 ### Exercise 2: Rinse and Repeat
 
-Repeat the verification of exercise 1, but with **Convolutional** Neural Networks. Show that **deeper** CNNs *without* residual connections do not always work better and **even deeper** ones *with* residual connections. For this exercise I will use CIFAR10, since MNIST is *very* easy.
+Repeat the verification of exercise 1, but with **Convolutional** Neural Networks. Show that **deeper** CNNs *without* residual connections do not always work better and **even deeper** ones *with* residual connections. For this exercise I will use CIFAR10, since MNIST is *very* easy. I choose to run at most 200 epochs with a patience of 20 epochs.
 
+
+### Introduction:
+
+Since the introduction of ResNet in 2015, residual connections (also known as skip connections) have become one of the most important architectural decisions in deep learning, enabling the construction of deeper and better-performing models. Residual connections are a way to address the problem of vanishing gradients. However, the use of skip connections is not always better and may depend on the specific task, dataset and model. Therefore, the question of whether or not to use residual connections in a neural network and how deep to make the network remains an important area of research in deep learning.
 
 ### Result:
+
+First of all I choose a model with 9 Convolutional Layer as a baseline for this exercise. After being trained the model achieve a 88.74% of accuracy as shown in the followinf Figure: <br>
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/baseline.png" />
+</p>
+
+Now, what's happen if I train on the same dataset deeper models with 17 or even 48 layers? What's happen if I add residual connections to all this models? <br> 
+Let's figure out! <br>
+First things first, are deeper model always better than shallower ones? <br>
+As you can see in the following figure, the model with depth 17 is marginally better than the one with depth 9. However, this is not true in the case of depth 48 where the performance is worse. <br>
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/baseline.png" />
+</p>
+
+
 
 |      Net      |  Accuracy  |   Loss   |
 | :-----------: | :--------: | :------: |
 | Depth-9       |    88.74   |  0.5249  |
 | Depth-9-skip  |    88.20   |  0.5433  |
-| Depth-17      |    **89.65**   |  0.4871  |
-| Depth-17-skip |    32.57   |  28.10   | 
+| Depth-17      |    **89.65**   |  **0.4871**  |
+| Depth-17-skip |    89.51   |  0.5189   | 
 | Depth-48      |    32.57   |  28.10   |
 | Depth-48-skip |    32.57   |  28.10   |
 
