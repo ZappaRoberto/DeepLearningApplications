@@ -54,6 +54,23 @@ Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g
 | MLP         |    32.57   |  28.10 |
 
 
+### Exercise 2: Rinse and Repeat
+
+Repeat the verification of exercise 1, but with **Convolutional** Neural Networks. Show that **deeper** CNNs *without* residual connections do not always work better and **even deeper** ones *with* residual connections. For this exercise I will use CIFAR10, since MNIST is *very* easy.
+
+
+### Result:
+
+|      Net      |  Accuracy  |   Loss   |
+| :-----------: | :--------: | :------: |
+| Depth-9       |    88.74   |  0.5249  |
+| Depth-9-skip  |    88.20   |  0.5433  |
+| Depth-17      |    **89.65**   |  0.4871  |
+| Depth-17-skip |    32.57   |  28.10   | 
+| Depth-48      |    32.57   |  28.10   |
+| Depth-48-skip |    32.57   |  28.10   |
+
+
 
 
 The overall architecture of this network is shown in the following figure:
