@@ -42,7 +42,7 @@ Try to implement your own training pipeline and use my code only as inspiration.
 > In my code I will use Weights and Biases.
 
 
-### Exercise 1: A baseline MLP
+## Exercise 1: A baseline MLP
 
 Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g. two narrow layers). Train this model to convergence, monitoring (at least) the loss and accuracy on the training and validation sets for every epoch.
 
@@ -54,7 +54,7 @@ Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g
 | MLP         |    32.57   |  28.10 |
 
 
-### Exercise 2: Rinse and Repeat
+## Exercise 2: Rinse and Repeat
 
 Repeat the verification of exercise 1, but with **Convolutional** Neural Networks. Show that **deeper** CNNs *without* residual connections do not always work better and **even deeper** ones *with* residual connections. For this exercise I will use CIFAR10, since MNIST is *very* easy. I choose to run at most 200 epochs with a patience of 20 epochs.
 
@@ -111,10 +111,14 @@ The following table summarize all the previously results:
 | Depth-48-skip |    87.96   |  0.5245   |
 
 
-### Exercise 3: Why Residual Connections are so effective
+## Exercise 3: Why Residual Connections are so effective
 
 
+Use your two models (with and without residual connections) you developed before to study and quantify why the residual versions of the networks learn more effectively.<br>
 
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/gradient.png" />
+</p>
 
 
 
