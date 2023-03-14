@@ -116,6 +116,13 @@ The following table summarize all the previously results:
 
 Use your two models (with and without residual connections) you developed before to study and quantify why the residual versions of the networks learn more effectively.<br>
 
+### Introduction
+
+The vanishing gradient problem refers to the issue where the gradients of the loss function with respect to the weights of a deep neural network become very small during backpropagation. This can lead to very slow learning or complete failure of the neural network to converge. <br>
+The problem occurs when the weights of the network are updated using the chain rule of differentiation during backpropagation. In deep neural networks, there are often many layers between the input and output layers, and the gradients are multiplied at each layer. If the gradients are small, they become increasingly smaller as they propagate backward through the layers, and can effectively "vanish" as they approach the input layer. <br>
+To demonstrate the vanishing gradient problem, I will experiment with 48 deep models, both with and without skip connections. During training, I will closely monitor the weights of the very first layer, where the vanishing gradient problem is more pronounced, and then compare the results.
+
+
 <p align="center">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/gradient.png" />
 </p>
