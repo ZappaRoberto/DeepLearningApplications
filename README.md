@@ -75,7 +75,7 @@ Repeat the verification of exercise 1, but with **Convolutional** Neural Network
 
 The overall architecture of this network is shown in the following figure:
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/VDCNN/blob/main/img/architecture.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/prova.png" />
 </p>
 
 The first block is a **`lookup table`** that generates a 2D tensor  of size (f0, s) that contain the embeddings of the s characters.
