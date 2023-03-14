@@ -77,10 +77,29 @@ First things first, are deeper model always better than shallower ones? <br>
 As you can see in the following figure, the model with depth 17 is marginally better than the one with depth 9. However, this is not true in the case of depth 48 where the performance is worse. <br>
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/baseline.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/models.png" />
 </p>
 
 
+What's happen if I add residual connections to all this models? <br>
+First of all I want to analaze what's happen with residual connection for depth 9 and 17: <br>
+As show in the following figure adding residual connection to models that are not enought deeper worsens the results.
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/skip.png" />
+</p>
+
+and the deepr model? <br>
+As shown in the following figure not even the deeper model with residual connection can achieve better result than the shallower ones without skip connection 
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/best.png" />
+</p>
+
+### Table Result:
+
+
+The following table summarize all the previously results:
 
 |      Net      |  Accuracy  |   Loss   |
 | :-----------: | :--------: | :------: |
@@ -88,8 +107,8 @@ As you can see in the following figure, the model with depth 17 is marginally be
 | Depth-9-skip  |    88.20   |  0.5433  |
 | Depth-17      |    **89.65**   |  **0.4871**  |
 | Depth-17-skip |    89.51   |  0.5189   | 
-| Depth-48      |    32.57   |  28.10   |
-| Depth-48-skip |    32.57   |  28.10   |
+| Depth-48      |    86.85   |  0.5053   |
+| Depth-48-skip |    87.96   |  0.5245   |
 
 
 
