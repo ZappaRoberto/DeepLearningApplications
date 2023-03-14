@@ -105,7 +105,7 @@ The following table summarize all the previously results:
 | :-----------: | :--------: | :------: |
 | Depth-9       |    88.74   |  0.5249  |
 | Depth-9-skip  |    88.20   |  0.5433  |
-| Depth-17      |    **89.65**   |  **0.4871**  |
+| **Depth-17**      |    **89.65**   |  **0.4871**  |
 | Depth-17-skip |    89.51   |  0.5189   | 
 | Depth-48      |    86.85   |  0.5053   |
 | Depth-48-skip |    87.96   |  0.5245   |
