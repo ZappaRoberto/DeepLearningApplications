@@ -68,7 +68,7 @@ Since the introduction of ResNet in 2015, residual connections (also known as sk
 First of all I choose a model with 9 Convolutional Layer as a baseline for this exercise. After being trained the model achieve a 88.74% of accuracy as shown in the followinf Figure: <br>
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/baseline.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/baseline.png" />
 </p>
 
 Now, what's happen if I train on the same dataset deeper models with 17 or even 48 layers? What's happen if I add residual connections to all this models? <br> 
@@ -77,7 +77,7 @@ First things first, are deeper model always better than shallower ones? <br>
 As you can see in the following figure, the model with depth 17 is marginally better than the one with depth 9. However, this is not true in the case of depth 48 where the performance is worse. <br>
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/models.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/models.png" />
 </p>
 
 
@@ -86,14 +86,14 @@ First of all I want to analaze what's happen with residual connection for depth 
 As show in the following figure adding residual connection to models that are not enought deeper worsens the results.
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/skip.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/skip.png" />
 </p>
 
 and the deepr model? <br>
 As shown in the following figure not even the deeper model with residual connection can achieve better result than the shallower ones without skip connection 
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/best.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/best.png" />
 </p>
 
 ### Table Result:
@@ -128,7 +128,7 @@ To demonstrate the vanishing gradient problem, I will experiment with 48 deep mo
 Watch the following pictures, which one refer to the models with skip connection? Why?
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/gradient.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
 </p>
 
 On the right, we have a model with skip connections, while on the left, we have a model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!.
