@@ -53,6 +53,8 @@ Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g
 | :---------: | :--------: |  :--:  |
 | MLP         |    32.57   |  28.10 |
 
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
+
 
 ## Exercise 2: Rinse and Repeat
 
@@ -110,6 +112,8 @@ The following table summarize all the previously results:
 | Depth-48      |    86.85   |  0.5053   |
 | Depth-48-skip |    87.96   |  0.5245   |
 
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
+
 
 ## Exercise 3: Why Residual Connections are so effective
 
@@ -137,6 +141,8 @@ On the right, we have a model with skip connections, while on the left, we have 
 ADD GRAPH BETWEEN GRADIENT BOTTOM LAYER
 
 
+
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
 
