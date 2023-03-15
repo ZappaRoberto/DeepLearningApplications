@@ -124,6 +124,7 @@ To demonstrate the vanishing gradient problem, I will experiment with 48 deep mo
 
 
 ### Result
+ADD GRAPH COMPARISON BETWEEN 48 AND 48 SKIP
 
 Watch the following pictures, which one refer to the models with skip connection? Why?
 
@@ -132,6 +133,8 @@ Watch the following pictures, which one refer to the models with skip connection
 </p>
 
 On the right, we have a model with skip connections, while on the left, we have a model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!.
+
+ADD GRAPH BETWEEN GRADIENT BOTTOM LAYER
 
 
 
