@@ -150,7 +150,10 @@ To demonstrate the vanishing gradient problem, I will experiment with 48 deep mo
 
 
 ### Result
-ADD GRAPH COMPARISON BETWEEN 48 AND 48 SKIP
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/48s.png" />
+</p>
 
 Watch the following pictures, which one refer to the models with skip connection? Why?
 
