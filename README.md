@@ -21,6 +21,8 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
     - [Exercise 3: Why Residual Connections are so effective](#Exercise-3-Why-Residual-Connections-are-so-effective)
     - [Exercise 4: Fully-convolutionalize a network](#Exercise-4-Fully-convolutionalize-a-network)
     - [Exercise 5: Explain the predictions of a CNN](#Exercise-5-Explain-the-predictions-of-a-CNN)
+    - [Exercise 6: Instance segmentation?](#Exercise-5-Explain-the-predictions-of-a-CNN)
+    - [Exercise 7: Siamese models?](#Exercise-5-Explain-the-predictions-of-a-CNN)
 - [Dataset](#Dataset)
     - [Yahoo! Answer topic classification](#Yahoo!-Answer-topic-classification)
     - [Amazon Reviews](#Amazon-Reviews)
