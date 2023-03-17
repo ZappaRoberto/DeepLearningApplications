@@ -161,13 +161,14 @@ Watch the following pictures, which one refer to the models with skip connection
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
 </p>
 
-On the right, we have a model with skip connections, while on the left, we have a model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!.
+On the right, we have the very first layer from the model with skip connections, while on the left, we have the very first layer from the model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!. <br>
+What's happen, instead on the last convolution of the network?
 
 <p align="center">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/lastlayer.png" />
 </p>
 
-
+As you can see the difference between the model with and without skip connection persist but we can also see that the gradient is exponentially increasing going backward, is this the famous problem of "Exploding gradient?"
 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
