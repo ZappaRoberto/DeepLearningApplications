@@ -56,6 +56,12 @@ Try to implement your own training pipeline and use my code only as inspiration.
 Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g. two narrow layers). Train this model to convergence, monitoring (at least) the loss and accuracy on the training and validation sets for every epoch.
 
 
+### Architecture:
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise1/mlp.png" />
+</p>
+
 ### Result:
 
 |     Net     |  Accuracy  |  Loss  |
