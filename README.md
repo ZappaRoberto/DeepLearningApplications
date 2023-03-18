@@ -170,6 +170,10 @@ What's happen, instead on the last convolution of the network?
 
 As you can see the difference between the model with and without skip connection persist but we can also see that the gradient is exponentially increasing going backward, is this the famous problem of "Exploding gradient?"
 
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/48clipped.png" />
+</p>
+
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
