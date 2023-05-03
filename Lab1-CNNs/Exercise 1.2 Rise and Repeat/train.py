@@ -70,7 +70,8 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
                                                     steps_per_epoch=len(train_loader),
                                                     epochs=wb.config['num_epochs'] - start)
 
-    wb.watch(model, log="all")
+    wb.watch(model, log="all", log_graph=True)
+    nn.utils.clip_grad_norm_(model.parameters(), 5.0)
 
     for epoch in range(start, wb.config['num_epochs']):
         train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
@@ -116,7 +117,7 @@ if __name__ == "__main__":
         # group='Experiment',
         tags=[],
         resume=False,
-        name='depth-48-skip',
+        name='depth-48-skip-clip',
         config={
             # model parameters
             "architecture": "Convolutional Neural Networks",

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
 import os
-from torchvision.datasets import MNIST
+from dataset import COCODataset, CustomDataset
 
 
 def save_checkpoint(string, state, directory):
@@ -32,16 +32,10 @@ def load_best_model(checkpoint, model):
     model.load_state_dict(checkpoint["state_dict"])
 
 
-def get_loaders(batch_size, num_workers, training=True):
-    transform = T.Compose([
-        T.ToTensor(),
-        T.Normalize((0.1307,), (0.3081,))])
-
-    test_ds = MNIST(
-        root='./Dataset/',
-        train=False,
-        download=True,
-        transform=transform
+def get_loaders(train_dir, test_dir, batch_size, num_workers, training=True):
+    test_ds = COCODataset(
+        img_path=test_dir,
+        dataType='val'
     )
 
     test_loader = DataLoader(
@@ -54,11 +48,9 @@ def get_loaders(batch_size, num_workers, training=True):
     )
 
     if training:
-        train_ds = MNIST(
-            root='./Dataset/',
-            train=True,
-            download=True,
-            transform=transform
+        train_ds = COCODataset(
+            img_path=train_dir,
+            dataType='train'
         )
 
         train_loader = DataLoader(
@@ -76,11 +68,16 @@ def get_loaders(batch_size, num_workers, training=True):
 
 def metrics(wb, device):
     metric_collection = torchmetrics.MetricCollection([
-        torchmetrics.classification.MulticlassAccuracy(num_classes=wb.config['n_class']).to(device=device),
+        torchmetrics.classification.BinaryAccuracy().to(device=device),
+        torchmetrics.classification.BinaryJaccardIndex().to(device=device),
+        torchmetrics.classification.Dice().to(device=device),
     ])
     wb.define_metric("test_loss", summary="min")
     wb.define_metric("test_accuracy", summary="max")
-    wb.define_metric("accuracy_epoch")
+    wb.define_metric("test_dice", summary="max")
+    wb.define_metric("test_iou", summary="max")
+    wb.define_metric("dice_epoch")
+    wb.define_metric("iou_epoch")
     return metric_collection
 
 
@@ -95,15 +92,18 @@ def eval_fn(loader, model, criterion, metric_collection, device):
             prediction = model(data)
             loss = criterion(prediction, target)
             running_loss += loss.item()
-            metric_collection(prediction, target)
+            prediction = (prediction > 0.5).float()
+            metric_collection(prediction, target.int())
 
     loss = running_loss / len(loader)
-    accuracy = metric_collection['MulticlassAccuracy'].compute().cpu() * 100
+    accuracy = metric_collection['BinaryAccuracy'].compute() * 100
+    dice = metric_collection['Dice'].compute()
+    iou = metric_collection['BinaryJaccardIndex'].compute()
 
-    print(f"Got on test set --> Accuracy: {accuracy:.3f} and Loss: {loss:.3f}")
+    print(f"Got on test set --> Dice score: {dice:.6f}, IoU: {iou:.6f}, Accuracy: {accuracy:.3f}, Loss: {loss:.3f}")
 
     metric_collection.reset()
-    return loss, accuracy
+    return loss, accuracy, dice, iou
 
 
 def save_plot(train_l, train_a, test_l, test_a):
