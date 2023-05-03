@@ -21,14 +21,23 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
     - [Exercise 3: Why Residual Connections are so effective](#Exercise-3-Why-Residual-Connections-are-so-effective)
     - [Exercise 4: Fully-convolutionalize a network](#Exercise-4-Fully-convolutionalize-a-network)
     - [Exercise 5: Explain the predictions of a CNN](#Exercise-5-Explain-the-predictions-of-a-CNN)
-- [Dataset](#Dataset)
-    - [Yahoo! Answer topic classification](#Yahoo!-Answer-topic-classification)
-    - [Amazon Reviews](#Amazon-Reviews)
-- [Training](#Training)
-- [Result Analysis](#Result-Analysis)
-    - [Text Classification](#Text-Classification)
-    - [Sentiment Analysis](#Sentiment-Analysis)
-- [How to use](#How-to-use)
+    - [Exercise 6: Instance segmentation?](#Exercise-5-Explain-the-predictions-of-a-CNN)
+    - [Exercise 7: Siamese models?](#Exercise-5-Explain-the-predictions-of-a-CNN)
+- [Laboratory 2: Natural Language Processing](#Laboratory-1-Convolutional-Neural-Networks)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+- [Laboratory 3: Depp Reinforcement Learning](#Laboratory-1-Convolutional-Neural-Networks)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+ - [Laboratory 4: Multimodal](#Laboratory-1-Convolutional-Neural-Networks)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
 
 
 ## Laboratory 1: Convolutional Neural Networks
@@ -47,11 +56,19 @@ Try to implement your own training pipeline and use my code only as inspiration.
 Implement a simple Multilayer Perceptron to classify the 10 digits of MNIST (e.g. two narrow layers). Train this model to convergence, monitoring (at least) the loss and accuracy on the training and validation sets for every epoch.
 
 
+### Architecture:
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise1/mlp.png" />
+</p>
+
 ### Result:
 
 |     Net     |  Accuracy  |  Loss  |
 | :---------: | :--------: |  :--:  |
 | MLP         |    32.57   |  28.10 |
+
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
 ## Exercise 2: Rinse and Repeat
@@ -63,12 +80,19 @@ Repeat the verification of exercise 1, but with **Convolutional** Neural Network
 
 Since the introduction of ResNet in 2015, residual connections (also known as skip connections) have become one of the most important architectural decisions in deep learning, enabling the construction of deeper and better-performing models. Residual connections are a way to address the problem of vanishing gradients. However, the use of skip connections is not always better and may depend on the specific task, dataset and model. Therefore, the question of whether or not to use residual connections in a neural network and how deep to make the network remains an important area of research in deep learning.
 
+
+### Architecture:
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/CNN.png" />
+</p>
+
 ### Result:
 
 First of all I choose a model with 9 Convolutional Layer as a baseline for this exercise. After being trained the model achieve a 88.74% of accuracy as shown in the followinf Figure: <br>
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/baseline.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/baseline.png" />
 </p>
 
 Now, what's happen if I train on the same dataset deeper models with 17 or even 48 layers? What's happen if I add residual connections to all this models? <br> 
@@ -77,7 +101,7 @@ First things first, are deeper model always better than shallower ones? <br>
 As you can see in the following figure, the model with depth 17 is marginally better than the one with depth 9. However, this is not true in the case of depth 48 where the performance is worse. <br>
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/models.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/models.png" />
 </p>
 
 
@@ -86,14 +110,14 @@ First of all I want to analaze what's happen with residual connection for depth 
 As show in the following figure adding residual connection to models that are not enought deeper worsens the results.
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/skip.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/skip.png" />
 </p>
 
 and the deepr model? <br>
 As shown in the following figure not even the deeper model with residual connection can achieve better result than the shallower ones without skip connection 
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/best.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise2/best.png" />
 </p>
 
 ### Table Result:
@@ -110,6 +134,8 @@ The following table summarize all the previously results:
 | Depth-48      |    86.85   |  0.5053   |
 | Depth-48-skip |    87.96   |  0.5245   |
 
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
+
 
 ## Exercise 3: Why Residual Connections are so effective
 
@@ -125,15 +151,30 @@ To demonstrate the vanishing gradient problem, I will experiment with 48 deep mo
 
 ### Result
 
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/48s.png" />
+</p>
+
 Watch the following pictures, which one refer to the models with skip connection? Why?
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/gradient.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
 </p>
 
-On the right, we have a model with skip connections, while on the left, we have a model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!.
+On the right, we have the very first layer from the model with skip connections, while on the left, we have the very first layer from the model without skip connections. As you can see, there is a significant difference between these two versions. At the beginning of training, the weights on the right range from 8000 to -6000 and at the end from 2000 to -2000. In contrast, on the left, the weights start at around 200 and end up only slightly larger, representing more or less an order of magnitude difference!. <br>
+What's happen, instead on the last convolution of the network?
 
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/lastlayer.png" />
+</p>
 
+As you can see the difference between the model with and without skip connection persist but we can also see that the gradient is exponentially increasing going backward, is this the famous problem of "Exploding gradient?"
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/48clipped.png" />
+</p>
+
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
 
