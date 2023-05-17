@@ -16,6 +16,19 @@ time to build a llama like Transformer model:
 """
 
 
+class Embedding(nn.Module):
+    def __init__(self, vocab_size, embedding_size):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, embedding_size)
+        self.tokenizer = AutoTokenizer.from_pretrained("togethercomputer/RedPajama-INCITE-Instruct-3B-v1")
+
+    def forward(self, string):
+        inputs = self.tokenizer(string, return_tensors="pt", max_length=4096)
+        token_id = inputs.input_ids
+        # attention_mask = inputs.attention_mask
+        return self.embedding(token_id)
+
+
 class RMSNorm(torch.nn.Module):
     def __init__(self, dim: int, eps: float = 1e-6):
         super().__init__()
@@ -49,8 +62,7 @@ def apply_rotary_emb(xq: torch.Tensor, xk: torch.Tensor, freqs_cis: torch.Tensor
 
 
 class MultiHeadAttention(nn.Module):
-    # TODO: implement rotary embeddings
-    def __init__(self, embed_dim=512, num_heads=8):
+    def __init__(self, embed_dim, num_heads=8):
         super().__init__()
         self.embed_dim = embed_dim
         self.num_heads = num_heads
@@ -62,16 +74,24 @@ class MultiHeadAttention(nn.Module):
 
     def forward(self, x, mask=None):
         bsz, seq_len, _ = x.shape  # bsz, seq_len, embed_dim
-        q, k, v = self.wq(x), self.wk(x), self.wv(x)
-        q = q.view(bsz, seq_len, self.num_heads, self.d_k)
+        q, k, v = self.wq(x), self.wk(x), self.wv(x)  # bsz, seq_len, d_k * num_heads [1, 2, 4096]
+        q = q.view(bsz, seq_len, self.num_heads, self.d_k)  # [1, 2, 8, 512]
         k = k.view(bsz, seq_len, self.num_heads, self.d_k)
         v = v.view(bsz, seq_len, self.num_heads, self.d_k)
 
-        attention_score = torch.matmul(q, k) / math.sqrt(self.d_k)
+        # TODO: implement rotary embeddings
+
+        q = q.transpose(1, 2)  # [1, 8, 2, 512]
+        k = k.transpose(1, 2)
+        v = v.transpose(1, 2)
+
+        attention_score = torch.matmul(q, k.transpose(2, 3)) / math.sqrt(self.d_k)  # [1, 8, 2, 2]
+
         if mask is not None:
             attention_score = attention_score + mask
+
         attention_weights = F.softmax(attention_score, dim=-1)
-        attention = torch.matmul(attention_weights, v)
+        attention = torch.matmul(attention_weights, v).transpose(1, 2).contiguous().view(bsz, seq_len, -1) #[1, 2, 4096]
         return self.wo(attention)
 
 
@@ -103,14 +123,24 @@ class TransformerBlock(nn.Module):
         return x + attention
 
 
+class LittleLLama(nn.Module):
+    def __init__(self, vocab_size, embedding_size, num_heads=8, num_layers=6):
+        super().__init__()
+        self.embedding = Embedding(vocab_size, embedding_size)
+        self.attention = MultiHeadAttention(embedding_size, num_heads)
+        # self.transformer = nn.Sequential(*[TransformerBlock(embedding_size, num_heads) for _ in range(num_layers)])
+        # self.linear = nn.Linear(embedding_size, vocab_size)
+
+    def forward(self, x):
+        x = self.embedding(x)
+        x = self.attention(x)
+        #x = self.transformer(x)
+        #x = self.norm(x)
+        return self.linear(x)
+
+
 if __name__ == "__main__":
-    tokenizer = AutoTokenizer.from_pretrained("togethercomputer/RedPajama-INCITE-Instruct-3B-v1")
-    inputs = tokenizer("Hello world", return_tensors="pt", max_length=4096)
-    token_id = inputs.input_ids
-    attention_mask = inputs.attention_mask
-    print(token_id, attention_mask)
-    attention = MultiHeadAttention(4096, 8)
-    embed = nn.Embedding(32000, 4096)  # 32000 is the vocab size, 4096 is the embedding size
-    out = attention(embed(token_id), attention_mask.float())
-    print(out.shape)
+    llama = LittleLLama(32000, 4096)  # 32000 is the vocab size, 4096 is the embedding size
+    llama('hello world')
+
     pass
