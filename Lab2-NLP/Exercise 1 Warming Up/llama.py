@@ -117,7 +117,7 @@ class FeedForward(nn.Module):
         super().__init__()
         self.seq = nn.Sequential(
             nn.Linear(embed_dim, hidden_dim),
-            nn.ReLU(),
+            nn.SiLU(),
             nn.Linear(hidden_dim, embed_dim),
         )
 
