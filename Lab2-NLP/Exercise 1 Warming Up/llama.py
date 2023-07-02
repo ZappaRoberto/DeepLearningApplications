@@ -1,11 +1,10 @@
-from typing import Optional, Tuple
 import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, AutoTokenizer, AutoModelForCausalLM
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import Transformer as T
 import math
 from einops import rearrange, repeat
+from tokenizers import Tokenizer
 
 """
 time to build a llama like Transformer model:
@@ -18,15 +17,15 @@ time to build a llama like Transformer model:
 
 
 class Embedding(nn.Module):
-    def __init__(self, vocab_size, embedding_size, max_len=4096):
+    def __init__(self, vocab_size, embedding_size, max_len):
         super().__init__()
-        self.embedding = nn.Embedding(vocab_size, embedding_size)
-        self.tokenizer = AutoTokenizer.from_pretrained("togethercomputer/RedPajama-INCITE-Instruct-3B-v1")
+        self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx=-1)
+        self.tokenizer = Tokenizer.from_file("./dante.tokenizer.json")
         self.max_len = max_len
 
     def forward(self, string):
-        inputs = self.tokenizer(string, return_tensors="pt", max_length=self.max_len, truncation=True)
-        token_id = inputs.input_ids
+        inputs = self.tokenizer.encode(string).truncate(self.max_len)
+        token_id = inputs.ids
         # attention_mask = inputs.attention_mask
         return self.embedding(token_id)
 
@@ -73,7 +72,7 @@ def rotate(u, pos_enc):
 
 class MultiHeadAttention(nn.Module):
     # TODO: I'm not secure is this all correct
-    def __init__(self, embed_dim, num_heads=8, max_seq_len=4096):
+    def __init__(self, embed_dim, num_heads, max_seq_len):
         super().__init__()
         self.embed_dim = embed_dim
         self.num_heads = num_heads
@@ -114,8 +113,9 @@ class MultiHeadAttention(nn.Module):
 
 
 class FeedForward(nn.Module):
-    def __init__(self, embedding_dimension=4096, intermediate_size=11008):
+    def __init__(self, embedding_dimension):
         super().__init__()
+        intermediate_size = 3 * embedding_dimension
         self.linear1 = nn.Linear(embedding_dimension, intermediate_size, bias=False)
         self.linear3 = nn.Linear(intermediate_size, embedding_dimension, bias=False)
         self.linear2 = nn.Linear(embedding_dimension, intermediate_size, bias=False)
@@ -124,10 +124,10 @@ class FeedForward(nn.Module):
         return self.linear3(F.silu(self.linear1(x)) * self.linear2(x))
 
 
-class TransformerLayer(nn.Module):
-    def __init__(self, embed_dim, num_heads=8):
+class Layer(nn.Module):
+    def __init__(self, embed_dim, num_heads, max_seq_len):
         super().__init__()
-        self.attention = MultiHeadAttention(embed_dim, num_heads)
+        self.attention = MultiHeadAttention(embed_dim, num_heads, max_seq_len)
         self.norm1 = RMSNorm(embed_dim)
         self.ff = FeedForward(embed_dim)
         self.norm2 = RMSNorm(embed_dim)
@@ -139,25 +139,28 @@ class TransformerLayer(nn.Module):
 
 
 class LittleLLama(nn.Module):
-    def __init__(self, vocab_size, embedding_size, num_heads=8, num_layers=2, max_seq_len=1024):
+    def __init__(self, vocab_size, embedding_size, num_heads, num_layers, max_seq_len):
         super().__init__()
-        self.embed_tokens = nn.Embedding(vocab_size, embedding_size, padding_idx=-1)
-        self.layers = nn.ModuleList([TransformerLayer(embedding_size, num_heads=num_heads) for _ in range(num_layers)])
+        self.embed_tokens = Embedding(vocab_size, embedding_size, max_seq_len)
+        self.layers = nn.ModuleList([Layer(embedding_size, num_heads, max_seq_len) for _ in range(num_layers)])
         self.norm = RMSNorm(embedding_size)
 
         # self.transformer = nn.Sequential(*[TransformerBlock(embedding_size, num_heads) for _ in range(num_layers)])
         # self.linear = nn.Linear(embedding_size, vocab_size)
 
     def forward(self, x):
-        x = self.embedding(x)
-        x = self.attention(x)
-        #x = self.transformer(x)
-        #x = self.norm(x)
+        x = self.embed_tokens(x)
+        x = self.layers(x)
+        x = self.norm(x)
         return self.linear(x)
 
 
 if __name__ == "__main__":
-    llama = LittleLLama(32000, 4096)  # 32000 is the vocab size, 4096 is the embedding size
+    llama = LittleLLama(vocab_size=10000,
+                        embedding_size=768,
+                        num_heads=8,
+                        num_layers=4,
+                        max_seq_len=4096)  # 38 million parameters instead of 33 million
     # number of parameters:
     pytorch_total_params = sum(p.numel() for p in llama.parameters())
     print(pytorch_total_params)
