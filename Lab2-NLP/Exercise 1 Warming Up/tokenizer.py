@@ -1,5 +1,5 @@
 from pathlib import Path
-from tokenizers import SentencePieceBPETokenizer
+from tokenizers import SentencePieceBPETokenizer, Tokenizer
 
 
 def main():
@@ -16,4 +16,7 @@ def main():
 
 if __name__ == "__main__":
     print("Hello World!")
-    main()
+    tokenizer = Tokenizer.from_file("dante.tokenizer.json")
+    inputs = tokenizer.encode('ciao')
+    print(inputs.ids)
+    # main()
