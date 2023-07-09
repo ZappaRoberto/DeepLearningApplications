@@ -1,17 +1,8 @@
 import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, AutoTokenizer, AutoModelForCausalLM
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn import Transformer as T
-import math
 from einops import rearrange, repeat
-from tokenizers import Tokenizer
-
-"""
-time to build a llama like Transformer model:
-    - Rotary Embedding
-    - Massk
-"""
+from tokenizer import Tokenization
 
 
 class RMSNorm(torch.nn.Module):
@@ -52,26 +43,6 @@ def rotate(u, pos_enc):
     num_tokens = u.shape[-2]
     pos_enc = pos_enc[:num_tokens]
     return u * pos_enc.cos() + (rotate_half(u) * pos_enc.sin())
-
-
-class Tokenization:
-    def __init__(self):
-        self.tokenizer = Tokenizer.from_file("dante.tokenizer.json")
-
-    def encode(self, string):
-        out = self.tokenizer.encode(string)
-        out = torch.tensor(out.ids)
-        return out
-
-    def decode(self, tensor):
-        out = self.tokenizer.decode(tensor.tolist())
-        return out
-
-    def train(self, string):
-        pass
-
-    def inference(self, string):
-        pass
 
 
 class MultiHeadAttention(nn.Module):
@@ -153,7 +124,6 @@ class TinyLLama(nn.Module):
         self.num_heads = num_heads
         self.max_seq_len = max_seq_len
 
-        self.tokenization = Tokenization()
         self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx=-1)
         self.norm = RMSNorm(embedding_size)
         self.layers = torch.nn.ModuleList()
@@ -162,7 +132,7 @@ class TinyLLama(nn.Module):
         self.out = nn.Linear(embedding_size, vocab_size, bias=False)
 
     def forward(self, x):
-        x = self.tokenization.encode(x)
+        # x = self.tokenization.encode(x)
         x = self.embedding(x)
         for layer in self.layers:
             x = layer(x, self.num_heads, self.d_k, self.freq_pos_enc)
@@ -179,4 +149,10 @@ if __name__ == "__main__":
     # number of parameters:
     pytorch_total_params = sum(p.numel() for p in llama.parameters())
     print(pytorch_total_params)
+    tokenizer = Tokenization()
+    out = llama(tokenizer.encode("Nel mezzo del cammin"))
+    out = F.softmax(out, dim=-1)
+    out = torch.argmax(out, dim=-1)
+    print(tokenizer.decode(out))
+
     pass

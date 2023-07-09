@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import wandb
 from tqdm import tqdm
-from model7 import UNet
+from model import TinyLLama
 from utils import (get_loaders, save_checkpoint, load_checkpoint,
                    load_best_model, metrics, eval_fn,
                    create_directory_if_does_not_exist, EarlyStopping, Lion)
