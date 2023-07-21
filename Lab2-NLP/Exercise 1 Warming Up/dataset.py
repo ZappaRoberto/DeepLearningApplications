@@ -1,6 +1,7 @@
 from torch.utils.data import Dataset
 from tokenizer import Tokenization
 from textwrap import wrap
+from datasets import load_dataset
 
 
 class Dante(Dataset):
