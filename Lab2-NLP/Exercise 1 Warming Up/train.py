@@ -36,12 +36,10 @@ def train_fn(epoch, loader, model, optimizer, scheduler, criterion, scaler, metr
 
     train_loss = running_loss / len(loader)
     train_accuracy = metric_collection['BinaryAccuracy'].compute() * 100
-    train_dice = metric_collection['Dice'].compute()
-    train_iou = metric_collection['BinaryJaccardIndex'].compute()
 
     metric_collection.reset()
 
-    return train_loss, train_accuracy, train_dice, train_iou
+    return train_loss, train_accuracy
 
 
 def main(wb, train_dir, test_dir, checkpoint_dir, weight_dir, device, num_workers):

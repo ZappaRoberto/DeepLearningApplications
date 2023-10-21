@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import torch.optim as optim
 import os
 from dataset import YahooDataset
+from tqdm import tqdm
 
 def save_checkpoint(string, state, directory):
     print(string)
@@ -81,7 +82,7 @@ def eval_fn(loader, model, criterion, metric_collection, device):
     running_loss = 0
 
     with torch.no_grad():
-        for input_ids, attention_mask, labels in loader:
+        for input_ids, attention_mask, labels in tqdm(loader, desc=f"Evaluation"):
             data = input_ids.to(device, non_blocking=True)
             target = labels.to(device, non_blocking=True)
             attention_mask = attention_mask.to(device, non_blocking=True)

@@ -85,13 +85,12 @@ class MultiHeadAttention(nn.Module):
         attention_weights = F.softmax(attention_score, dim=-1)
         attention = torch.matmul(attention_weights, v)
         """
-        attention = attention.transpose(1, 2).contiguous().view(bsz, seq_len,
-                                                                -1)  # [1, 2, 4096]
+        attention = attention.transpose(1, 2).contiguous().view(bsz, seq_len, -1)  # [1, 2, 4096]
         return self.wo(attention)
 
 
 class FeedForward(nn.Module):
-    def __init__(self, embedding_dimension=4096):
+    def __init__(self, embedding_dimension):
         super().__init__()
         intermediate_size = 256 * ((int(8 * embedding_dimension / 3) + 256 - 1) // 256)  # numbers from llama GitHub :(
         self.linear1 = nn.Linear(embedding_dimension, intermediate_size, bias=False)
@@ -144,7 +143,7 @@ if __name__ == "__main__":
     llama = TinyLLama(vocab_size=10000,
                       embedding_size=768,
                       num_heads=8,
-                      num_layers=4,
+                      num_layers=2,
                       max_seq_len=1024)
     # number of parameters:
     pytorch_total_params = sum(p.numel() for p in llama.parameters())

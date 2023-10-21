@@ -1,23 +1,32 @@
 from pathlib import Path
 from tokenizers import SentencePieceBPETokenizer, Tokenizer
+from transformers import PreTrainedTokenizerFast
 import torch
 import torch.nn.functional as F
 
 
 class Tokenization:
-    def __init__(self):
-        self.tokenizer = Tokenizer.from_file("dante.tokenizer.json")
+    def __init__(self, max_token_len=1024):
+        self.tokenizer = PreTrainedTokenizerFast(tokenizer_file="Tokenizer/tokenizer.json",
+                                                 unk_token="<unk>",
+                                                 eos_token="</s>",
+                                                 bos_token="<s>",
+                                                 pad_token="<pad>",
+                                                 mask_token="<mask>")
+        self.max_token_len = max_token_len
 
     def encode(self, string):
-        out = self.tokenizer.encode(string)
-        out = torch.tensor(out.ids[:-1]).unsqueeze(dim=0)
-        return out
+        tokens = self.tokenizer.__call__(string,
+                                         add_special_tokens=True,
+                                         return_tensors='pt',
+                                         truncation=True,
+                                         padding='max_length',
+                                         max_length=self.max_token_len,
+                                         return_attention_mask=True)
+        return tokens.input_ids.flatten(), tokens.attention_mask.flatten()
 
     def decode(self, tensor):
-        out = F.softmax(tensor, dim=-1)
-        out = torch.argmax(out, dim=-1)
-        out = self.tokenizer.decode(out.tolist())
-        return out
+        return self.tokenizer.decode(tensor)
 
     def generate(self, string):
         out = self.tokenizer.encode(string)
@@ -27,20 +36,20 @@ class Tokenization:
 
 def main():
     paths = [str(x) for x in Path("./Dataset").glob("**/*.txt")]
-    tokenizer = SentencePieceBPETokenizer()
+    tokenizer = SentencePieceBPETokenizer(add_prefix_space=True)
     tokenizer.train(
         files=paths,
-        vocab_size=5568,
+        vocab_size=5549,
         min_frequency=2,
         show_progress=True,
         special_tokens=["<s>", "<pad>", "</s>", "<unk>", "<mask>"],
     )
-    tokenizer.save_model("./Tokenizer", "dante")
+    tokenizer.save("tokenizer.json", pretty=True)
 
 
 if __name__ == "__main__":
-    # tokenizer = Tokenization()
-    # inputs = tokenizer.encode('ciao')
-    # print(inputs.shape)
-    # print(tokenizer.decode(inputs))
+    #tokenizer = Tokenization()
+    #tokens, attention = tokenizer.encode('Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura')
+    #print(tokens, attention)
+    #print(tokenizer.decode(tokens))
     main()

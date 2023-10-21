@@ -125,7 +125,7 @@ if __name__ == "__main__":
         # group='Experiment',
         tags=[],
         resume=False,
-        name='EX-0',
+        name='Version-0',
         config={
             # model parameters
             "architecture": "BERT",
@@ -143,7 +143,7 @@ if __name__ == "__main__":
             "weight_decay": 1e-2,
             "scheduler": "One Cycle Learning",
             "max_lr": 1.5e-5,
-            "num_epochs": 5,
+            "num_epochs": 1000,
             "patience": 20,
 
             # run type
