@@ -1,4 +1,5 @@
 from textwrap import wrap
+from tokenizer import Tokenization
 
 def main(input_file):
     with open(input_file, "r", encoding='utf-8') as file:
@@ -12,10 +13,10 @@ def main(input_file):
     lines = cleaned_text.split("\n")
     lines = [line for line in lines if line.strip() != ""]
     cleaned_text = "\n".join(lines)
-    output_file = 'dataset.txt'
+    output_file = 'Dataset/dataset.txt'
     with open(output_file, "w") as file:
         file.write(cleaned_text)
 
 
 if __name__ == '__main__':
-    main('Divina Commedia.txt')
+    main('Dataset/Divina Commedia.txt')

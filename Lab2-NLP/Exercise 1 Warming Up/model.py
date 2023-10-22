@@ -67,12 +67,14 @@ class MultiHeadAttention(nn.Module):
 
         q, k = rotate(q, freq_pos_enc), rotate(k, freq_pos_enc)
 
+        """
         if self.k_cache:
             old_k, old_v = self.k_cache, self.v_cache
             k = torch.cat(old_k, k)
             v = torch.cat(old_v, v)
         else:
             self.k_cache, self.v_cache = k, v
+        """
         # Flash attention
         attention = F.scaled_dot_product_attention(q, k, v,
                                                    attn_mask=None,
@@ -119,7 +121,7 @@ class TinyLLama(nn.Module):
     def __init__(self, vocab_size, embedding_size, num_heads, num_layers, max_seq_len):
         super().__init__()
         self.d_k = embedding_size // num_heads
-        self.freq_pos_enc = freq_pos_enc(self.d_k, max_seq_len)
+        self.freq_pos_enc = freq_pos_enc(self.d_k, max_seq_len).to('cuda')
         self.num_heads = num_heads
         self.max_seq_len = max_seq_len
 
@@ -131,7 +133,6 @@ class TinyLLama(nn.Module):
         self.out = nn.Linear(embedding_size, vocab_size, bias=False)
 
     def forward(self, x):
-        # x = self.tokenization.encode(x)
         x = self.embedding(x)
         for layer in self.layers:
             x = layer(x, self.num_heads, self.d_k, self.freq_pos_enc)
@@ -140,18 +141,27 @@ class TinyLLama(nn.Module):
 
 
 if __name__ == "__main__":
-    llama = TinyLLama(vocab_size=10000,
+    llama = TinyLLama(vocab_size=5549,
                       embedding_size=768,
                       num_heads=8,
-                      num_layers=2,
-                      max_seq_len=1024)
+                      num_layers=1,
+                      max_seq_len=128)
     # number of parameters:
     pytorch_total_params = sum(p.numel() for p in llama.parameters())
     print(pytorch_total_params)
     tokenizer = Tokenization()
-    out = llama(tokenizer.encode("Nel mezzo del cammin"))
-    out = F.softmax(out, dim=-1)
-    out = torch.argmax(out, dim=-1)
-    print(tokenizer.decode(out))
+    text = tokenizer.dataset_preparation("Nel mezzo del cammin").unsqueeze(0)
+    out = llama(text)
+    print(out.shape)
+    #out = F.softmax(out, dim=-1)
+    #out = torch.argmax(out, dim=-1)
+    #print(tokenizer.decode(out))
+
+    ce = nn.CrossEntropyLoss()
+    b = torch.randint(0, 5549, (1,)).long()
+    print(b)
+
+    print('Target Shape: ', b.shape)
+    print('Loss: ', ce(out, b))
 
     pass

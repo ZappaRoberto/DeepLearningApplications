@@ -9,13 +9,13 @@ from utils import (get_loaders, save_checkpoint, load_checkpoint,
                    create_directory_if_does_not_exist, EarlyStopping, Lion)
 
 
-def train_fn(epoch, loader, model, optimizer, scheduler, criterion, scaler, metric_collection, device):
+def train_fn(epoch, loader, model, optimizer, scheduler, criterion, scaler, device):
     model.train()
     running_loss = 0
 
     for (data, target) in tqdm(loader, desc=f"Epoch {epoch + 1}"):
         data = data.to(device, non_blocking=True)
-        target = target.to(device, non_blocking=True)
+        target = target.to(device, non_blocking=True).view(-1)
 
         # forward
         with torch.cuda.amp.autocast():
@@ -28,25 +28,22 @@ def train_fn(epoch, loader, model, optimizer, scheduler, criterion, scaler, metr
         scaler.step(optimizer)
         scaler.update()
         scheduler.step()
-        running_loss += loss.item() # .item porta il calcolo alla cpu, non riesco a farlo andare sulla GPU?
-
-        # metrics
-        prediction = (prediction > 0.5).float()
-        metric_collection(prediction, target.int())
+        running_loss += loss.item()  # .item porta il calcolo alla cpu, non riesco a farlo andare sulla GPU?
 
     train_loss = running_loss / len(loader)
-    train_accuracy = metric_collection['BinaryAccuracy'].compute() * 100
 
-    metric_collection.reset()
-
-    return train_loss, train_accuracy
+    return train_loss
 
 
 def main(wb, train_dir, test_dir, checkpoint_dir, weight_dir, device, num_workers):
-    model = UNet(in_channels=wb.config['in_channels'], out_channels=wb.config['n_class']).to(device)
+    model = TinyLLama(vocab_size=wb.config['vocab_size'],
+                      embedding_size=wb.config['embedding_size'],
+                      num_heads=wb.config['num_heads'],
+                      num_layers=wb.config['num_layers'],
+                      max_seq_len=wb.config['max_seq_len']).to(device)
 
     optimizer = Lion(model.parameters(), lr=wb.config['learning_rate'], weight_decay=wb.config['weight_decay'])
-    criterion = nn.BCEWithLogitsLoss()
+    criterion = nn.CrossEntropyLoss()
     scaler = torch.cuda.amp.GradScaler()
     metric_collection = metrics(wb, device)
 
@@ -68,9 +65,10 @@ def main(wb, train_dir, test_dir, checkpoint_dir, weight_dir, device, num_worker
 
     else:
         start = 0
-        patience = EarlyStopping('max', wb.config['patience'])
+        patience = EarlyStopping('min', wb.config['patience'], baseline=1000)
 
-    train_loader, test_loader = get_loaders(train_dir, test_dir, wb.config['batch_size'], num_workers)
+    train_loader, test_loader = get_loaders(train_dir, test_dir, wb.config['batch_size'], wb.config['max_seq_len'],
+                                            num_workers)
     scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
                                                     max_lr=wb.config['max_lr'],
                                                     steps_per_epoch=len(train_loader),
@@ -80,29 +78,19 @@ def main(wb, train_dir, test_dir, checkpoint_dir, weight_dir, device, num_worker
     # nn.utils.clip_grad_norm_(model.parameters(), 5.0)
 
     for epoch in range(start, wb.config['num_epochs']):
-        train_loss, train_accuracy, train_dice, train_iou = train_fn(epoch, train_loader, model, optimizer, scheduler,
-                                                                     criterion, scaler,
-                                                                     metric_collection, device)
+        train_loss = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler, device)
 
-        test_loss, test_accuracy, test_dice, test_iou = eval_fn(test_loader, model, criterion, metric_collection,
-                                                                device)
+        test_loss = eval_fn(test_loader, model, criterion, device)
 
         wb.log({"train_loss": train_loss,
-                "train_accuracy": train_accuracy,
-                "train_dice": train_dice,
-                "train_iou": train_iou,
                 'test_loss': test_loss,
-                'test_accuracy': test_accuracy,
-                'test_dice': test_dice,
-                'test_iou': test_iou,
                 'epoch': epoch + 1,
                 })
 
         # save best model
-        if patience(test_iou):
+        if patience(test_loss):
             wb.log({
-                "dice_epoch": epoch + 1,
-                "iou_epoch": epoch + 1,
+                "test_epoch": epoch + 1,
             })
             checkpoint = {"state_dict": model.state_dict()}
             save_checkpoint("=> Best Model found ! Don't Stop Me Now", checkpoint, weight_dir)
@@ -127,23 +115,26 @@ def main(wb, train_dir, test_dir, checkpoint_dir, weight_dir, device, num_worker
 if __name__ == "__main__":
     wab = wandb.init(
         # set the wandb project where this run will be logged
-        project="Efficient Unet 2",
+        project="Small Language Models",
         # group='Experiment',
         tags=[],
         resume=False,
-        name='version-7.2',
+        name='Experiments-1',
         config={
             # model parameters
-            "architecture": "Unet",
-            'in_channels': 3,
-            'n_class': 1,
+            "architecture": "Transformer decoder only",
+            'vocab_size': 5549,
+            'embedding_size': 768,
+            'num_heads': 16,
+            'num_layers': 4,
+            'max_seq_len': 128,
 
             # datasets
-            "dataset": "COCO",
+            "dataset": "Divina Commedia",
 
             # hyperparameters
             "learning_rate": 1e-4,
-            "batch_size": 64,
+            "batch_size": 1024,
             "optimizer": 'Lion',
             "weight_decay": 1e-2,
             "scheduler": "One Cycle Learning",
@@ -159,9 +150,9 @@ if __name__ == "__main__":
     # Local parameters
     check_dir = ''.join(["checkpoint/", wab.name, "/"])
     w_dir = ''.join(["result/", wab.name, "/"])
-    train = "COCOdataset2017/annotations/instances_train2017.json"   # 'Dataset/train/images'
-    test = "COCOdataset2017/annotations/instances_val2017.json"  # 'Dataset/val/images'
+    train = 'Dataset/dataset.txt'
+    test = 'Dataset/dataset.txt'
     create_directory_if_does_not_exist(check_dir, w_dir)
     dev = 'cuda' if torch.cuda.is_available() else 'cpu'
-    n_workers = 4
+    n_workers = 1
     main(wab, train, test, check_dir, w_dir, dev, n_workers)

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
 import os
-from dataset import COCODataset, CustomDataset
+from dataset import Dante
 
 
 def save_checkpoint(string, state, directory):
@@ -32,10 +32,11 @@ def load_best_model(checkpoint, model):
     model.load_state_dict(checkpoint["state_dict"])
 
 
-def get_loaders(train_dir, test_dir, batch_size, num_workers, training=True):
-    test_ds = COCODataset(
-        img_path=test_dir,
-        dataType='val'
+def get_loaders(train_dir, test_dir, batch_size, max_token_len, num_workers, training=True):
+    test_ds = Dante(
+        text_path=test_dir,
+        datatype='val',
+        max_token_len=max_token_len
     )
 
     test_loader = DataLoader(
@@ -48,9 +49,10 @@ def get_loaders(train_dir, test_dir, batch_size, num_workers, training=True):
     )
 
     if training:
-        train_ds = COCODataset(
-            img_path=train_dir,
-            dataType='train'
+        train_ds = Dante(
+            text_path=train_dir,
+            datatype='train',
+            max_token_len=max_token_len
         )
 
         train_loader = DataLoader(
@@ -58,7 +60,7 @@ def get_loaders(train_dir, test_dir, batch_size, num_workers, training=True):
             batch_size=batch_size,
             num_workers=num_workers,
             pin_memory=True,
-            shuffle=True,
+            shuffle=False,
             persistent_workers=True,
         )
         return train_loader, test_loader
@@ -81,53 +83,26 @@ def metrics(wb, device):
     return metric_collection
 
 
-def eval_fn(loader, model, criterion, metric_collection, device):
+def eval_fn(loader, model, criterion, device):
     model.eval()
     running_loss = 0
 
     with torch.no_grad():
         for data, target in loader:
             data = data.to(device, non_blocking=True)
-            target = target.to(device, non_blocking=True)
+            target = target.to(device, non_blocking=True).view(-1)
             prediction = model(data)
             loss = criterion(prediction, target)
             running_loss += loss.item()
-            prediction = (prediction > 0.5).float()
-            metric_collection(prediction, target.int())
 
     loss = running_loss / len(loader)
-    accuracy = metric_collection['BinaryAccuracy'].compute() * 100
-    dice = metric_collection['Dice'].compute()
-    iou = metric_collection['BinaryJaccardIndex'].compute()
 
-    print(f"Got on test set --> Dice score: {dice:.6f}, IoU: {iou:.6f}, Accuracy: {accuracy:.3f}, Loss: {loss:.3f}")
-
-    metric_collection.reset()
-    return loss, accuracy, dice, iou
-
-
-def save_plot(train_l, train_a, test_l, test_a):
-    plt.plot(train_a, '-')
-    plt.plot(test_a, '-')
-    plt.xlabel('epoch')
-    plt.ylabel('accuracy')
-    plt.legend(['Train', 'Valid'])
-    plt.title('Train vs Valid accuracy')
-    plt.savefig('result/accuracy')
-    plt.close()
-
-    plt.plot(train_l, '-')
-    plt.plot(test_l, '-')
-    plt.xlabel('epoch')
-    plt.ylabel('losses')
-    plt.legend(['Train', 'Valid'])
-    plt.title('Train vs Valid Losses')
-    plt.savefig('result/losses')
-    plt.close()
+    print(f"Got on test set --> Loss: {loss:.3f}")
+    return loss
 
 
 class EarlyStopping:
-    def __init__(self, mod, patience, count=None, baseline=None):
+    def __init__(self, mod, patience, baseline, count=None):
         self.patience = patience
         self.count = patience if count is None else count
         if mod == 'max':

@@ -28,10 +28,13 @@ class Tokenization:
     def decode(self, tensor):
         return self.tokenizer.decode(tensor)
 
-    def generate(self, string):
-        out = self.tokenizer.encode(string)
-        out = torch.tensor(out.ids).unsqueeze(dim=0)
-        return out
+    def dataset_preparation(self, dataset):
+        tokens = self.tokenizer.__call__(dataset,
+                                         add_special_tokens=True,
+                                         return_tensors='pt',
+                                         truncation=False,
+                                         return_attention_mask=False)
+        return tokens.input_ids.flatten()
 
 
 def main():
@@ -48,8 +51,10 @@ def main():
 
 
 if __name__ == "__main__":
-    #tokenizer = Tokenization()
+    tokenizer = Tokenization()
+    print(tokenizer.dataset_preparation('Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura'))
     #tokens, attention = tokenizer.encode('Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura')
     #print(tokens, attention)
     #print(tokenizer.decode(tokens))
-    main()
+    #main()
+
