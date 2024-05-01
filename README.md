@@ -23,7 +23,7 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
     - [Exercise 5: Explain the predictions of a CNN](#Exercise-5-Explain-the-predictions-of-a-CNN)
     - [Exercise 6: Instance segmentation?](#Exercise-5-Explain-the-predictions-of-a-CNN)
     - [Exercise 7: Siamese models?](#Exercise-5-Explain-the-predictions-of-a-CNN)
-- [Laboratory 2: Natural Language Processing](#Laboratory-1-Convolutional-Neural-Networks)
+- [Laboratory 2: Natural Language Processing](#Laboratory-2-Natural-Language-Processing)
     - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
     - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
     - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
@@ -197,6 +197,17 @@ As you can see the difference between the model with and without skip connection
 
 
 
+## Laboratory 2: Natural Language Processing
+In this laboratory we will get our hands dirty working with Large Language Models (e.g. GPT and BERT) to do various useful things.
+
+## Exercise 1: Warming Up
+In this first exercise you will train a small autoregressive GPT model for character generation (the one used by Karpathy in his video) to generate text in the style of Dante Aligheri. Use this file, which contains the entire text of Dante’s Inferno (note: you will have to delete some introductory text at the top of the file before training). Train the model for a few epochs, monitor the loss, and generate some text at the end of training. Qualitatively evaluate the results
+
+## Exercise 2: Working with Real LLMs
+In this exercise we will see how to use the [Hugging Face](https://huggingface.co/) model and dataset ecosystem to access a *huge* variety of pre-trained transformer models.
+
+
+## Exercise 3.1: Training a Text Classifier
 
 The overall architecture of this network is shown in the following figure:
 <p align="center">
