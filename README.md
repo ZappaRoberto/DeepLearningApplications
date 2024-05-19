@@ -252,7 +252,7 @@ prompt = "Once upon a time"
 generated_text = generate_text(prompt)
 print(generated_text)
 ```
-The output of this experiments is:
+The output of this experiments is:<br>
 Once upon a time, what was the best way to go about it? When I first started out, I was happy to do some of the things I loved about cooking: I didn't have to cook your food. I could<br>
 
 
