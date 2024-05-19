@@ -201,14 +201,20 @@ In this first exercise you will train a small autoregressive GPT model for chara
 For this exercise I decided to implement from scratch LLama2 (model.py) and the training script. I did this model ~8 months ago. Now could be beautiful improve the architecture with the latest advancement (MoE, MoD) and also improve the training script but I don't know if I'll have the time to do it :( .
 I made three major experiment on my RTX 4090. The model have ~15M parameters with a fixed vocab_size of 5549 and an embedding_size of 768. The contex lengh is 128 token. Two experiments will use 16 Heads, the other 4 heads. 
 
-|      n_head      |  Test Loss  |   Epochs   |
-| :-----------: | :--------: | :------: |
-| 4       |    5.97   |  144  |
-| 16  |    5.827   |  62  |
-| 16      |    5.832   |  40  |
+|      experiments      |      n_head      |  Test Loss  |   Epochs   |
+| :-----------: | :-----------: | :--------: | :------: |
+| 0       | 4       |    5.97   |  144  |
+| 1       | 16  |    5.827   |  62  |
+| 2       | 16      |    5.832   |  40  |
+
+With the experiments 0 I prove that my implementation can learn as expected from the datasets while with the other two experiments I test how the number of heads are correlated with the convergence speed.
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise4/train.png" />
+</p>
+Looking the test loss we can easily see how quickly this architecture overfit.
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise4/test.png" />
 </p>
 
 ## Exercise 2: Working with Real LLMs
