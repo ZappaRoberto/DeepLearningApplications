@@ -197,7 +197,19 @@ As you can see the difference between the model with and without skip connection
 In this laboratory we will get our hands dirty working with Large Language Models (e.g. GPT and BERT) to do various useful things.
 
 ## Exercise 1: Warming Up
-In this first exercise you will train a small autoregressive GPT model for character generation (the one used by Karpathy in his video) to generate text in the style of Dante Aligheri. Use this file, which contains the entire text of Dante’s Inferno (note: you will have to delete some introductory text at the top of the file before training). Train the model for a few epochs, monitor the loss, and generate some text at the end of training. Qualitatively evaluate the results
+In this first exercise you will train a small autoregressive GPT model for character generation (the one used by Karpathy in his video) to generate text in the style of Dante Aligheri. Use this file, which contains the entire text of Dante’s Inferno (note: you will have to delete some introductory text at the top of the file before training). Train the model for a few epochs, monitor the loss, and generate some text at the end of training. Qualitatively evaluate the results.
+For this exercise I decided to implement from scratch LLama2 (model.py) and the training script. I did this model ~8 months ago. Now could be beautiful improve the architecture with the latest advancement (MoE, MoD) and also improve the training script but I don't know if I'll have the time to do it :( .
+I made three major experiment on my RTX 4090. The model have ~15M parameters with a fixed vocab_size of 5549 and an embedding_size of 768. The contex lengh is 128 token. Two experiments will use 16 Heads, the other 4 heads. 
+
+|      n_head      |  Test Loss  |   Epochs   |
+| :-----------: | :--------: | :------: |
+| 4       |    5.97   |  144  |
+| 16  |    5.827   |  62  |
+| 16      |    5.832   |  40  |
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
+</p>
 
 ## Exercise 2: Working with Real LLMs
 In this exercise we will see how to use the [Hugging Face](https://huggingface.co/) model and dataset ecosystem to access a *huge* variety of pre-trained transformer models.
