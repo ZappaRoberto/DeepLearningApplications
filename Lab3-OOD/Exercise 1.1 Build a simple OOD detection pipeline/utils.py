@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
 import os
-from torchvision.datasets import CIFAR10
+from torchvision.datasets import CIFAR10, FakeData
+import torch.nn as nn
 
 
 def save_checkpoint(string, state, directory):
@@ -38,11 +39,15 @@ def get_loaders(batch_size, num_workers, training=True):
         T.ToTensor(),
         T.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])])
 
+    transform_test = T.Compose([
+        T.ToTensor(),
+        T.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])])
+
     test_ds = CIFAR10(
         root='./Dataset/',
         train=False,
         download=True,
-        transform=transform
+        transform=transform_test
     )
 
     test_loader = DataLoader(
@@ -53,6 +58,20 @@ def get_loaders(batch_size, num_workers, training=True):
         shuffle=False,
         persistent_workers=True,
     )
+
+    fake_ds = FakeData(
+        size=10000,
+        image_size=(3, 32, 32),
+        transform=transform_test
+    )
+
+    fake_loader = DataLoader(fake_ds,
+                             batch_size=batch_size,
+                             shuffle=False,
+                             num_workers=num_workers,
+                             pin_memory=True,
+                             persistent_workers=True,
+                             )
 
     if training:
         train_ds = CIFAR10(
@@ -70,9 +89,9 @@ def get_loaders(batch_size, num_workers, training=True):
             shuffle=True,
             persistent_workers=True,
         )
-        return train_loader, test_loader
+        return train_loader, test_loader, fake_loader
 
-    return test_loader
+    return test_loader, fake_loader
 
 
 def metrics(wb, device):
@@ -85,7 +104,7 @@ def metrics(wb, device):
     return metric_collection
 
 
-def eval_fn(loader, model, criterion, metric_collection, device):
+def eval_fn(loader, fake_loader, model, criterion, metric_collection, device):
     model.eval()
     running_loss = 0
 
@@ -104,27 +123,28 @@ def eval_fn(loader, model, criterion, metric_collection, device):
     print(f"Got on test set --> Accuracy: {accuracy:.3f} and Loss: {loss:.3f}")
 
     metric_collection.reset()
-    return loss, accuracy
 
+    id_score = 0
+    ood_score = 0
 
-def save_plot(train_l, train_a, test_l, test_a):
-    plt.plot(train_a, '-')
-    plt.plot(test_a, '-')
-    plt.xlabel('epoch')
-    plt.ylabel('accuracy')
-    plt.legend(['Train', 'Valid'])
-    plt.title('Train vs Valid accuracy')
-    plt.savefig('result/accuracy')
-    plt.close()
+    with torch.no_grad():
+        for data, _ in loader:
+            inputs= data.to(device, non_blocking=True)
+            outputs = model(inputs)
+            softmax_outputs = nn.functional.softmax(outputs, dim=1)
+            max_softmax_scores, _ = torch.max(softmax_outputs, dim=1)
+            ood_scores = 1 - max_softmax_scores
+            id_score += ood_scores.sum().item()
 
-    plt.plot(train_l, '-')
-    plt.plot(test_l, '-')
-    plt.xlabel('epoch')
-    plt.ylabel('losses')
-    plt.legend(['Train', 'Valid'])
-    plt.title('Train vs Valid Losses')
-    plt.savefig('result/losses')
-    plt.close()
+        for data, _ in fake_loader:
+            inputs = data.to(device, non_blocking=True)
+            outputs = model(inputs)
+            softmax_outputs = nn.functional.softmax(outputs, dim=1)
+            max_softmax_scores, _ = torch.max(softmax_outputs, dim=1)
+            ood_scores = 1 - max_softmax_scores  # Higher score indicates more "out of distribution"
+            ood_score += ood_scores.sum().item()
+
+    return loss, accuracy, id_score, ood_score
 
 
 class EarlyStopping:
