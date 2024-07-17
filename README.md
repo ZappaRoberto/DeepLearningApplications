@@ -174,25 +174,6 @@ As you can see the difference between the model with and without skip connection
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Laboratory 2: Natural Language Processing
 In this laboratory we will get our hands dirty working with Large Language Models (e.g. GPT and BERT) to do various useful things.
 
@@ -201,18 +182,79 @@ In this first exercise you will train a small autoregressive GPT model for chara
 For this exercise I decided to implement from scratch LLama2 (model.py) and the training script. I did this model ~8 months ago. Now could be beautiful improve the architecture with the latest advancement (MoE, MoD) and also improve the training script but I don't know if I'll have the time to do it :( .
 I made three major experiment on my RTX 4090. The model have ~15M parameters with a fixed vocab_size of 5549 and an embedding_size of 768. The contex lengh is 128 token. Two experiments will use 16 Heads, the other 4 heads. 
 
-|      n_head      |  Test Loss  |   Epochs   |
-| :-----------: | :--------: | :------: |
-| 4       |    5.97   |  144  |
-| 16  |    5.827   |  62  |
-| 16      |    5.832   |  40  |
+|      experiments      |      n_head      |  Test Loss  |   Epochs   |
+| :-----------: | :-----------: | :--------: | :------: |
+| 0       | 4       |    5.97   |  144  |
+| 2       | 16  |    5.827   |  62  |
+| 1       | 16      |    5.832   |  40  |
+
+With the experiments 0 I prove that my implementation can learn as expected from the datasets while with the other two experiments I test how the number of heads are correlated with the convergence speed.
 
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise3/gradient.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise4/train.png" />
+</p>
+Looking the test loss we can easily see how quickly this architecture overfit.
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise4/test.png" />
 </p>
 
 ## Exercise 2: Working with Real LLMs
-In this exercise we will see how to use the [Hugging Face](https://huggingface.co/) model and dataset ecosystem to access a *huge* variety of pre-trained transformer models.
+In this exercise we will see how to use the [Hugging Face](https://huggingface.co/) model and dataset ecosystem to access a *huge* variety of pre-trained transformer models.<br>
+Instantiate the GPT2Tokenizer and experiment with encoding text into integer tokens.<br>
+```python
+def main(text):
+    tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+    encoded_input = tokenizer(text, return_tensors="pt")
+
+    # Compare the length of input text with the encoded sequence length
+    input_length = len(text.split())
+    encoded_length = encoded_input["input_ids"].shape[1]
+
+    print(f"Original text length: {input_length}")
+    print(f"Encoded sequence length: {encoded_length}")
+
+    decoded_text = tokenizer.decode(encoded_input["input_ids"][0])
+    print(f"Decoded text: {decoded_text}")
+```
+```python
+text = "This is an example sentence to encode into tokens."
+main(text)
+```
+The output of this experiments is:
+- Original text length: 9
+- Encoded sequence length: 10
+- Decoded text: This is an example sentence to encode into tokens.<br>
+
+Instantiate a pre-trained GPT2LMHeadModel and use the generate() method to generate text from a prompt.<br>
+```python
+def generate_text(prompt, model_name="gpt2", max_length=50, num_return_sequences=1, do_sample=True, top_k=50,
+                  temperature=0.7):
+    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model = GPT2LMHeadModel.from_pretrained(model_name)
+
+    torch.manual_seed(42)  # Set the seed for reproducibility
+
+    generated_text = model.generate(
+        input_ids=tokenizer.encode(prompt, return_tensors="pt"),
+        max_length=max_length,
+        num_return_sequences=num_return_sequences,
+        do_sample=do_sample,
+        top_k=top_k,
+        temperature=temperature,
+        pad_token_id=tokenizer.eos_token_id
+    )
+
+    generated_text = tokenizer.decode(generated_text[0], skip_special_tokens=True)
+    return generated_text
+```
+```python
+prompt = "Once upon a time"
+generated_text = generate_text(prompt)
+print(generated_text)
+```
+The output of this experiments is:<br>
+Once upon a time, what was the best way to go about it? When I first started out, I was happy to do some of the things I loved about cooking: I didn't have to cook your food. I could<br>
+
 
 
 ## Exercise 3.1: Training a Text Classifier
