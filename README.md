@@ -30,10 +30,9 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
     - [Exercise 2: Working with Real LLMs](#Exercise-2-Working-with-Real-LLMs)
     - [Exercise 3: Reusing Pre-trained LLMs](#Exercise-3-Reusing-Pre-trained-LLMs)
 - [Laboratory 3: Adversarial Learning and OOD Detection](#Laboratory-3-Adversarial-Learning-and-OOD-Detection)
-    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
-    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
-    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
-    - [Exercise 1: A baseline MLP](#Exercise-1-A-baseline-MLP)
+    - [Exercise 1: OOD Detection and Performance Evaluation](#Exercise-1-OOD-Detection-and-Performance-Evaluation)
+    - [Exercise 2: Enhancing Robustness to Adversarial Attack](#Exercise-2-Enhancing-Robustness-to-Adversarial-Attack)
+    - [Exercise 3: Wildcard](#Exercise-3-Wildcard)
 
 
 ## Laboratory 1: Convolutional Neural Networks
