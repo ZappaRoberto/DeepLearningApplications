@@ -257,7 +257,7 @@ Once upon a time, what was the best way to go about it? When I first started out
 
 
 
-## Exercise 3.1: Training a Text Classifier
+## Exercise 3: Reusing Pre-trained LLMs
 
 For this exercise I will finetune DistilRoberta-base for a topic classification task.
 
