@@ -298,13 +298,20 @@ The Yahoo! Answers topic classification dataset is constructed using the 10 larg
 </p>
 
 
-
-
-
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
-## How to use
+## Laboratory 3: Adversarial Learning and OOD Detection
+In this laboratory session we will develop a methodology for detecting OOD samples and measuring the quality of OOD detection. We will also experiment with incorporating adversarial examples during training to render models more robust to adversarial attacks.
 
-After training run main.py file changing variable **`WEIGHT_DIR`** with the local directory where the weight are saved
+## Exercise 1: OOD Detection and Performance Evaluation
+In this first exercise you will build a simple OOD detection pipeline and implement some performance metrics to evaluate its performance.
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise6/metrics.png" />
+</p>
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise5/test.png" />
+</p>
+
 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
