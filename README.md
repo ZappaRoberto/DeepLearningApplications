@@ -313,5 +313,14 @@ In this first exercise you will build a simple OOD detection pipeline and implem
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise5/test.png" />
 </p>
 
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
+
+
+## Exercise 2: Enhancing Robustness to Adversarial Attack
+
+<div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
+
+
+## Exercise 3: Wildcard
 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
