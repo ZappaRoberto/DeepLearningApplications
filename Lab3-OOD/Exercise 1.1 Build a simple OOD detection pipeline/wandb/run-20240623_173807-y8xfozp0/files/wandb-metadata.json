@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.6",
+    "heartbeatAt": "2024-06-23T15:38:08.411519",
+    "startedAt": "2024-06-23T15:38:07.480932",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\Roberto\\PycharmProjects\\DeepLearningApplications\\Lab3-OOD\\Exercise 1.1 Build a simple OOD detection pipeline\\train.py",
+    "codePathLocal": "train.py",
+    "codePath": "Lab3-OOD\\Exercise 1.1 Build a simple OOD detection pipeline\\train.py",
+    "git": {
+        "remote": "https://github.com/ZappaRoberto/DeepLearningApplications.git",
+        "commit": "091ac6c9fb3abbe43d77090003dbc061e5a503ec"
+    },
+    "email": "roberto.zappa@luxottica.com",
+    "root": "C:/Users/Roberto/PycharmProjects/DeepLearningApplications",
+    "host": "DESKTOP-V58I0U8",
+    "username": "Roberto",
+    "executable": "C:\\Users\\Roberto\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 3400.0,
+        "min": 0.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3400.0,
+            "min": 0.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1862.2314414978027,
+            "used": 871.7917900085449
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.74370574951172
+    }
+}

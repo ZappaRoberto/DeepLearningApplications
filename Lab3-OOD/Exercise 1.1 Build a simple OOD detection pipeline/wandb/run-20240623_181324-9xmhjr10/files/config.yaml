@@ -1,0 +1,98 @@
+wandb_version: 1
+
+architecture:
+  desc: null
+  value: Convolutional Neural Networks
+in_channels:
+  desc: null
+  value: 3
+out_channels:
+  desc: null
+  value: 64
+n_class:
+  desc: null
+  value: 10
+dataset:
+  desc: null
+  value: CIFAR-10
+learning_rate:
+  desc: null
+  value: 5.0e-05
+batch_size:
+  desc: null
+  value: 2048
+optimizer:
+  desc: null
+  value: Lion
+weight_decay:
+  desc: null
+  value: 0.01
+scheduler:
+  desc: null
+  value: One Cycle Learning
+max_lr:
+  desc: null
+  value: 0.0005
+num_epochs:
+  desc: null
+  value: 20000
+patience:
+  desc: null
+  value: 20000
+evaluation:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.6
+    cli_version: 0.15.12
+    framework: huggingface
+    huggingface_version: 4.34.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1719159204.208399
+    t:
+      1:
+      - 1
+      - 11
+      - 12
+      - 41
+      - 49
+      - 55
+      - 71
+      2:
+      - 1
+      - 11
+      - 12
+      - 41
+      - 49
+      - 55
+      - 71
+      3:
+      - 1
+      - 7
+      - 13
+      - 16
+      - 23
+      4: 3.11.6
+      5: 0.15.12
+      6: 4.34.0
+      8:
+      - 3
+      - 5
+      13: windows-amd64
+    m:
+    - 1: test_loss
+      6:
+      - 3
+      7:
+      - 1
+    - 1: test_accuracy
+      6:
+      - 3
+      7:
+      - 2
+    - 1: accuracy_epoch
+      6:
+      - 3

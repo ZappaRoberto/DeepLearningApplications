@@ -1,0 +1,16 @@
+Files already downloaded and verified
+Files already downloaded and verified
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+
+Epoch 1: 100%|██████████| 25/25 [00:54<00:00,  2.19s/it]
+Got on test set --> Accuracy: 16.730 and Loss: 2.286
+Traceback (most recent call last):
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 1.1 Build a simple OOD detection pipeline\train.py", line 149, in <module>
+    main(wab, check_dir, w_dir, dev, n_workers)
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 1.1 Build a simple OOD detection pipeline\train.py", line 77, in main
+    test_loss, test_accuracy, id_score, ood_score = eval_fn(test_loader,fake_loader, model, criterion, metric_collection, device)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 1.1 Build a simple OOD detection pipeline\utils.py", line 127, in eval_fn
+    inputs, _ = data.to(device, non_blocking=True)
+                ^^^^^^^
+AttributeError: 'list' object has no attribute 'to'
