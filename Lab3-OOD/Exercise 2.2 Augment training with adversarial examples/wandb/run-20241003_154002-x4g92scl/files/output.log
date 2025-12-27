@@ -1,0 +1,1133 @@
+Device: cuda
+Files already downloaded and verified
+Files already downloaded and verified
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+
+
+Epoch 1: 100%|██████████| 25/25 [01:43<00:00,  4.16s/it]
+Got on test set --> Accuracy: 18.290 and Loss: 2.278
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 2: 100%|██████████| 25/25 [00:01<00:00, 16.79it/s]
+Got on test set --> Accuracy: 24.450 and Loss: 2.230
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 3: 100%|██████████| 25/25 [00:01<00:00, 16.63it/s]
+Epoch 4:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 26.020 and Loss: 2.180
+=> Best Model found ! Don't Stop Me Now
+Epoch 4: 100%|██████████| 25/25 [00:01<00:00, 17.59it/s]
+Epoch 5:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 27.070 and Loss: 2.134
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 28.680 and Loss: 2.090
+=> Best Model found ! Don't Stop Me Now
+Epoch 5: 100%|██████████| 25/25 [00:01<00:00, 17.97it/s]
+Epoch 6:  20%|██        | 5/25 [00:00<00:02,  7.37it/s]
+Got on test set --> Accuracy: 30.070 and Loss: 2.046
+=> Best Model found ! Don't Stop Me Now
+Epoch 6: 100%|██████████| 25/25 [00:01<00:00, 16.98it/s]
+Epoch 7:  72%|███████▏  | 18/25 [00:01<00:00, 22.35it/s]
+Got on test set --> Accuracy: 31.530 and Loss: 2.010
+=> Best Model found ! Don't Stop Me Now
+Epoch 7: 100%|██████████| 25/25 [00:01<00:00, 16.95it/s]
+Epoch 8: 100%|██████████| 25/25 [00:01<00:00, 16.86it/s]
+Got on test set --> Accuracy: 33.050 and Loss: 1.966
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 9: 100%|██████████| 25/25 [00:01<00:00, 17.87it/s]
+Epoch 10:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 34.070 and Loss: 1.926
+=> Best Model found ! Don't Stop Me Now
+Epoch 10: 100%|██████████| 25/25 [00:01<00:00, 17.90it/s]
+Epoch 11:   4%|▍         | 1/25 [00:00<00:15,  1.56it/s]
+Got on test set --> Accuracy: 34.860 and Loss: 1.892
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 36.340 and Loss: 1.863
+=> Best Model found ! Don't Stop Me Now
+Epoch 11: 100%|██████████| 25/25 [00:01<00:00, 17.78it/s]
+Epoch 12:  52%|█████▏    | 13/25 [00:01<00:00, 17.76it/s]
+Got on test set --> Accuracy: 37.100 and Loss: 1.833
+=> Best Model found ! Don't Stop Me Now
+Epoch 12: 100%|██████████| 25/25 [00:01<00:00, 17.12it/s]
+Epoch 13: 100%|██████████| 25/25 [00:01<00:00, 17.16it/s]
+Got on test set --> Accuracy: 37.950 and Loss: 1.813
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 14: 100%|██████████| 25/25 [00:01<00:00, 18.68it/s]
+Epoch 15:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 39.390 and Loss: 1.780
+=> Best Model found ! Don't Stop Me Now
+Epoch 15: 100%|██████████| 25/25 [00:01<00:00, 17.65it/s]
+Epoch 16:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 40.210 and Loss: 1.749
+=> Best Model found ! Don't Stop Me Now
+Epoch 16: 100%|██████████| 25/25 [00:01<00:00, 16.65it/s]
+Epoch 17:  20%|██        | 5/25 [00:00<00:02,  7.38it/s]
+Got on test set --> Accuracy: 40.230 and Loss: 1.729
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 41.080 and Loss: 1.706
+=> Best Model found ! Don't Stop Me Now
+Epoch 17: 100%|██████████| 25/25 [00:01<00:00, 17.06it/s]
+Epoch 18:  60%|██████    | 15/25 [00:01<00:00, 20.85it/s]
+Got on test set --> Accuracy: 42.240 and Loss: 1.681
+=> Best Model found ! Don't Stop Me Now
+Epoch 18: 100%|██████████| 25/25 [00:01<00:00, 17.72it/s]
+Epoch 19: 100%|██████████| 25/25 [00:01<00:00, 16.50it/s]
+Got on test set --> Accuracy: 43.530 and Loss: 1.652
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 20: 100%|██████████| 25/25 [00:01<00:00, 17.62it/s]
+Epoch 21:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 44.120 and Loss: 1.630
+=> Best Model found ! Don't Stop Me Now
+Epoch 21: 100%|██████████| 25/25 [00:01<00:00, 17.28it/s]
+Epoch 22:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 43.840 and Loss: 1.620
+=> Saving checkpoint
+Got on test set --> Accuracy: 45.970 and Loss: 1.580
+=> Best Model found ! Don't Stop Me Now
+Epoch 22: 100%|██████████| 25/25 [00:01<00:00, 17.81it/s]
+Epoch 23:  48%|████▊     | 12/25 [00:00<00:00, 18.26it/s]
+Got on test set --> Accuracy: 44.720 and Loss: 1.587
+Epoch 23: 100%|██████████| 25/25 [00:01<00:00, 18.20it/s]
+Epoch 24: 100%|██████████| 25/25 [00:03<00:00,  7.96it/s]
+Epoch 25:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 47.030 and Loss: 1.546
+=> Best Model found ! Don't Stop Me Now
+Epoch 25: 100%|██████████| 25/25 [00:01<00:00, 16.76it/s]
+Epoch 26:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 46.610 and Loss: 1.541
+Epoch 26: 100%|██████████| 25/25 [00:01<00:00, 16.23it/s]
+Epoch 27:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 46.190 and Loss: 1.536
+Epoch 27: 100%|██████████| 25/25 [00:01<00:00, 16.57it/s]
+Epoch 28:  20%|██        | 5/25 [00:00<00:02,  8.03it/s]
+Got on test set --> Accuracy: 47.540 and Loss: 1.512
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 47.020 and Loss: 1.516
+Epoch 28: 100%|██████████| 25/25 [00:01<00:00, 16.25it/s]
+Epoch 29:  52%|█████▏    | 13/25 [00:01<00:00, 20.23it/s]
+Got on test set --> Accuracy: 48.180 and Loss: 1.488
+=> Best Model found ! Don't Stop Me Now
+Epoch 29: 100%|██████████| 25/25 [00:01<00:00, 16.98it/s]
+Epoch 30: 100%|██████████| 25/25 [00:01<00:00, 17.96it/s]
+Got on test set --> Accuracy: 49.340 and Loss: 1.461
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 31: 100%|██████████| 25/25 [00:01<00:00, 17.13it/s]
+Epoch 32:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 50.400 and Loss: 1.438
+=> Best Model found ! Don't Stop Me Now
+Epoch 32: 100%|██████████| 25/25 [00:01<00:00, 16.63it/s]
+Epoch 33:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 49.760 and Loss: 1.433
+Epoch 33: 100%|██████████| 25/25 [00:01<00:00, 17.82it/s]
+Epoch 34:  16%|█▌        | 4/25 [00:00<00:03,  5.91it/s]
+Got on test set --> Accuracy: 50.310 and Loss: 1.420
+=> Saving checkpoint
+Got on test set --> Accuracy: 51.120 and Loss: 1.407
+=> Best Model found ! Don't Stop Me Now
+Epoch 34: 100%|██████████| 25/25 [00:01<00:00, 16.91it/s]
+Epoch 35:  76%|███████▌  | 19/25 [00:01<00:00, 23.63it/s]
+Got on test set --> Accuracy: 52.210 and Loss: 1.388
+=> Best Model found ! Don't Stop Me Now
+Epoch 35: 100%|██████████| 25/25 [00:01<00:00, 18.15it/s]
+Epoch 36: 100%|██████████| 25/25 [00:01<00:00, 16.47it/s]
+Got on test set --> Accuracy: 52.370 and Loss: 1.378
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 37: 100%|██████████| 25/25 [00:01<00:00, 17.53it/s]
+Epoch 38:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 52.660 and Loss: 1.366
+=> Best Model found ! Don't Stop Me Now
+Epoch 38: 100%|██████████| 25/25 [00:01<00:00, 17.01it/s]
+Epoch 39:   4%|▍         | 1/25 [00:00<00:14,  1.66it/s]
+Got on test set --> Accuracy: 52.700 and Loss: 1.362
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 52.610 and Loss: 1.362
+Epoch 39: 100%|██████████| 25/25 [00:01<00:00, 18.16it/s]
+Epoch 40:  52%|█████▏    | 13/25 [00:01<00:00, 18.24it/s]
+Got on test set --> Accuracy: 52.630 and Loss: 1.371
+Epoch 40: 100%|██████████| 25/25 [00:01<00:00, 17.93it/s]
+Epoch 41:  76%|███████▌  | 19/25 [00:01<00:00, 22.46it/s]
+Got on test set --> Accuracy: 53.730 and Loss: 1.350
+=> Best Model found ! Don't Stop Me Now
+Epoch 41: 100%|██████████| 25/25 [00:01<00:00, 16.51it/s]
+Epoch 42: 100%|██████████| 25/25 [00:01<00:00, 16.27it/s]
+Got on test set --> Accuracy: 54.050 and Loss: 1.344
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 43: 100%|██████████| 25/25 [00:01<00:00, 15.49it/s]
+Epoch 44:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 54.350 and Loss: 1.333
+=> Best Model found ! Don't Stop Me Now
+Epoch 44: 100%|██████████| 25/25 [00:01<00:00, 17.88it/s]
+Epoch 45:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 54.640 and Loss: 1.324
+=> Best Model found ! Don't Stop Me Now
+Epoch 45: 100%|██████████| 25/25 [00:01<00:00, 17.88it/s]
+Epoch 46:  16%|█▌        | 4/25 [00:00<00:03,  6.46it/s]
+Got on test set --> Accuracy: 55.410 and Loss: 1.311
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 55.610 and Loss: 1.296
+=> Best Model found ! Don't Stop Me Now
+Epoch 46: 100%|██████████| 25/25 [00:01<00:00, 17.70it/s]
+Epoch 47:  40%|████      | 10/25 [00:01<00:01, 11.84it/s]
+Got on test set --> Accuracy: 55.050 and Loss: 1.294
+Epoch 47: 100%|██████████| 25/25 [00:01<00:00, 16.24it/s]
+Epoch 48:  88%|████████▊ | 22/25 [00:01<00:00, 23.19it/s]
+Got on test set --> Accuracy: 53.300 and Loss: 1.335
+Epoch 48: 100%|██████████| 25/25 [00:01<00:00, 16.60it/s]
+Epoch 49: 100%|██████████| 25/25 [00:01<00:00, 17.43it/s]
+Epoch 50:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 55.970 and Loss: 1.295
+=> Best Model found ! Don't Stop Me Now
+Epoch 50: 100%|██████████| 25/25 [00:01<00:00, 16.99it/s]
+Epoch 51:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 56.170 and Loss: 1.282
+=> Best Model found ! Don't Stop Me Now
+Epoch 51: 100%|██████████| 25/25 [00:01<00:00, 17.77it/s]
+Epoch 52:   4%|▍         | 1/25 [00:00<00:19,  1.24it/s]
+Got on test set --> Accuracy: 55.830 and Loss: 1.285
+=> Saving checkpoint
+Got on test set --> Accuracy: 55.950 and Loss: 1.273
+Epoch 52: 100%|██████████| 25/25 [00:01<00:00, 16.37it/s]
+Epoch 53:  48%|████▊     | 12/25 [00:01<00:00, 17.89it/s]
+Got on test set --> Accuracy: 56.820 and Loss: 1.252
+=> Best Model found ! Don't Stop Me Now
+Epoch 53: 100%|██████████| 25/25 [00:01<00:00, 17.73it/s]
+Epoch 54: 100%|██████████| 25/25 [00:01<00:00, 18.16it/s]
+Got on test set --> Accuracy: 57.600 and Loss: 1.242
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 55: 100%|██████████| 25/25 [00:01<00:00, 17.68it/s]
+Epoch 56:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 54.800 and Loss: 1.294
+Epoch 56: 100%|██████████| 25/25 [00:01<00:00, 16.94it/s]
+Epoch 57:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 55.010 and Loss: 1.294
+Epoch 57: 100%|██████████| 25/25 [00:01<00:00, 17.00it/s]
+Epoch 58:  36%|███▌      | 9/25 [00:00<00:01, 15.49it/s]
+Got on test set --> Accuracy: 56.120 and Loss: 1.272
+=> Saving checkpoint
+Got on test set --> Accuracy: 57.390 and Loss: 1.234
+Epoch 58: 100%|██████████| 25/25 [00:01<00:00, 18.50it/s]
+Epoch 59:  68%|██████▊   | 17/25 [00:01<00:00, 20.69it/s]
+Got on test set --> Accuracy: 57.010 and Loss: 1.232
+Epoch 59: 100%|██████████| 25/25 [00:01<00:00, 16.60it/s]
+Epoch 60: 100%|██████████| 25/25 [00:01<00:00, 16.17it/s]
+Got on test set --> Accuracy: 58.580 and Loss: 1.202
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 61: 100%|██████████| 25/25 [00:01<00:00, 17.74it/s]
+Epoch 62:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 59.270 and Loss: 1.190
+=> Best Model found ! Don't Stop Me Now
+Epoch 62: 100%|██████████| 25/25 [00:01<00:00, 17.45it/s]
+Epoch 63:   4%|▍         | 1/25 [00:00<00:13,  1.83it/s]
+Got on test set --> Accuracy: 57.570 and Loss: 1.231
+=> Saving checkpoint
+Got on test set --> Accuracy: 59.030 and Loss: 1.205
+Epoch 63: 100%|██████████| 25/25 [00:01<00:00, 17.57it/s]
+Epoch 64:  24%|██▍       | 6/25 [00:00<00:01,  9.61it/s]
+Got on test set --> Accuracy: 59.460 and Loss: 1.192
+=> Best Model found ! Don't Stop Me Now
+Epoch 64: 100%|██████████| 25/25 [00:01<00:00, 17.25it/s]
+Epoch 65:  80%|████████  | 20/25 [00:01<00:00, 23.92it/s]
+Got on test set --> Accuracy: 59.530 and Loss: 1.179
+=> Best Model found ! Don't Stop Me Now
+Epoch 65: 100%|██████████| 25/25 [00:01<00:00, 17.61it/s]
+Epoch 66: 100%|██████████| 25/25 [00:01<00:00, 17.39it/s]
+Epoch 67:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 59.420 and Loss: 1.178
+Epoch 67: 100%|██████████| 25/25 [00:01<00:00, 16.84it/s]
+Epoch 68:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 59.770 and Loss: 1.172
+=> Best Model found ! Don't Stop Me Now
+Epoch 68: 100%|██████████| 25/25 [00:01<00:00, 16.80it/s]
+Epoch 69:   4%|▍         | 1/25 [00:00<00:16,  1.46it/s]
+Got on test set --> Accuracy: 58.440 and Loss: 1.195
+=> Saving checkpoint
+Got on test set --> Accuracy: 59.590 and Loss: 1.185
+Epoch 69: 100%|██████████| 25/25 [00:01<00:00, 17.28it/s]
+Epoch 70:  44%|████▍     | 11/25 [00:00<00:00, 16.52it/s]
+Got on test set --> Accuracy: 57.460 and Loss: 1.227
+Epoch 70: 100%|██████████| 25/25 [00:01<00:00, 17.88it/s]
+Epoch 71: 100%|██████████| 25/25 [00:01<00:00, 17.80it/s]
+Got on test set --> Accuracy: 60.440 and Loss: 1.160
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 72: 100%|██████████| 25/25 [00:01<00:00, 15.01it/s]
+Got on test set --> Accuracy: 59.700 and Loss: 1.175
+=> Saving checkpoint
+Epoch 73: 100%|██████████| 25/25 [00:01<00:00, 17.67it/s]
+Epoch 74:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 60.690 and Loss: 1.153
+=> Best Model found ! Don't Stop Me Now
+Epoch 74: 100%|██████████| 25/25 [00:01<00:00, 18.13it/s]
+Epoch 75:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 61.170 and Loss: 1.139
+=> Best Model found ! Don't Stop Me Now
+Epoch 75: 100%|██████████| 25/25 [00:01<00:00, 16.78it/s]
+Epoch 76:  32%|███▏      | 8/25 [00:00<00:01, 11.04it/s]
+Got on test set --> Accuracy: 60.560 and Loss: 1.148
+=> Saving checkpoint
+Got on test set --> Accuracy: 61.120 and Loss: 1.129
+Epoch 76: 100%|██████████| 25/25 [00:01<00:00, 16.98it/s]
+Epoch 77:  64%|██████▍   | 16/25 [00:01<00:00, 20.60it/s]
+Got on test set --> Accuracy: 60.910 and Loss: 1.129
+Epoch 77: 100%|██████████| 25/25 [00:01<00:00, 17.18it/s]
+Epoch 78: 100%|██████████| 25/25 [00:01<00:00, 17.08it/s]
+Got on test set --> Accuracy: 61.560 and Loss: 1.105
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 79: 100%|██████████| 25/25 [00:01<00:00, 18.35it/s]
+Epoch 80:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 62.350 and Loss: 1.091
+=> Best Model found ! Don't Stop Me Now
+Epoch 80: 100%|██████████| 25/25 [00:01<00:00, 16.69it/s]
+Epoch 81:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 58.800 and Loss: 1.172
+Epoch 81: 100%|██████████| 25/25 [00:01<00:00, 16.87it/s]
+Epoch 82:  32%|███▏      | 8/25 [00:00<00:01, 11.54it/s]
+Got on test set --> Accuracy: 62.250 and Loss: 1.098
+=> Saving checkpoint
+Got on test set --> Accuracy: 62.180 and Loss: 1.105
+Epoch 82: 100%|██████████| 25/25 [00:01<00:00, 17.23it/s]
+Epoch 83:  76%|███████▌  | 19/25 [00:01<00:00, 23.57it/s]
+Got on test set --> Accuracy: 61.640 and Loss: 1.122
+Epoch 83: 100%|██████████| 25/25 [00:01<00:00, 17.00it/s]
+Epoch 84: 100%|██████████| 25/25 [00:01<00:00, 17.32it/s]
+Epoch 85:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 61.560 and Loss: 1.124
+Epoch 85: 100%|██████████| 25/25 [00:01<00:00, 16.85it/s]
+Epoch 86:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 60.610 and Loss: 1.142
+Epoch 86: 100%|██████████| 25/25 [00:01<00:00, 17.87it/s]
+Epoch 87:   4%|▍         | 1/25 [00:00<00:15,  1.53it/s]
+Got on test set --> Accuracy: 59.480 and Loss: 1.165
+=> Saving checkpoint
+Got on test set --> Accuracy: 62.450 and Loss: 1.107
+=> Best Model found ! Don't Stop Me Now
+Epoch 87: 100%|██████████| 25/25 [00:01<00:00, 17.42it/s]
+Epoch 88:  64%|██████▍   | 16/25 [00:01<00:00, 23.31it/s]
+Got on test set --> Accuracy: 63.520 and Loss: 1.079
+=> Best Model found ! Don't Stop Me Now
+Epoch 88: 100%|██████████| 25/25 [00:01<00:00, 18.62it/s]
+Epoch 89: 100%|██████████| 25/25 [00:01<00:00, 18.28it/s]
+Got on test set --> Accuracy: 63.790 and Loss: 1.062
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Epoch 90: 100%|██████████| 25/25 [00:01<00:00, 17.75it/s]
+Epoch 91:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 61.930 and Loss: 1.081
+Epoch 91: 100%|██████████| 25/25 [00:01<00:00, 18.37it/s]
+Epoch 92:  20%|██        | 5/25 [00:00<00:02,  8.12it/s]
+Got on test set --> Accuracy: 63.460 and Loss: 1.067
+=> Saving checkpoint
+Got on test set --> Accuracy: 61.710 and Loss: 1.101
+Epoch 92: 100%|██████████| 25/25 [00:01<00:00, 17.61it/s]
+Epoch 93:  48%|████▊     | 12/25 [00:01<00:00, 17.47it/s]
+Got on test set --> Accuracy: 60.890 and Loss: 1.126
+Epoch 93: 100%|██████████| 25/25 [00:01<00:00, 17.28it/s]
+Epoch 94: 100%|██████████| 25/25 [00:01<00:00, 17.50it/s]
+Got on test set --> Accuracy: 60.960 and Loss: 1.112
+=> Saving checkpoint
+Epoch 95: 100%|██████████| 25/25 [00:01<00:00, 18.29it/s]
+Epoch 96:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 63.770 and Loss: 1.050
+Epoch 96: 100%|██████████| 25/25 [00:01<00:00, 16.83it/s]
+Epoch 97:   4%|▍         | 1/25 [00:00<00:14,  1.66it/s]
+Got on test set --> Accuracy: 63.080 and Loss: 1.066
+Epoch 97: 100%|██████████| 25/25 [00:01<00:00, 17.21it/s]
+Epoch 98:  36%|███▌      | 9/25 [00:00<00:01, 13.55it/s]
+Got on test set --> Accuracy: 63.600 and Loss: 1.073
+=> Saving checkpoint
+Got on test set --> Accuracy: 61.400 and Loss: 1.111
+Epoch 98: 100%|██████████| 25/25 [00:01<00:00, 17.41it/s]
+Epoch 99:  88%|████████▊ | 22/25 [00:01<00:00, 26.25it/s]
+Got on test set --> Accuracy: 64.720 and Loss: 1.041
+=> Best Model found ! Don't Stop Me Now
+Epoch 99: 100%|██████████| 25/25 [00:01<00:00, 17.93it/s]
+Epoch 100: 100%|██████████| 25/25 [00:01<00:00, 18.11it/s]
+Epoch 101:   0%|          | 0/25 [00:00<?, ?it/s]
+Got on test set --> Accuracy: 63.910 and Loss: 1.043
+Epoch 101: 100%|██████████| 25/25 [00:01<00:00, 16.95it/s]
+Epoch 102:   0%|          | 0/25 [00:00<?, ?it/s]
+Epoch 101: 100%|██████████| 25/25 [00:01<00:00, 16.95it/s]
+Got on test set --> Accuracy: 63.580 and Loss: 1.058
+Epoch 103:   4%|▍         | 1/25 [00:00<00:16,  1.42it/s]]
+Epoch 103:   4%|▍         | 1/25 [00:00<00:16,  1.42it/s]]
+Got on test set --> Accuracy: 64.490 and Loss: 1.046
+=> Saving checkpoint
+Got on test set --> Accuracy: 64.070 and Loss: 1.043
+Epoch 103: 100%|██████████| 25/25 [00:01<00:00, 17.28it/s]
+Epoch 103: 100%|██████████| 25/25 [00:01<00:00, 17.28it/s]
+Got on test set --> Accuracy: 62.940 and Loss: 1.074
+Epoch 105: 100%|██████████| 25/25 [00:01<00:00, 17.87it/s]
+Epoch 105: 100%|██████████| 25/25 [00:01<00:00, 17.87it/s]
+Got on test set --> Accuracy: 64.240 and Loss: 1.042
+Epoch 107:   0%|          | 0/25 [00:00<?, ?it/s]7.87it/s]
+Epoch 107:   0%|          | 0/25 [00:00<?, ?it/s]7.87it/s]
+Got on test set --> Accuracy: 63.820 and Loss: 1.059
+Epoch 107: 100%|██████████| 25/25 [00:01<00:00, 17.88it/s]
+Epoch 107: 100%|██████████| 25/25 [00:01<00:00, 17.88it/s]
+Got on test set --> Accuracy: 64.500 and Loss: 1.045
+Epoch 109:   4%|▍         | 1/25 [00:00<00:17,  1.37it/s]]
+Epoch 109:   4%|▍         | 1/25 [00:00<00:17,  1.37it/s]]
+Got on test set --> Accuracy: 63.600 and Loss: 1.058
+=> Saving checkpoint
+Got on test set --> Accuracy: 63.440 and Loss: 1.061
+Epoch 109: 100%|██████████| 25/25 [00:01<00:00, 17.00it/s]
+Epoch 109: 100%|██████████| 25/25 [00:01<00:00, 17.00it/s]
+Got on test set --> Accuracy: 65.170 and Loss: 1.012
+=> Best Model found ! Don't Stop Me Now
+Epoch 111: 100%|██████████| 25/25 [00:01<00:00, 17.70it/s]
+Epoch 111: 100%|██████████| 25/25 [00:01<00:00, 17.70it/s]
+Got on test set --> Accuracy: 62.190 and Loss: 1.080
+Epoch 113:   0%|          | 0/25 [00:00<?, ?it/s]7.70it/s]
+Epoch 113:   0%|          | 0/25 [00:00<?, ?it/s]7.70it/s]
+Got on test set --> Accuracy: 64.040 and Loss: 1.039
+Epoch 113: 100%|██████████| 25/25 [00:01<00:00, 15.93it/s]
+Epoch 113: 100%|██████████| 25/25 [00:01<00:00, 15.93it/s]
+Got on test set --> Accuracy: 62.360 and Loss: 1.091
+Epoch 115:  28%|██▊       | 7/25 [00:00<00:01, 11.18it/s]]
+Epoch 115:  28%|██▊       | 7/25 [00:00<00:01, 11.18it/s]]
+Got on test set --> Accuracy: 63.920 and Loss: 1.052
+=> Saving checkpoint
+Got on test set --> Accuracy: 63.090 and Loss: 1.065
+Epoch 115: 100%|██████████| 25/25 [00:01<00:00, 17.60it/s]
+Epoch 115: 100%|██████████| 25/25 [00:01<00:00, 17.60it/s]
+Got on test set --> Accuracy: 63.490 and Loss: 1.067
+Epoch 117: 100%|██████████| 25/25 [00:01<00:00, 16.84it/s]
+Epoch 117: 100%|██████████| 25/25 [00:01<00:00, 16.84it/s]
+Got on test set --> Accuracy: 60.830 and Loss: 1.124
+Epoch 119:   0%|          | 0/25 [00:00<?, ?it/s]6.84it/s]
+Epoch 119:   0%|          | 0/25 [00:00<?, ?it/s]6.84it/s]
+Got on test set --> Accuracy: 61.230 and Loss: 1.113
+Epoch 119: 100%|██████████| 25/25 [00:01<00:00, 18.42it/s]
+Epoch 119: 100%|██████████| 25/25 [00:01<00:00, 18.42it/s]
+Got on test set --> Accuracy: 65.250 and Loss: 1.013
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 64.660 and Loss: 1.020
+Epoch 121:  48%|████▊     | 12/25 [00:00<00:00, 17.98it/s]
+Epoch 121:  48%|████▊     | 12/25 [00:00<00:00, 17.98it/s]
+Got on test set --> Accuracy: 63.730 and Loss: 1.040
+Epoch 121: 100%|██████████| 25/25 [00:01<00:00, 17.96it/s]
+Epoch 121: 100%|██████████| 25/25 [00:01<00:00, 17.96it/s]
+Got on test set --> Accuracy: 65.100 and Loss: 1.011
+Epoch 123: 100%|██████████| 25/25 [00:01<00:00, 17.98it/s]
+Epoch 123: 100%|██████████| 25/25 [00:01<00:00, 17.98it/s]
+Got on test set --> Accuracy: 65.050 and Loss: 1.024
+Epoch 125:   0%|          | 0/25 [00:00<?, ?it/s]7.98it/s]
+Epoch 125:   0%|          | 0/25 [00:00<?, ?it/s]7.98it/s]
+Got on test set --> Accuracy: 65.670 and Loss: 1.005
+=> Best Model found ! Don't Stop Me Now
+Epoch 125: 100%|██████████| 25/25 [00:01<00:00, 17.27it/s]
+Epoch 125: 100%|██████████| 25/25 [00:01<00:00, 17.27it/s]
+Got on test set --> Accuracy: 65.220 and Loss: 1.012
+=> Saving checkpoint
+Got on test set --> Accuracy: 64.970 and Loss: 1.025
+Epoch 127:  68%|██████▊   | 17/25 [00:01<00:00, 20.66it/s]
+Epoch 127:  68%|██████▊   | 17/25 [00:01<00:00, 20.66it/s]
+Got on test set --> Accuracy: 63.090 and Loss: 1.074
+Epoch 127: 100%|██████████| 25/25 [00:01<00:00, 17.15it/s]
+Epoch 127: 100%|██████████| 25/25 [00:01<00:00, 17.15it/s]
+Got on test set --> Accuracy: 63.520 and Loss: 1.060
+Epoch 129: 100%|██████████| 25/25 [00:01<00:00, 18.22it/s]
+Epoch 129: 100%|██████████| 25/25 [00:01<00:00, 18.22it/s]
+Got on test set --> Accuracy: 66.130 and Loss: 0.993
+=> Best Model found ! Don't Stop Me Now
+Epoch 131:  16%|█▌        | 4/25 [00:00<00:03,  6.47it/s]]
+Epoch 131:  16%|█▌        | 4/25 [00:00<00:03,  6.47it/s]]
+Got on test set --> Accuracy: 64.760 and Loss: 1.022
+=> Saving checkpoint
+Got on test set --> Accuracy: 63.790 and Loss: 1.049
+Epoch 131: 100%|██████████| 25/25 [00:01<00:00, 17.70it/s]
+Epoch 131: 100%|██████████| 25/25 [00:01<00:00, 17.70it/s]
+Got on test set --> Accuracy: 66.440 and Loss: 0.977
+=> Best Model found ! Don't Stop Me Now
+Epoch 133: 100%|██████████| 25/25 [00:01<00:00, 17.57it/s]
+Epoch 133: 100%|██████████| 25/25 [00:01<00:00, 17.57it/s]
+Got on test set --> Accuracy: 65.190 and Loss: 1.005
+Epoch 135:   0%|          | 0/25 [00:00<?, ?it/s]7.57it/s]
+Epoch 135:   0%|          | 0/25 [00:00<?, ?it/s]7.57it/s]
+Got on test set --> Accuracy: 63.980 and Loss: 1.048
+Epoch 135: 100%|██████████| 25/25 [00:01<00:00, 18.90it/s]
+Epoch 135: 100%|██████████| 25/25 [00:01<00:00, 18.90it/s]
+Got on test set --> Accuracy: 67.070 and Loss: 0.962
+=> Best Model found ! Don't Stop Me Now
+=> Saving checkpoint
+Got on test set --> Accuracy: 66.710 and Loss: 0.964
+Epoch 137:  44%|████▍     | 11/25 [00:01<00:00, 17.91it/s]
+Epoch 137:  44%|████▍     | 11/25 [00:01<00:00, 17.91it/s]
+Got on test set --> Accuracy: 65.260 and Loss: 1.007
+Epoch 137: 100%|██████████| 25/25 [00:01<00:00, 17.58it/s]
+Epoch 137: 100%|██████████| 25/25 [00:01<00:00, 17.58it/s]
+Got on test set --> Accuracy: 66.270 and Loss: 0.986
+Epoch 139: 100%|██████████| 25/25 [00:01<00:00, 18.12it/s]
+Epoch 139: 100%|██████████| 25/25 [00:01<00:00, 18.12it/s]
+Got on test set --> Accuracy: 65.370 and Loss: 1.006
+Epoch 141:   0%|          | 0/25 [00:00<?, ?it/s]8.12it/s]
+Epoch 141:   0%|          | 0/25 [00:00<?, ?it/s]8.12it/s]
+Got on test set --> Accuracy: 64.800 and Loss: 1.027
+Epoch 141: 100%|██████████| 25/25 [00:01<00:00, 16.83it/s]
+Epoch 141: 100%|██████████| 25/25 [00:01<00:00, 16.83it/s]
+Got on test set --> Accuracy: 63.930 and Loss: 1.051
+=> Saving checkpoint
+Got on test set --> Accuracy: 64.770 and Loss: 1.028
+Epoch 143:  52%|█████▏    | 13/25 [00:01<00:00, 17.45it/s]
+Epoch 143:  52%|█████▏    | 13/25 [00:01<00:00, 17.45it/s]
+Got on test set --> Accuracy: 65.100 and Loss: 1.011
+Epoch 143: 100%|██████████| 25/25 [00:01<00:00, 16.95it/s]
+Epoch 143: 100%|██████████| 25/25 [00:01<00:00, 16.95it/s]
+Got on test set --> Accuracy: 64.390 and Loss: 1.030
+Epoch 145: 100%|██████████| 25/25 [00:01<00:00, 17.52it/s]
+Epoch 145: 100%|██████████| 25/25 [00:01<00:00, 17.52it/s]
+Got on test set --> Accuracy: 66.300 and Loss: 0.976
+Epoch 147:   0%|          | 0/25 [00:00<?, ?it/s]7.52it/s]
+Epoch 147:   0%|          | 0/25 [00:00<?, ?it/s]7.52it/s]
+Got on test set --> Accuracy: 65.080 and Loss: 1.009
+Epoch 147: 100%|██████████| 25/25 [00:01<00:00, 16.10it/s]
+Epoch 147: 100%|██████████| 25/25 [00:01<00:00, 16.10it/s]
+Got on test set --> Accuracy: 65.100 and Loss: 1.016
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.610 and Loss: 0.938
+=> Best Model found ! Don't Stop Me Now
+Epoch 149:  36%|███▌      | 9/25 [00:01<00:01, 11.23it/s]]
+Epoch 149:  36%|███▌      | 9/25 [00:01<00:01, 11.23it/s]]
+Got on test set --> Accuracy: 65.800 and Loss: 0.982
+Epoch 149: 100%|██████████| 25/25 [00:01<00:00, 15.27it/s]
+Epoch 149: 100%|██████████| 25/25 [00:01<00:00, 15.27it/s]
+Got on test set --> Accuracy: 66.060 and Loss: 0.976
+Epoch 151: 100%|██████████| 25/25 [00:01<00:00, 17.32it/s]
+Epoch 151: 100%|██████████| 25/25 [00:01<00:00, 17.32it/s]
+Got on test set --> Accuracy: 65.310 and Loss: 1.003
+Epoch 153:   0%|          | 0/25 [00:00<?, ?it/s]7.32it/s]
+Epoch 153:   0%|          | 0/25 [00:00<?, ?it/s]7.32it/s]
+Got on test set --> Accuracy: 66.150 and Loss: 0.978
+Epoch 153: 100%|██████████| 25/25 [00:01<00:00, 16.31it/s]
+Epoch 153: 100%|██████████| 25/25 [00:01<00:00, 16.31it/s]
+Got on test set --> Accuracy: 63.380 and Loss: 1.042
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.970 and Loss: 0.933
+=> Best Model found ! Don't Stop Me Now
+Epoch 155:  28%|██▊       | 7/25 [00:00<00:01, 10.40it/s]]
+Epoch 155:  28%|██▊       | 7/25 [00:00<00:01, 10.40it/s]]
+Got on test set --> Accuracy: 66.690 and Loss: 0.963
+Epoch 155: 100%|██████████| 25/25 [00:01<00:00, 17.04it/s]
+Epoch 155: 100%|██████████| 25/25 [00:01<00:00, 17.04it/s]
+Got on test set --> Accuracy: 68.640 and Loss: 0.911
+=> Best Model found ! Don't Stop Me Now
+Epoch 157: 100%|██████████| 25/25 [00:01<00:00, 18.21it/s]
+Epoch 157: 100%|██████████| 25/25 [00:01<00:00, 18.21it/s]
+Got on test set --> Accuracy: 68.000 and Loss: 0.923
+Epoch 159:   0%|          | 0/25 [00:00<?, ?it/s]8.21it/s]
+Epoch 159:   0%|          | 0/25 [00:00<?, ?it/s]8.21it/s]
+Got on test set --> Accuracy: 67.440 and Loss: 0.949
+Epoch 159: 100%|██████████| 25/25 [00:01<00:00, 16.33it/s]
+Epoch 159: 100%|██████████| 25/25 [00:01<00:00, 16.33it/s]
+Got on test set --> Accuracy: 64.910 and Loss: 1.017
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.650 and Loss: 0.948
+Epoch 161:  64%|██████▍   | 16/25 [00:01<00:00, 22.37it/s]
+Epoch 161:  64%|██████▍   | 16/25 [00:01<00:00, 22.37it/s]
+Got on test set --> Accuracy: 65.390 and Loss: 0.999
+Epoch 161: 100%|██████████| 25/25 [00:01<00:00, 17.01it/s]
+Epoch 161: 100%|██████████| 25/25 [00:01<00:00, 17.01it/s]
+Got on test set --> Accuracy: 67.160 and Loss: 0.966
+Epoch 163: 100%|██████████| 25/25 [00:01<00:00, 16.15it/s]
+Epoch 163: 100%|██████████| 25/25 [00:01<00:00, 16.15it/s]
+Got on test set --> Accuracy: 66.970 and Loss: 0.962
+Epoch 165:   0%|          | 0/25 [00:00<?, ?it/s]6.15it/s]
+Epoch 165:   0%|          | 0/25 [00:00<?, ?it/s]6.15it/s]
+Got on test set --> Accuracy: 66.070 and Loss: 0.987
+Epoch 165: 100%|██████████| 25/25 [00:01<00:00, 16.51it/s]
+Epoch 165: 100%|██████████| 25/25 [00:01<00:00, 16.51it/s]
+Got on test set --> Accuracy: 67.790 and Loss: 0.957
+Epoch 167:  44%|████▍     | 11/25 [00:00<00:00, 17.17it/s]
+Epoch 167:  44%|████▍     | 11/25 [00:00<00:00, 17.17it/s]
+Got on test set --> Accuracy: 66.710 and Loss: 0.970
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.910 and Loss: 0.927
+Epoch 167: 100%|██████████| 25/25 [00:01<00:00, 18.22it/s]
+Epoch 167: 100%|██████████| 25/25 [00:01<00:00, 18.22it/s]
+Got on test set --> Accuracy: 66.290 and Loss: 0.977
+Epoch 169: 100%|██████████| 25/25 [00:01<00:00, 16.38it/s]
+Epoch 169: 100%|██████████| 25/25 [00:01<00:00, 16.38it/s]
+Got on test set --> Accuracy: 64.490 and Loss: 1.035
+Epoch 171:   0%|          | 0/25 [00:00<?, ?it/s]6.38it/s]
+Epoch 171:   0%|          | 0/25 [00:00<?, ?it/s]6.38it/s]
+Got on test set --> Accuracy: 65.810 and Loss: 1.001
+Epoch 171: 100%|██████████| 25/25 [00:01<00:00, 16.85it/s]
+Epoch 171: 100%|██████████| 25/25 [00:01<00:00, 16.85it/s]
+Got on test set --> Accuracy: 65.550 and Loss: 0.999
+Epoch 173:  32%|███▏      | 8/25 [00:00<00:01, 12.13it/s]]
+Epoch 173:  32%|███▏      | 8/25 [00:00<00:01, 12.13it/s]]
+Got on test set --> Accuracy: 66.340 and Loss: 0.977
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.980 and Loss: 0.934
+Epoch 173: 100%|██████████| 25/25 [00:01<00:00, 17.71it/s]
+Epoch 173: 100%|██████████| 25/25 [00:01<00:00, 17.71it/s]
+Got on test set --> Accuracy: 67.470 and Loss: 0.948
+Epoch 175: 100%|██████████| 25/25 [00:01<00:00, 18.24it/s]
+Epoch 175: 100%|██████████| 25/25 [00:01<00:00, 18.24it/s]
+Got on test set --> Accuracy: 67.910 and Loss: 0.938
+Epoch 177:   0%|          | 0/25 [00:00<?, ?it/s]8.24it/s]
+Epoch 177:   0%|          | 0/25 [00:00<?, ?it/s]8.24it/s]
+Got on test set --> Accuracy: 65.340 and Loss: 1.003
+Epoch 177: 100%|██████████| 25/25 [00:01<00:00, 17.18it/s]
+Epoch 177: 100%|██████████| 25/25 [00:01<00:00, 17.18it/s]
+Got on test set --> Accuracy: 68.060 and Loss: 0.928
+=> Saving checkpoint
+Got on test set --> Accuracy: 66.770 and Loss: 0.970
+Epoch 179:  56%|█████▌    | 14/25 [00:01<00:00, 20.47it/s]
+Epoch 179:  56%|█████▌    | 14/25 [00:01<00:00, 20.47it/s]
+Got on test set --> Accuracy: 66.740 and Loss: 0.970
+Epoch 179: 100%|██████████| 25/25 [00:01<00:00, 17.37it/s]
+Epoch 179: 100%|██████████| 25/25 [00:01<00:00, 17.37it/s]
+Got on test set --> Accuracy: 65.430 and Loss: 0.994
+Epoch 181: 100%|██████████| 25/25 [00:01<00:00, 16.25it/s]
+Epoch 181: 100%|██████████| 25/25 [00:01<00:00, 16.25it/s]
+Got on test set --> Accuracy: 67.400 and Loss: 0.959
+Epoch 183:   0%|          | 0/25 [00:00<?, ?it/s]6.25it/s]
+Epoch 183:   0%|          | 0/25 [00:00<?, ?it/s]6.25it/s]
+Got on test set --> Accuracy: 66.820 and Loss: 0.974
+Epoch 183: 100%|██████████| 25/25 [00:01<00:00, 17.90it/s]
+Epoch 183: 100%|██████████| 25/25 [00:01<00:00, 17.90it/s]
+Got on test set --> Accuracy: 68.150 and Loss: 0.944
+Epoch 185:  48%|████▊     | 12/25 [00:01<00:00, 19.28it/s]
+Epoch 185:  48%|████▊     | 12/25 [00:01<00:00, 19.28it/s]
+Got on test set --> Accuracy: 66.360 and Loss: 0.976
+=> Saving checkpoint
+Got on test set --> Accuracy: 65.520 and Loss: 0.999
+Epoch 185: 100%|██████████| 25/25 [00:01<00:00, 17.50it/s]
+Epoch 185: 100%|██████████| 25/25 [00:01<00:00, 17.50it/s]
+Got on test set --> Accuracy: 66.560 and Loss: 0.988
+Epoch 187: 100%|██████████| 25/25 [00:01<00:00, 18.03it/s]
+Epoch 187: 100%|██████████| 25/25 [00:01<00:00, 18.03it/s]
+Got on test set --> Accuracy: 68.130 and Loss: 0.934
+Epoch 189:   0%|          | 0/25 [00:00<?, ?it/s]8.03it/s]
+Epoch 189:   0%|          | 0/25 [00:00<?, ?it/s]8.03it/s]
+Got on test set --> Accuracy: 68.300 and Loss: 0.930
+Epoch 189: 100%|██████████| 25/25 [00:01<00:00, 16.69it/s]
+Epoch 189: 100%|██████████| 25/25 [00:01<00:00, 16.69it/s]
+Got on test set --> Accuracy: 61.770 and Loss: 1.095
+=> Saving checkpoint
+Got on test set --> Accuracy: 65.890 and Loss: 0.984
+Epoch 191:  64%|██████▍   | 16/25 [00:01<00:00, 21.63it/s]
+Epoch 191:  64%|██████▍   | 16/25 [00:01<00:00, 21.63it/s]
+Got on test set --> Accuracy: 69.140 and Loss: 0.891
+=> Best Model found ! Don't Stop Me Now
+Epoch 191: 100%|██████████| 25/25 [00:01<00:00, 18.28it/s]
+Epoch 191: 100%|██████████| 25/25 [00:01<00:00, 18.28it/s]
+Got on test set --> Accuracy: 68.640 and Loss: 0.908
+Epoch 193: 100%|██████████| 25/25 [00:01<00:00, 18.07it/s]
+Epoch 193: 100%|██████████| 25/25 [00:01<00:00, 18.07it/s]
+Got on test set --> Accuracy: 67.490 and Loss: 0.946
+Epoch 195:   0%|          | 0/25 [00:00<?, ?it/s]8.07it/s]
+Epoch 195:   0%|          | 0/25 [00:00<?, ?it/s]8.07it/s]
+Got on test set --> Accuracy: 64.440 and Loss: 1.023
+Epoch 195: 100%|██████████| 25/25 [00:01<00:00, 16.65it/s]
+Epoch 195: 100%|██████████| 25/25 [00:01<00:00, 16.65it/s]
+Got on test set --> Accuracy: 68.390 and Loss: 0.914
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.970 and Loss: 0.937
+Epoch 197:  84%|████████▍ | 21/25 [00:01<00:00, 23.65it/s]
+Epoch 197:  84%|████████▍ | 21/25 [00:01<00:00, 23.65it/s]
+Got on test set --> Accuracy: 64.440 and Loss: 1.026
+Epoch 199:   0%|          | 0/25 [00:00<?, ?it/s]7.29it/s]
+Epoch 199:   0%|          | 0/25 [00:00<?, ?it/s]7.29it/s]
+Got on test set --> Accuracy: 67.380 and Loss: 0.949
+Epoch 199: 100%|██████████| 25/25 [00:01<00:00, 17.62it/s]
+Epoch 199: 100%|██████████| 25/25 [00:01<00:00, 17.62it/s]
+Got on test set --> Accuracy: 67.530 and Loss: 0.944
+Epoch 201:  16%|█▌        | 4/25 [00:00<00:03,  6.39it/s]]
+Epoch 201:  16%|█▌        | 4/25 [00:00<00:03,  6.39it/s]]
+Got on test set --> Accuracy: 66.550 and Loss: 0.968
+=> Saving checkpoint
+Got on test set --> Accuracy: 66.300 and Loss: 0.977
+Epoch 201: 100%|██████████| 25/25 [00:01<00:00, 18.03it/s]
+Epoch 201: 100%|██████████| 25/25 [00:01<00:00, 18.03it/s]
+Got on test set --> Accuracy: 68.400 and Loss: 0.908
+Epoch 203: 100%|██████████| 25/25 [00:01<00:00, 16.87it/s]
+Epoch 203: 100%|██████████| 25/25 [00:01<00:00, 16.87it/s]
+Got on test set --> Accuracy: 66.530 and Loss: 0.970
+Epoch 205:   0%|          | 0/25 [00:00<?, ?it/s]6.87it/s]
+Epoch 205:   0%|          | 0/25 [00:00<?, ?it/s]6.87it/s]
+Got on test set --> Accuracy: 69.110 and Loss: 0.899
+Epoch 205: 100%|██████████| 25/25 [00:01<00:00, 18.18it/s]
+Epoch 205: 100%|██████████| 25/25 [00:01<00:00, 18.18it/s]
+Got on test set --> Accuracy: 67.450 and Loss: 0.944
+Epoch 207:  44%|████▍     | 11/25 [00:00<00:00, 16.09it/s]
+Epoch 207:  44%|████▍     | 11/25 [00:00<00:00, 16.09it/s]
+Got on test set --> Accuracy: 67.770 and Loss: 0.936
+=> Saving checkpoint
+Got on test set --> Accuracy: 66.780 and Loss: 0.956
+Epoch 207: 100%|██████████| 25/25 [00:01<00:00, 17.76it/s]
+Epoch 207: 100%|██████████| 25/25 [00:01<00:00, 17.76it/s]
+Got on test set --> Accuracy: 70.520 and Loss: 0.861
+=> Best Model found ! Don't Stop Me Now
+Epoch 209: 100%|██████████| 25/25 [00:01<00:00, 17.71it/s]
+Epoch 209: 100%|██████████| 25/25 [00:01<00:00, 17.71it/s]
+Got on test set --> Accuracy: 65.990 and Loss: 0.982
+Epoch 211:   0%|          | 0/25 [00:00<?, ?it/s]7.71it/s]
+Epoch 211:   0%|          | 0/25 [00:00<?, ?it/s]7.71it/s]
+Got on test set --> Accuracy: 67.020 and Loss: 0.952
+Epoch 211: 100%|██████████| 25/25 [00:01<00:00, 16.56it/s]
+Epoch 211: 100%|██████████| 25/25 [00:01<00:00, 16.56it/s]
+Got on test set --> Accuracy: 63.630 and Loss: 1.046
+=> Saving checkpoint
+Got on test set --> Accuracy: 63.750 and Loss: 1.042
+Epoch 213:  64%|██████▍   | 16/25 [00:01<00:00, 21.00it/s]
+Epoch 213:  64%|██████▍   | 16/25 [00:01<00:00, 21.00it/s]
+Got on test set --> Accuracy: 68.080 and Loss: 0.935
+Epoch 213: 100%|██████████| 25/25 [00:01<00:00, 17.17it/s]
+Epoch 213: 100%|██████████| 25/25 [00:01<00:00, 17.17it/s]
+Got on test set --> Accuracy: 67.110 and Loss: 0.956
+Epoch 215: 100%|██████████| 25/25 [00:01<00:00, 17.43it/s]
+Epoch 215: 100%|██████████| 25/25 [00:01<00:00, 17.43it/s]
+Got on test set --> Accuracy: 68.600 and Loss: 0.918
+Epoch 217:   0%|          | 0/25 [00:00<?, ?it/s]7.43it/s]
+Epoch 217:   0%|          | 0/25 [00:00<?, ?it/s]7.43it/s]
+Got on test set --> Accuracy: 69.730 and Loss: 0.896
+Epoch 217: 100%|██████████| 25/25 [00:01<00:00, 15.84it/s]
+Epoch 217: 100%|██████████| 25/25 [00:01<00:00, 15.84it/s]
+Got on test set --> Accuracy: 68.970 and Loss: 0.907
+Epoch 219:  44%|████▍     | 11/25 [00:00<00:00, 16.40it/s]
+Epoch 219:  44%|████▍     | 11/25 [00:00<00:00, 16.40it/s]
+Got on test set --> Accuracy: 69.370 and Loss: 0.902
+=> Saving checkpoint
+Got on test set --> Accuracy: 69.480 and Loss: 0.889
+Epoch 219: 100%|██████████| 25/25 [00:01<00:00, 18.23it/s]
+Epoch 219: 100%|██████████| 25/25 [00:01<00:00, 18.23it/s]
+Got on test set --> Accuracy: 62.730 and Loss: 1.073
+Epoch 221: 100%|██████████| 25/25 [00:01<00:00, 17.80it/s]
+Epoch 221: 100%|██████████| 25/25 [00:01<00:00, 17.80it/s]
+Got on test set --> Accuracy: 66.650 and Loss: 0.964
+Epoch 223:   4%|▍         | 1/25 [00:00<00:15,  1.57it/s]]
+Epoch 223:   4%|▍         | 1/25 [00:00<00:15,  1.57it/s]]
+Got on test set --> Accuracy: 68.900 and Loss: 0.905
+=> Saving checkpoint
+Got on test set --> Accuracy: 69.960 and Loss: 0.879
+Epoch 223: 100%|██████████| 25/25 [00:01<00:00, 18.58it/s]
+Epoch 223: 100%|██████████| 25/25 [00:01<00:00, 18.58it/s]
+Got on test set --> Accuracy: 65.500 and Loss: 0.993
+Epoch 225:  60%|██████    | 15/25 [00:01<00:00, 18.59it/s]
+Epoch 225:  60%|██████    | 15/25 [00:01<00:00, 18.59it/s]
+Got on test set --> Accuracy: 70.090 and Loss: 0.865
+Epoch 225: 100%|██████████| 25/25 [00:01<00:00, 15.58it/s]
+Epoch 225: 100%|██████████| 25/25 [00:01<00:00, 15.58it/s]
+Got on test set --> Accuracy: 69.500 and Loss: 0.887
+Epoch 227:  76%|███████▌  | 19/25 [00:01<00:00, 24.16it/s]
+Epoch 227:  76%|███████▌  | 19/25 [00:01<00:00, 24.16it/s]
+Got on test set --> Accuracy: 70.230 and Loss: 0.873
+Epoch 229:   0%|          | 0/25 [00:00<?, ?it/s]6.63it/s]
+Epoch 229:   0%|          | 0/25 [00:00<?, ?it/s]6.63it/s]
+Got on test set --> Accuracy: 69.080 and Loss: 0.909
+Epoch 229: 100%|██████████| 25/25 [00:01<00:00, 17.68it/s]
+Epoch 229: 100%|██████████| 25/25 [00:01<00:00, 17.68it/s]
+Got on test set --> Accuracy: 68.740 and Loss: 0.911
+=> Saving checkpoint
+Got on test set --> Accuracy: 69.550 and Loss: 0.883
+Epoch 231:   4%|▍         | 1/25 [00:00<00:17,  1.35it/s]]
+Epoch 231:   4%|▍         | 1/25 [00:00<00:17,  1.35it/s]]
+Got on test set --> Accuracy: 69.880 and Loss: 0.881
+Epoch 231: 100%|██████████| 25/25 [00:01<00:00, 16.96it/s]
+Epoch 231: 100%|██████████| 25/25 [00:01<00:00, 16.96it/s]
+Got on test set --> Accuracy: 69.120 and Loss: 0.902
+Epoch 233: 100%|██████████| 25/25 [00:01<00:00, 18.34it/s]
+Epoch 233: 100%|██████████| 25/25 [00:01<00:00, 18.34it/s]
+Got on test set --> Accuracy: 67.740 and Loss: 0.934
+Epoch 235:   0%|          | 0/25 [00:00<?, ?it/s]8.34it/s]
+Epoch 235:   0%|          | 0/25 [00:00<?, ?it/s]8.34it/s]
+Got on test set --> Accuracy: 69.000 and Loss: 0.898
+=> Saving checkpoint
+Got on test set --> Accuracy: 65.190 and Loss: 0.993
+Epoch 235: 100%|██████████| 25/25 [00:01<00:00, 16.63it/s]
+Epoch 235: 100%|██████████| 25/25 [00:01<00:00, 16.63it/s]
+Got on test set --> Accuracy: 68.850 and Loss: 0.902
+Epoch 237:  28%|██▊       | 7/25 [00:00<00:01, 11.80it/s]]
+Epoch 237:  28%|██▊       | 7/25 [00:00<00:01, 11.80it/s]]
+Got on test set --> Accuracy: 69.470 and Loss: 0.890
+Epoch 237: 100%|██████████| 25/25 [00:01<00:00, 18.31it/s]
+Epoch 237: 100%|██████████| 25/25 [00:01<00:00, 18.31it/s]
+Got on test set --> Accuracy: 69.540 and Loss: 0.885
+Epoch 239: 100%|██████████| 25/25 [00:01<00:00, 18.20it/s]
+Epoch 239: 100%|██████████| 25/25 [00:01<00:00, 18.20it/s]
+Got on test set --> Accuracy: 69.770 and Loss: 0.879
+Epoch 241:   0%|          | 0/25 [00:00<?, ?it/s]8.20it/s]
+Epoch 241:   0%|          | 0/25 [00:00<?, ?it/s]8.20it/s]
+Got on test set --> Accuracy: 70.060 and Loss: 0.868
+=> Saving checkpoint
+Got on test set --> Accuracy: 67.530 and Loss: 0.938
+Epoch 241: 100%|██████████| 25/25 [00:01<00:00, 17.11it/s]
+Epoch 241: 100%|██████████| 25/25 [00:01<00:00, 17.11it/s]
+Got on test set --> Accuracy: 70.420 and Loss: 0.868
+Epoch 243:  80%|████████  | 20/25 [00:01<00:00, 24.18it/s]
+Epoch 243:  80%|████████  | 20/25 [00:01<00:00, 24.18it/s]
+Got on test set --> Accuracy: 70.630 and Loss: 0.851
+=> Best Model found ! Don't Stop Me Now
+Epoch 243: 100%|██████████| 25/25 [00:01<00:00, 17.65it/s]
+Epoch 243: 100%|██████████| 25/25 [00:01<00:00, 17.65it/s]
+Got on test set --> Accuracy: 69.060 and Loss: 0.896
+Epoch 245: 100%|██████████| 25/25 [00:01<00:00, 17.14it/s]
+Epoch 245: 100%|██████████| 25/25 [00:01<00:00, 17.14it/s]
+Got on test set --> Accuracy: 64.040 and Loss: 1.039
+=> Saving checkpoint
+Got on test set --> Accuracy: 69.780 and Loss: 0.876
+Epoch 247:   4%|▍         | 1/25 [00:00<00:13,  1.72it/s]]
+Epoch 247:   4%|▍         | 1/25 [00:00<00:13,  1.72it/s]]
+Got on test set --> Accuracy: 70.470 and Loss: 0.857
+Epoch 247: 100%|██████████| 25/25 [00:01<00:00, 17.60it/s]
+Epoch 247: 100%|██████████| 25/25 [00:01<00:00, 17.60it/s]
+Got on test set --> Accuracy: 71.540 and Loss: 0.825
+=> Best Model found ! Don't Stop Me Now
+Epoch 249:  68%|██████▊   | 17/25 [00:01<00:00, 16.59it/s]
+Epoch 249:  68%|██████▊   | 17/25 [00:01<00:00, 16.59it/s]
+Got on test set --> Accuracy: 69.130 and Loss: 0.892
+Epoch 251:   0%|          | 0/25 [00:00<?, ?it/s]5.89it/s]
+Epoch 251:   0%|          | 0/25 [00:00<?, ?it/s]5.89it/s]
+Got on test set --> Accuracy: 71.620 and Loss: 0.834
+=> Best Model found ! Don't Stop Me Now
+Epoch 251: 100%|██████████| 25/25 [00:01<00:00, 17.76it/s]
+Epoch 251: 100%|██████████| 25/25 [00:01<00:00, 17.76it/s]
+Got on test set --> Accuracy: 68.000 and Loss: 0.930
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.290 and Loss: 0.839
+Epoch 253:   4%|▍         | 1/25 [00:00<00:16,  1.47it/s]]
+Epoch 253:   4%|▍         | 1/25 [00:00<00:16,  1.47it/s]]
+Got on test set --> Accuracy: 71.230 and Loss: 0.836
+Epoch 254:  44%|████▍     | 11/25 [00:01<00:00, 14.53it/s]
+Epoch 254:  44%|████▍     | 11/25 [00:01<00:00, 14.53it/s]
+Got on test set --> Accuracy: 68.550 and Loss: 0.919
+Epoch 255:  80%|████████  | 20/25 [00:01<00:00, 23.85it/s]
+Epoch 255:  80%|████████  | 20/25 [00:01<00:00, 23.85it/s]
+Got on test set --> Accuracy: 70.260 and Loss: 0.863
+Epoch 256: 100%|██████████| 25/25 [00:01<00:00, 17.41it/s]
+Epoch 256: 100%|██████████| 25/25 [00:01<00:00, 17.41it/s]
+Got on test set --> Accuracy: 71.250 and Loss: 0.840
+Epoch 258:   0%|          | 0/25 [00:00<?, ?it/s]7.41it/s]
+Epoch 258:   0%|          | 0/25 [00:00<?, ?it/s]7.41it/s]
+Got on test set --> Accuracy: 69.110 and Loss: 0.895
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.060 and Loss: 0.850
+Epoch 259:  20%|██        | 5/25 [00:00<00:02,  9.07it/s]]
+Epoch 259:  20%|██        | 5/25 [00:00<00:02,  9.07it/s]]
+Got on test set --> Accuracy: 70.190 and Loss: 0.873
+Epoch 260:  72%|███████▏  | 18/25 [00:01<00:00, 24.26it/s]
+Epoch 260:  72%|███████▏  | 18/25 [00:01<00:00, 24.26it/s]
+Got on test set --> Accuracy: 71.080 and Loss: 0.839
+Epoch 261: 100%|██████████| 25/25 [00:01<00:00, 17.67it/s]
+Epoch 261: 100%|██████████| 25/25 [00:01<00:00, 17.67it/s]
+Got on test set --> Accuracy: 72.210 and Loss: 0.809
+=> Best Model found ! Don't Stop Me Now
+Epoch 263:   0%|          | 0/25 [00:00<?, ?it/s]7.67it/s]
+Epoch 263:   0%|          | 0/25 [00:00<?, ?it/s]7.67it/s]
+Got on test set --> Accuracy: 65.070 and Loss: 1.004
+=> Saving checkpoint
+Got on test set --> Accuracy: 65.270 and Loss: 0.992
+Epoch 264:   4%|▍         | 1/25 [00:00<00:15,  1.58it/s]]
+Epoch 264:   4%|▍         | 1/25 [00:00<00:15,  1.58it/s]]
+Got on test set --> Accuracy: 69.660 and Loss: 0.873
+Epoch 265:  48%|████▊     | 12/25 [00:01<00:00, 17.15it/s]
+Epoch 265:  48%|████▊     | 12/25 [00:01<00:00, 17.15it/s]
+Got on test set --> Accuracy: 69.640 and Loss: 0.882
+Epoch 266: 100%|██████████| 25/25 [00:01<00:00, 17.86it/s]
+Epoch 266: 100%|██████████| 25/25 [00:01<00:00, 17.86it/s]
+Got on test set --> Accuracy: 70.740 and Loss: 0.848
+Epoch 268:   0%|          | 0/25 [00:00<?, ?it/s]7.86it/s]
+Epoch 268:   0%|          | 0/25 [00:00<?, ?it/s]7.86it/s]
+Got on test set --> Accuracy: 66.330 and Loss: 0.971
+Epoch 269:   0%|          | 0/25 [00:00<?, ?it/s]7.86it/s]
+Epoch 269:   0%|          | 0/25 [00:00<?, ?it/s]7.86it/s]
+Got on test set --> Accuracy: 69.110 and Loss: 0.891
+=> Saving checkpoint
+Got on test set --> Accuracy: 72.080 and Loss: 0.807
+Epoch 270:  16%|█▌        | 4/25 [00:00<00:03,  6.16it/s]]
+Epoch 270:  16%|█▌        | 4/25 [00:00<00:03,  6.16it/s]]
+Got on test set --> Accuracy: 70.210 and Loss: 0.863
+Epoch 271:  56%|█████▌    | 14/25 [00:01<00:00, 19.57it/s]
+Epoch 271:  56%|█████▌    | 14/25 [00:01<00:00, 19.57it/s]
+Got on test set --> Accuracy: 69.800 and Loss: 0.884
+Epoch 272: 100%|██████████| 25/25 [00:01<00:00, 17.08it/s]
+Epoch 272: 100%|██████████| 25/25 [00:01<00:00, 17.08it/s]
+Got on test set --> Accuracy: 70.010 and Loss: 0.866
+Epoch 274:   0%|          | 0/25 [00:00<?, ?it/s]7.08it/s]
+Epoch 274:   0%|          | 0/25 [00:00<?, ?it/s]7.08it/s]
+Got on test set --> Accuracy: 69.990 and Loss: 0.881
+Epoch 275:   0%|          | 0/25 [00:00<?, ?it/s]7.08it/s]
+Epoch 275:   0%|          | 0/25 [00:00<?, ?it/s]7.08it/s]
+Got on test set --> Accuracy: 70.060 and Loss: 0.874
+=> Saving checkpoint
+Got on test set --> Accuracy: 72.190 and Loss: 0.806
+Epoch 276:  40%|████      | 10/25 [00:01<00:01, 14.38it/s]
+Epoch 276:  40%|████      | 10/25 [00:01<00:01, 14.38it/s]
+Got on test set --> Accuracy: 69.200 and Loss: 0.888
+Epoch 277:  84%|████████▍ | 21/25 [00:01<00:00, 21.69it/s]
+Epoch 277:  84%|████████▍ | 21/25 [00:01<00:00, 21.69it/s]
+Got on test set --> Accuracy: 70.240 and Loss: 0.868
+Epoch 278: 100%|██████████| 25/25 [00:01<00:00, 16.54it/s]
+Epoch 278: 100%|██████████| 25/25 [00:01<00:00, 16.54it/s]
+Got on test set --> Accuracy: 67.670 and Loss: 0.928
+Epoch 280:   0%|          | 0/25 [00:00<?, ?it/s]6.54it/s]
+Epoch 280:   0%|          | 0/25 [00:00<?, ?it/s]6.54it/s]
+Got on test set --> Accuracy: 71.350 and Loss: 0.828
+=> Saving checkpoint
+Got on test set --> Accuracy: 69.140 and Loss: 0.888
+Epoch 281:   8%|▊         | 2/25 [00:00<00:06,  3.39it/s]]
+Epoch 281:   8%|▊         | 2/25 [00:00<00:06,  3.39it/s]]
+Got on test set --> Accuracy: 66.940 and Loss: 0.956
+Epoch 282:  36%|███▌      | 9/25 [00:01<00:01, 12.48it/s]]
+Epoch 282:  36%|███▌      | 9/25 [00:01<00:01, 12.48it/s]]
+Got on test set --> Accuracy: 67.880 and Loss: 0.925
+Epoch 283:  84%|████████▍ | 21/25 [00:01<00:00, 25.60it/s]
+Epoch 283:  84%|████████▍ | 21/25 [00:01<00:00, 25.60it/s]
+Got on test set --> Accuracy: 68.790 and Loss: 0.902
+Epoch 284: 100%|██████████| 25/25 [00:01<00:00, 17.14it/s]
+Epoch 284: 100%|██████████| 25/25 [00:01<00:00, 17.14it/s]
+Got on test set --> Accuracy: 70.570 and Loss: 0.854
+Epoch 286:   0%|          | 0/25 [00:00<?, ?it/s]7.14it/s]
+Epoch 286:   0%|          | 0/25 [00:00<?, ?it/s]7.14it/s]
+Got on test set --> Accuracy: 67.660 and Loss: 0.929
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.010 and Loss: 0.843
+Epoch 287:   4%|▍         | 1/25 [00:00<00:15,  1.55it/s]]
+Epoch 287:   4%|▍         | 1/25 [00:00<00:15,  1.55it/s]]
+Got on test set --> Accuracy: 69.780 and Loss: 0.871
+Epoch 288:  32%|███▏      | 8/25 [00:00<00:01, 11.85it/s]]
+Epoch 288:  32%|███▏      | 8/25 [00:00<00:01, 11.85it/s]]
+Got on test set --> Accuracy: 71.590 and Loss: 0.820
+Epoch 289:  92%|█████████▏| 23/25 [00:01<00:00, 26.90it/s]
+Epoch 289:  92%|█████████▏| 23/25 [00:01<00:00, 26.90it/s]
+Got on test set --> Accuracy: 70.130 and Loss: 0.867
+Epoch 290: 100%|██████████| 25/25 [00:01<00:00, 17.56it/s]
+Epoch 290: 100%|██████████| 25/25 [00:01<00:00, 17.56it/s]
+Got on test set --> Accuracy: 72.140 and Loss: 0.810
+Epoch 292:   0%|          | 0/25 [00:00<?, ?it/s]7.56it/s]
+Epoch 292:   0%|          | 0/25 [00:00<?, ?it/s]7.56it/s]
+Got on test set --> Accuracy: 67.190 and Loss: 0.951
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.250 and Loss: 0.836
+Epoch 293:   0%|          | 0/25 [00:00<?, ?it/s]7.56it/s]
+Epoch 293:   0%|          | 0/25 [00:00<?, ?it/s]7.56it/s]
+Got on test set --> Accuracy: 72.290 and Loss: 0.813
+=> Best Model found ! Don't Stop Me Now
+Epoch 294:  44%|████▍     | 11/25 [00:01<00:00, 16.98it/s]
+Epoch 294:  44%|████▍     | 11/25 [00:01<00:00, 16.98it/s]
+Got on test set --> Accuracy: 68.930 and Loss: 0.894
+Epoch 295: 100%|██████████| 25/25 [00:01<00:00, 17.72it/s]
+Epoch 295: 100%|██████████| 25/25 [00:01<00:00, 17.72it/s]
+Got on test set --> Accuracy: 67.740 and Loss: 0.933
+Epoch 297:   0%|          | 0/25 [00:00<?, ?it/s]7.72it/s]
+Epoch 297:   0%|          | 0/25 [00:00<?, ?it/s]7.72it/s]
+Got on test set --> Accuracy: 65.450 and Loss: 0.984
+Epoch 298:   0%|          | 0/25 [00:00<?, ?it/s]7.72it/s]
+Epoch 298:   0%|          | 0/25 [00:00<?, ?it/s]7.72it/s]
+Got on test set --> Accuracy: 67.530 and Loss: 0.938
+=> Saving checkpoint
+Got on test set --> Accuracy: 68.160 and Loss: 0.918
+Epoch 299:  28%|██▊       | 7/25 [00:00<00:01, 11.32it/s]]
+Epoch 299:  28%|██▊       | 7/25 [00:00<00:01, 11.32it/s]]
+Got on test set --> Accuracy: 71.690 and Loss: 0.824
+Epoch 300:  68%|██████▊   | 17/25 [00:01<00:00, 23.09it/s]
+Epoch 300:  68%|██████▊   | 17/25 [00:01<00:00, 23.09it/s]
+Got on test set --> Accuracy: 69.990 and Loss: 0.873
+Epoch 301: 100%|██████████| 25/25 [00:01<00:00, 18.11it/s]
+Epoch 301: 100%|██████████| 25/25 [00:01<00:00, 18.11it/s]
+Got on test set --> Accuracy: 70.560 and Loss: 0.853
+Epoch 303:   0%|          | 0/25 [00:00<?, ?it/s]8.11it/s]
+Epoch 303:   0%|          | 0/25 [00:00<?, ?it/s]8.11it/s]
+Got on test set --> Accuracy: 71.030 and Loss: 0.835
+=> Saving checkpoint
+Got on test set --> Accuracy: 66.090 and Loss: 0.970
+Epoch 304:   4%|▍         | 1/25 [00:00<00:14,  1.68it/s]]
+Epoch 304:   4%|▍         | 1/25 [00:00<00:14,  1.68it/s]]
+Got on test set --> Accuracy: 70.500 and Loss: 0.859
+Epoch 305:  48%|████▊     | 12/25 [00:01<00:00, 18.15it/s]
+Epoch 305:  48%|████▊     | 12/25 [00:01<00:00, 18.15it/s]
+Got on test set --> Accuracy: 71.850 and Loss: 0.822
+Epoch 306: 100%|██████████| 25/25 [00:01<00:00, 18.68it/s]
+Epoch 306: 100%|██████████| 25/25 [00:01<00:00, 18.68it/s]
+Got on test set --> Accuracy: 71.440 and Loss: 0.822
+Epoch 308:   0%|          | 0/25 [00:00<?, ?it/s]8.68it/s]
+Epoch 308:   0%|          | 0/25 [00:00<?, ?it/s]8.68it/s]
+Got on test set --> Accuracy: 69.230 and Loss: 0.886
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.630 and Loss: 0.816
+Epoch 309:   4%|▍         | 1/25 [00:00<00:15,  1.57it/s]]
+Epoch 309:   4%|▍         | 1/25 [00:00<00:15,  1.57it/s]]
+Got on test set --> Accuracy: 70.140 and Loss: 0.864
+Epoch 310:  44%|████▍     | 11/25 [00:01<00:00, 16.24it/s]
+Epoch 310:  44%|████▍     | 11/25 [00:01<00:00, 16.24it/s]
+Got on test set --> Accuracy: 70.250 and Loss: 0.859
+Epoch 311:  76%|███████▌  | 19/25 [00:01<00:00, 24.75it/s]
+Epoch 311:  76%|███████▌  | 19/25 [00:01<00:00, 24.75it/s]
+Got on test set --> Accuracy: 68.490 and Loss: 0.904
+Epoch 312: 100%|██████████| 25/25 [00:01<00:00, 17.80it/s]
+Epoch 312: 100%|██████████| 25/25 [00:01<00:00, 17.80it/s]
+Got on test set --> Accuracy: 71.100 and Loss: 0.844
+Epoch 314:   0%|          | 0/25 [00:00<?, ?it/s]7.80it/s]
+Epoch 314:   0%|          | 0/25 [00:00<?, ?it/s]7.80it/s]
+Got on test set --> Accuracy: 67.230 and Loss: 0.938
+=> Saving checkpoint
+Got on test set --> Accuracy: 72.930 and Loss: 0.789
+=> Best Model found ! Don't Stop Me Now
+Epoch 315:  16%|█▌        | 4/25 [00:00<00:03,  6.21it/s]]
+Epoch 315:  16%|█▌        | 4/25 [00:00<00:03,  6.21it/s]]
+Got on test set --> Accuracy: 71.030 and Loss: 0.838
+Epoch 316:  60%|██████    | 15/25 [00:01<00:00, 21.19it/s]
+Epoch 316:  60%|██████    | 15/25 [00:01<00:00, 21.19it/s]
+Got on test set --> Accuracy: 69.700 and Loss: 0.872
+Epoch 317: 100%|██████████| 25/25 [00:01<00:00, 16.03it/s]
+Epoch 317: 100%|██████████| 25/25 [00:01<00:00, 16.03it/s]
+Got on test set --> Accuracy: 64.350 and Loss: 1.016
+Epoch 319:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Epoch 319:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Got on test set --> Accuracy: 70.100 and Loss: 0.864
+Epoch 320:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Epoch 320:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Got on test set --> Accuracy: 66.480 and Loss: 0.959
+Epoch 321:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Epoch 321:   0%|          | 0/25 [00:00<?, ?it/s]6.03it/s]
+Got on test set --> Accuracy: 69.920 and Loss: 0.875
+=> Saving checkpoint
+Got on test set --> Accuracy: 68.070 and Loss: 0.917
+Epoch 322:  32%|███▏      | 8/25 [00:00<00:01, 12.03it/s]]
+Epoch 322:  32%|███▏      | 8/25 [00:00<00:01, 12.03it/s]]
+Got on test set --> Accuracy: 64.780 and Loss: 1.013
+Epoch 323:  40%|████      | 10/25 [00:01<00:01, 13.54it/s]
+Epoch 323:  40%|████      | 10/25 [00:01<00:01, 13.54it/s]
+Got on test set --> Accuracy: 68.330 and Loss: 0.921
+Epoch 324:  56%|█████▌    | 14/25 [00:01<00:00, 18.86it/s]
+Epoch 324:  56%|█████▌    | 14/25 [00:01<00:00, 18.86it/s]
+Got on test set --> Accuracy: 70.140 and Loss: 0.871
+Epoch 325:  64%|██████▍   | 16/25 [00:01<00:00, 20.96it/s]
+Epoch 325:  64%|██████▍   | 16/25 [00:01<00:00, 20.96it/s]
+Got on test set --> Accuracy: 72.580 and Loss: 0.795
+Epoch 326:  32%|███▏      | 8/25 [00:01<00:01, 10.60it/s]]
+Epoch 326:  32%|███▏      | 8/25 [00:01<00:01, 10.60it/s]]
+Got on test set --> Accuracy: 69.870 and Loss: 0.884
+Epoch 327:  48%|████▊     | 12/25 [00:01<00:00, 16.35it/s]
+Epoch 327:  48%|████▊     | 12/25 [00:01<00:00, 16.35it/s]
+Got on test set --> Accuracy: 73.120 and Loss: 0.781
+=> Best Model found ! Don't Stop Me Now
+Epoch 328:   8%|▊         | 2/25 [00:01<00:09,  2.32it/s]]
+Epoch 328:   8%|▊         | 2/25 [00:01<00:09,  2.32it/s]]
+Got on test set --> Accuracy: 70.770 and Loss: 0.847
+Epoch 329:  12%|█▏        | 3/25 [00:00<00:05,  3.72it/s]]
+Epoch 329:  12%|█▏        | 3/25 [00:00<00:05,  3.72it/s]]
+Got on test set --> Accuracy: 71.620 and Loss: 0.826
+Epoch 330:  12%|█▏        | 3/25 [00:00<00:05,  4.40it/s]]
+Epoch 330:  12%|█▏        | 3/25 [00:00<00:05,  4.40it/s]]
+Got on test set --> Accuracy: 70.740 and Loss: 0.852
+Epoch 331:   4%|▍         | 1/25 [00:00<00:18,  1.31it/s]]
+Epoch 331:   4%|▍         | 1/25 [00:00<00:18,  1.31it/s]]
+Got on test set --> Accuracy: 67.090 and Loss: 0.944
+Epoch 332:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 333:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 333:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 67.380 and Loss: 0.936
+Epoch 334:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 334:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 67.960 and Loss: 0.924
+Epoch 335:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 335:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.520 and Loss: 0.834
+Epoch 336:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 336:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 70.160 and Loss: 0.862
+Epoch 337:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 337:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 66.630 and Loss: 0.947
+Epoch 338:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 338:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 65.920 and Loss: 0.965
+Epoch 339:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 339:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 69.570 and Loss: 0.878
+Epoch 340:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 340:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.170 and Loss: 0.839
+Epoch 341:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 341:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.530 and Loss: 0.834
+Epoch 342:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 342:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 69.810 and Loss: 0.879
+Epoch 343:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 343:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 68.100 and Loss: 0.923
+Epoch 344:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 344:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 72.090 and Loss: 0.813
+Epoch 345:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 345:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 70.990 and Loss: 0.849
+Epoch 346:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 346:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.880 and Loss: 0.820
+Epoch 347:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 347:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 72.400 and Loss: 0.799
+Epoch 348:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 348:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 67.140 and Loss: 0.947
+Epoch 349:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 349:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 64.440 and Loss: 1.012
+Epoch 350:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 350:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 72.880 and Loss: 0.788
+Epoch 351:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 351:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.740 and Loss: 0.827
+Epoch 352:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 352:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 61.810 and Loss: 1.079
+Epoch 353:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 353:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 68.890 and Loss: 0.896
+Epoch 354:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 354:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 72.240 and Loss: 0.810
+Epoch 355:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 355:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 70.460 and Loss: 0.860
+Epoch 356:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 356:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 73.230 and Loss: 0.783
+=> Best Model found ! Don't Stop Me Now
+Epoch 357:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 357:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.700 and Loss: 0.824
+Epoch 358:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 358:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 71.910 and Loss: 0.812
+Epoch 359:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 359:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Got on test set --> Accuracy: 70.160 and Loss: 0.866
+=> Saving checkpoint
+Epoch 360:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+Epoch 360:   0%|          | 0/25 [00:00<?, ?it/s].31it/s]]
+=> Saving checkpoint
+Got on test set --> Accuracy: 71.430 and Loss: 0.825
+Epoch 361:   4%|▍         | 1/25 [00:00<00:18,  1.27it/s]]
+Epoch 361:   4%|▍         | 1/25 [00:00<00:18,  1.27it/s]]
+Got on test set --> Accuracy: 73.150 and Loss: 0.779
+Epoch 362:   8%|▊         | 2/25 [00:00<00:10,  2.20it/s]]
+Epoch 362:   8%|▊         | 2/25 [00:00<00:10,  2.20it/s]]
+Got on test set --> Accuracy: 60.480 and Loss: 1.124
+Epoch 363:   4%|▍         | 1/25 [00:00<00:16,  1.49it/s]]
+Epoch 364:   0%|          | 0/25 [00:00<?, ?it/s].49it/s]]
+Epoch 364:   0%|          | 0/25 [00:00<?, ?it/s].49it/s]]
+Got on test set --> Accuracy: 69.800 and Loss: 0.869
+Epoch 365:   0%|          | 0/25 [00:00<?, ?it/s].49it/s]]

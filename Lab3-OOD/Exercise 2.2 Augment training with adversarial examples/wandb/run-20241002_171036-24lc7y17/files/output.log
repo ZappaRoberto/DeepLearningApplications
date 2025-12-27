@@ -1,0 +1,46 @@
+Files already downloaded and verified
+Files already downloaded and verified
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+
+
+Epoch 1: 100%|██████████| 25/25 [01:22<00:00,  3.30s/it]
+Got on test set --> Accuracy: 19.700 and Loss: 2.280
+Traceback (most recent call last):
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\queue.py", line 179, in get
+    raise Empty
+_queue.Empty
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 172, in <module>
+    main(wab, check_dir, w_dir, dev, n_workers)
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 99, in main
+    test_loss, test_accuracy, id_score, ood_score = eval_fn(test_loader,fake_loader, model, criterion, metric_collection, device)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\utils.py", line 139, in eval_fn
+    for data, _ in fake_loader:
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 1145, in _try_get_data
+    raise RuntimeError(f'DataLoader worker (pid(s) {pids_str}) exited unexpectedly') from e
+RuntimeError: DataLoader worker (pid(s) 19760, 27972, 31032, 16700, 27216, 27080, 31664, 14460, 31276, 7484, 21552) exited unexpectedly
+Exception ignored in atexit callback: <function _MultiProcessingDataLoaderIter._clean_up_worker at 0x000001520B014CC0>
+Traceback (most recent call last):
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 1472, in _clean_up_worker
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\popen_spawn_win32.py", line 110, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:

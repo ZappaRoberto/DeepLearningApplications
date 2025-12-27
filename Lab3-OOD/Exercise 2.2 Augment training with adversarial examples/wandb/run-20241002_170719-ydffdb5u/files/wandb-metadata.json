@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.6",
+    "heartbeatAt": "2024-10-02T15:07:20.453847",
+    "startedAt": "2024-10-02T15:07:19.495295",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\Roberto\\PycharmProjects\\DeepLearningApplications\\Lab3-OOD\\Exercise 2.2 Augment training with adversarial examples\\train.py",
+    "codePathLocal": "train.py",
+    "codePath": "Lab3-OOD\\Exercise 2.2 Augment training with adversarial examples\\train.py",
+    "git": {
+        "remote": "https://github.com/ZappaRoberto/DeepLearningApplications.git",
+        "commit": "2791694b3fc95548ae5d9504629ff78050a706c4"
+    },
+    "email": "roberto.zappa@luxottica.com",
+    "root": "C:/Users/Roberto/PycharmProjects/DeepLearningApplications",
+    "host": "DESKTOP-V58I0U8",
+    "username": "Roberto",
+    "executable": "C:\\Users\\Roberto\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 3400.0,
+        "min": 0.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3400.0,
+            "min": 0.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1862.1640586853027,
+            "used": 832.1722564697266
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.74370574951172
+    }
+}

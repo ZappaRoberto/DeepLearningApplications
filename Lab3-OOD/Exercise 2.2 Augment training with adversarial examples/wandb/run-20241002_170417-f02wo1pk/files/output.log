@@ -1,0 +1,16 @@
+Files already downloaded and verified
+Files already downloaded and verified
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+Epoch 1:   0%|          | 0/25 [01:24<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 172, in <module>
+    main(wab, check_dir, w_dir, dev, n_workers)
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 96, in main
+    train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 39, in train_fn
+    data = fgsm_attack(data, eps, data_grad)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 16, in fgsm_attack
+    perturbed_image = image + epsilon*sign_data_grad
+                              ~~~~~~~^~~~~~~~~~~~~~~
