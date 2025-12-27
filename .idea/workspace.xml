@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f64fb682-b355-44a7-9966-7095c119cda5" name="Changes" comment="new img">
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 1.2 Measure your OOD detection performance/ROC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 1.2 Measure your OOD detection performance/recallprecision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_0_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_1_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_2_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_3_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_4_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_5_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_6_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_7_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_8_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/adv_9_eps_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/examples/collage_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/fgsm_attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/myplot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/batches.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/data_batch_1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/data_batch_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/data_batch_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/data_batch_4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/data_batch_5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/readme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/Dataset/cifar-10-batches-py/test_batch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/checkpoint/CNN-3/model.pth.tar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/myplot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/result/CNN-3/model.pth.tar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/debug-cli.Roberto.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/media/graph/graph_0_summary_acbae0370eea56b76cc1.graph.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170417-f02wo1pk/run-f02wo1pk.wandb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/media/graph/graph_0_summary_f2a7ba674fb52f4315bc.graph.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_170719-ydffdb5u/run-ydffdb5u.wandb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/media/graph/graph_0_summary_39e46ba1548765f8a8bb.graph.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171036-24lc7y17/run-24lc7y17.wandb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241002_171704-irr95dca/run-irr95dca.wandb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/media/graph/graph_0_summary_b45bee1afdc2d316210d.graph.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/wandb/run-20241003_154002-x4g92scl/run-x4g92scl.wandb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/exercise1/MLP.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/exercise1/MLP.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2Y5MuVibXCuOwtYUPFhPa2wZ2N1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.2.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2.2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roberto/PycharmProjects/DeepLearningApplications/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.1 Enhancing Robustness to Adversarial Attack" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 1.2 Enhancing Robustness to Adversarial Attack" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\OOD_Flipped" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.1 Enhancing Robustness to Adversarial Attack" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\img\exercise4" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 1.1 Build a simple OOD detection pipeline" />
+      <recent name="C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningApplications" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningApplications" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.2 Enhancing Robustness to Adversarial Attack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.2 Enhancing Robustness to Adversarial Attack/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="model (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningApplications" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningApplications" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepLearningApplications" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.train (1)" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.model (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-eebebe6c2be4-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15325.20" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f64fb682-b355-44a7-9966-7095c119cda5" name="Changes" comment="" />
+      <created>1699811210110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699811210110</updated>
+      <workItem from="1699811211282" duration="1363000" />
+      <workItem from="1699890757493" duration="1222000" />
+      <workItem from="1700408295022" duration="248000" />
+      <workItem from="1700408641875" duration="718000" />
+      <workItem from="1700498749101" duration="14000" />
+      <workItem from="1703264163343" duration="40000" />
+      <workItem from="1714581940989" duration="924000" />
+      <workItem from="1714655139358" duration="3000" />
+      <workItem from="1714655147859" duration="3000" />
+      <workItem from="1716124781936" duration="3762000" />
+      <workItem from="1716192071446" duration="8000" />
+      <workItem from="1716648150998" duration="3027000" />
+      <workItem from="1716796946075" duration="6000" />
+      <workItem from="1717256455254" duration="1286000" />
+      <workItem from="1717335449466" duration="1195000" />
+      <workItem from="1717401619257" duration="62000" />
+      <workItem from="1717420400121" duration="1394000" />
+      <workItem from="1717493300388" duration="9000" />
+      <workItem from="1719061123112" duration="1921000" />
+      <workItem from="1719153324483" duration="5935000" />
+      <workItem from="1719159658315" duration="87000" />
+      <workItem from="1719161672363" duration="49000" />
+      <workItem from="1719215985718" duration="5000" />
+      <workItem from="1719753640813" duration="5322000" />
+      <workItem from="1719820753966" duration="7000" />
+      <workItem from="1720617187311" duration="8162000" />
+      <workItem from="1720684961233" duration="1191000" />
+      <workItem from="1721194810733" duration="55000" />
+      <workItem from="1727874617216" duration="7802000" />
+      <workItem from="1727962651450" duration="2200000" />
+      <workItem from="1729343210903" duration="22000" />
+      <workItem from="1731249217583" duration="644000" />
+      <workItem from="1731490620892" duration="8000" />
+    </task>
+    <task id="LOCAL-00001" summary="ood">
+      <option name="closed" value="true" />
+      <created>1703264194051</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703264194051</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new img">
+      <option name="closed" value="true" />
+      <created>1716126776077</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716126776077</updated>
+    </task>
+    <task id="LOCAL-00003" summary="new img">
+      <option name="closed" value="true" />
+      <created>1721194841593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721194841593</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new img">
+      <option name="closed" value="true" />
+      <created>1727879141863</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727879141863</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ood" />
+    <MESSAGE value="new img" />
+    <option name="LAST_COMMIT_MESSAGE" value="new img" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$train.coverage" NAME="train Coverage Results" MODIFIED="1719159198816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1727963908860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab3-OOD/Exercise 2.1 Enhancing Robustness to Adversarial Attack" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$model.coverage" NAME="model Coverage Results" MODIFIED="1719156733782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab2-NLP/Exercise 1 Warming Up" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$2_1.coverage" NAME="2.1 Coverage Results" MODIFIED="1716128057137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab2-NLP/Exercise 2 Working with Real LLMs" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$model__1_.coverage" NAME="model (1) Coverage Results" MODIFIED="1719156975448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab3-OOD/Exercise 1.1 Build a simple OOD detection pipeline" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$main.coverage" NAME="main Coverage Results" MODIFIED="1719765188534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab3-OOD/Exercise 1.2 Enhancing Robustness to Adversarial Attack" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$2_2.coverage" NAME="2.2 Coverage Results" MODIFIED="1716128262703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab2-NLP/Exercise 2 Working with Real LLMs" />
+    <SUITE FILE_PATH="coverage/DeepLearningApplications$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1727962790269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab3-OOD/Exercise 2.2 Augment training with adversarial examples" />
+  </component>
+</project>
