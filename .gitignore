@@ -1,0 +1,7 @@
+# Ignora dataset pesanti
+*.tar.gz
+Dataset/
+
+# Ignora log di WandB
+wandb/
+*.wandb

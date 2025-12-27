@@ -9,6 +9,16 @@ from utils import (get_loaders, save_checkpoint, load_checkpoint,
                    create_directory_if_does_not_exist, EarlyStopping, Lion)
 
 
+def fgsm_attack(image, epsilon, data_grad):
+    # Collect the element-wise sign of the data gradient
+    sign_data_grad = data_grad.sign()
+    # Create the perturbed image by adjusting each pixel of the input image
+    perturbed_image = image + epsilon*sign_data_grad
+    perturbed_image = torch.clamp(perturbed_image, 0, 1)
+    # Return the perturbed image
+    return perturbed_image
+
+
 def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric_collection, device):
     model.train()
     running_loss = 0
@@ -16,6 +26,18 @@ def train_fn(epoch, loader, model, optimizer, scheduler, loss_fn, scaler, metric
     for (data, target) in tqdm(loader, desc=f"Epoch {epoch + 1}"):
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
+
+        if torch.rand(1) < 0.5:
+            model.eval()
+            data.requires_grad = True
+            output = model(data)
+            loss = loss_fn(output, target)
+            model.zero_grad()
+            loss.backward()
+            data_grad = data.grad.data
+            eps = (torch.rand(1) * 0.1).to(device)
+            data = fgsm_attack(data, eps, data_grad)
+            model.train()
 
         # forward
         with torch.cuda.amp.autocast():
@@ -61,7 +83,7 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
         start = 0
         patience = EarlyStopping('max', wb.config['patience'])
 
-    train_loader, test_loader, fake_loader = get_loaders(wb.config['batch_size'], num_workers)
+    train_loader, test_loader = get_loaders(wb.config['batch_size'], num_workers)
     scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
                                                     max_lr=wb.config['max_lr'],
                                                     steps_per_epoch=len(train_loader),
@@ -74,15 +96,12 @@ def main(wb, checkpoint_dir, weight_dir, device, num_workers):
         train_loss, train_accuracy = train_fn(epoch, train_loader, model, optimizer, scheduler, criterion, scaler,
                                               metric_collection, device)
 
-        test_loss, test_accuracy, id_score, ood_score = eval_fn(test_loader,fake_loader, model, criterion, metric_collection, device)
+        test_loss, test_accuracy = eval_fn(test_loader, model, criterion, metric_collection, device)
 
         wb.log({"train_loss": train_loss,
                 "train_accuracy": train_accuracy,
                 'test_loss': test_loss,
                 'test_accuracy': test_accuracy,
-                'id_score': id_score,
-                'ood_score': ood_score,
-                'ood-id': ood_score - id_score,
                 })
 
         # save best model
@@ -146,5 +165,6 @@ if __name__ == "__main__":
     w_dir = ''.join(["result/", wab.name, "/"])
     create_directory_if_does_not_exist(check_dir, w_dir)
     dev = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print('Device:', dev)
     n_workers = 16
     main(wab, check_dir, w_dir, dev, n_workers)

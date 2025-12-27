@@ -40,7 +40,7 @@ def load_cifar10_test():
 def load_model():
     model = CNN(in_channels=3, out_channels=64,
                 n_class=10).to('cuda' if torch.cuda.is_available() else 'cpu')
-    model.load_state_dict(torch.load('../Exercise 1.1 Build a simple OOD detection pipeline/result/CNN-2/model.pth.tar')['state_dict'])
+    model.load_state_dict(torch.load('../Exercise 2.2 Augment training with adversarial examples/result/CNN-3/model.pth.tar')['state_dict'])
     model.eval()
     return model
 
@@ -121,6 +121,7 @@ def fgsm_attack_test(model, test_loader):
     plt.xlabel("Epsilon")
     plt.ylabel("Accuracy")
     plt.show()
+    plt.savefig('fgsm_attack.png')
 
 
 def create_collages_from_folder(folder_path):
@@ -171,4 +172,4 @@ if __name__ == '__main__':
     model = load_model()
     test_loader = load_cifar10_test()
     fgsm_attack_test(model, test_loader)
-    create_collages_from_folder('examples')
+    #create_collages_from_folder('examples')

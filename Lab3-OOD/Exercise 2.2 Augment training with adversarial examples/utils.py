@@ -1,11 +1,10 @@
 import torch
 import torchmetrics
 from torch.utils.data import DataLoader
-import matplotlib.pyplot as plt
 import torch.optim as optim
 import torchvision.transforms as T
 import os
-from torchvision.datasets import CIFAR10, FakeData
+from torchvision.datasets import CIFAR10
 import torch.nn as nn
 
 
@@ -59,20 +58,6 @@ def get_loaders(batch_size, num_workers, training=True):
         persistent_workers=True,
     )
 
-    fake_ds = FakeData(
-        size=10000,
-        image_size=(3, 32, 32),
-        transform=transform_test
-    )
-
-    fake_loader = DataLoader(fake_ds,
-                             batch_size=batch_size,
-                             shuffle=False,
-                             num_workers=num_workers,
-                             pin_memory=True,
-                             persistent_workers=True,
-                             )
-
     if training:
         train_ds = CIFAR10(
             root='./Dataset/',
@@ -89,10 +74,9 @@ def get_loaders(batch_size, num_workers, training=True):
             shuffle=True,
             persistent_workers=True,
         )
-        return train_loader, test_loader, fake_loader
+        return train_loader, test_loader
 
-    return test_loader, fake_loader
-
+    return test_loader
 
 def metrics(wb, device):
     metric_collection = torchmetrics.MetricCollection([
@@ -104,7 +88,7 @@ def metrics(wb, device):
     return metric_collection
 
 
-def eval_fn(loader, fake_loader, model, criterion, metric_collection, device):
+def eval_fn(loader, model, criterion, metric_collection, device):
     model.eval()
     running_loss = 0
 
@@ -124,27 +108,7 @@ def eval_fn(loader, fake_loader, model, criterion, metric_collection, device):
 
     metric_collection.reset()
 
-    id_score = 0
-    ood_score = 0
-
-    with torch.no_grad():
-        for data, _ in loader:
-            inputs= data.to(device, non_blocking=True)
-            outputs = model(inputs)
-            softmax_outputs = nn.functional.softmax(outputs, dim=1)
-            max_softmax_scores, _ = torch.max(softmax_outputs, dim=1)
-            ood_scores = 1 - max_softmax_scores
-            id_score += ood_scores.sum().item()
-
-        for data, _ in fake_loader:
-            inputs = data.to(device, non_blocking=True)
-            outputs = model(inputs)
-            softmax_outputs = nn.functional.softmax(outputs, dim=1)
-            max_softmax_scores, _ = torch.max(softmax_outputs, dim=1)
-            ood_scores = 1 - max_softmax_scores  # Higher score indicates more "out of distribution"
-            ood_score += ood_scores.sum().item()
-
-    return loss, accuracy, id_score, ood_score
+    return loss, accuracy
 
 
 class EarlyStopping:

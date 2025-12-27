@@ -14,3 +14,4 @@ Traceback (most recent call last):
   File "C:\Users\Roberto\PycharmProjects\DeepLearningApplications\Lab3-OOD\Exercise 2.2 Augment training with adversarial examples\train.py", line 16, in fgsm_attack
     perturbed_image = image + epsilon*sign_data_grad
                               ~~~~~~~^~~~~~~~~~~~~~~
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!
