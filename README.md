@@ -304,19 +304,29 @@ The Yahoo! Answers topic classification dataset is constructed using the 10 larg
 In this laboratory session we will develop a methodology for detecting OOD samples and measuring the quality of OOD detection. We will also experiment with incorporating adversarial examples during training to render models more robust to adversarial attacks.
 
 ## Exercise 1: OOD Detection and Performance Evaluation
-In this first exercise you will build a simple OOD detection pipeline and implement some performance metrics to evaluate its performance.
+In this first exercise you will build a simple OOD detection pipeline and implement some performance metrics to evaluate its performance. Your *OOD Detector* should produce a score representing how "out of distribution" a test sample is. For this exercise I choose to calculate the id score and the ood score as 1 - max_softmax_scores. In this way Higher score indicates more "out of distribution"
 
 <p align="center">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise6/metrics.png" />
 </p>
+
+AS you can see Is clear that during training the id score tend to move to zero while the ood score even if descrease as well tend to stationate around ~4k.<br>
+There are several metrics used to evaluate OOD detection performance, we will concentrate on two threshold-free approaches: the area under the Receiver Operator Characteristic (ROC) curve for ID classification, and the area under the Precision-Recall curve for *both* ID and OOD scoring.
+
 <p align="center">
-  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise5/test.png" />
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise6/ROC.png" />
 </p>
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise6/recallprecision.png" />
+</p>
+
 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
 ## Exercise 2: Enhancing Robustness to Adversarial Attack
+
+In this second exercise we will experiment with enhancing our base model to be (more) robust to adversarial attacksusing the Fast Gradient Sign Method (FGSM) that perturbs samples in the direction of the gradient with respect to the input
 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
