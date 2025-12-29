@@ -334,21 +334,18 @@ In this second exercise we will experiment with enhancing our base model to be (
 
 I show an example of perturbation<br>
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.png" />
-</p>.png" />
 </p>
 
-<p align="center">
+<p align="right">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.09.png" />
-</p>.png" />
 </p>
 
 I Used my implementation of FGSM to augment *on the fly* the training dataset with adversarial samples. In this way the adversarial samples are always generated using the current model.
 
 <p align="center">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/myplot-2.2.png" />
-</p>.png" />
 </p>
 
 The model as you can see is more robust to OOD
