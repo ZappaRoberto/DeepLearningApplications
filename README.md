@@ -32,7 +32,7 @@ Each exercise is accompanied by detailed instructions and solutions to help othe
 - [Laboratory 3: Adversarial Learning and OOD Detection](#Laboratory-3-Adversarial-Learning-and-OOD-Detection)
     - [Exercise 1: OOD Detection and Performance Evaluation](#Exercise-1-OOD-Detection-and-Performance-Evaluation)
     - [Exercise 2: Enhancing Robustness to Adversarial Attack](#Exercise-2-Enhancing-Robustness-to-Adversarial-Attack)
-    - [Exercise 3: Wildcard](#Exercise-3-Wildcard)
+    - [Exercise 3: ODIN Implementation](#Exercise-3-ODIN-Implementation)
 
 
 ## Laboratory 1: Convolutional Neural Networks
@@ -338,7 +338,7 @@ I show an example of perturbation<br>
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.png" />
 </p>
 
-<p align="right">
+<p align="left">
   <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.09.png" />
 </p>
 
@@ -353,6 +353,31 @@ The model as you can see is more robust to OOD
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 
-## Exercise 3: Wildcard
-
+## Exercise 3: ODIN Implementation
+ 
+In this final exercise, I implemented ODIN (Out-of-Distribution detector for Neural networks) to improve the OOD detection performance. ODIN enhances the basic softmax baseline by introducing two key components:
+1. **Temperature Scaling**: Dividing the logits by a temperature $T > 1$ during the softmax calculation. This has the effect of separating the softmax scores between ID and OOD samples more effectively.
+2. **Input Perturbation**: adding small perturbations to the input image in the direction that maximizes the softmax score of the predicted class. This makes ID images have even higher confidence scores compared to OOD images.
+ 
+### Experimental Setup
+ 
+I performed a grid search to find the optimal hyperparameters:
+*   Temperature ($T$): $[1, 10, 100, 1000]$
+*   Epsilon ($\epsilon$): $[0, 0.0005, 0.001, 0.0014, 0.002, 0.0024, 0.005, 0.01, 0.02, 0.05]$
+ 
+### Results
+ 
+The results demonstrate that ODIN significantly outperforms the baseline.
+ 
+*   **Baseline** (Standard Softmax, $T=1, \epsilon=0$): AUROC $\approx 78\%$
+*   **Best ODIN** ($T=1000, \epsilon=0.01$): AUROC **$98.14\%$**
+ 
+The following plot shows the impact of Input Perturbation (Epsilon) across different Temperatures:
+ 
+<p align="center">
+   <img src="https://github.ZappaRoberto/DeepLearningApplications/blob/main/img/exercise8/odin_results.png" />
+ </p>
+ 
+As observed, increasing Temperature substantially improves performance, and a small input perturbation further boosts the detection capability.
+ 
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
