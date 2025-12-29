@@ -328,6 +328,31 @@ There are several metrics used to evaluate OOD detection performance, we will co
 
 In this second exercise we will experiment with enhancing our base model to be (more) robust to adversarial attacksusing the Fast Gradient Sign Method (FGSM) that perturbs samples in the direction of the gradient with respect to the input
 
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/myplot.png" />
+</p>
+
+I show an example of perturbation<br>
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.png" />
+</p>.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/adv_3_eps_0.09.png" />
+</p>.png" />
+</p>
+
+I Used my implementation of FGSM to augment *on the fly* the training dataset with adversarial samples. In this way the adversarial samples are always generated using the current model.
+
+<p align="center">
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise7/myplot-2.2.png" />
+</p>.png" />
+</p>
+
+The model as you can see is more robust to OOD
+
 <div align="right">[ <a href="#Table-Of-Content">↑ to top ↑</a> ]</div>
 
 

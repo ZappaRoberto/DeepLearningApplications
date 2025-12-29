@@ -5,3 +5,4 @@ Dataset/
 # Ignora log di WandB
 wandb/
 *.wandb
+img/exercise1/mlp.png
