@@ -375,8 +375,8 @@ The results demonstrate that ODIN significantly outperforms the baseline.
 The following plot shows the impact of Input Perturbation (Epsilon) across different Temperatures:
  
 <p align="center">
-   <img src="https://github.ZappaRoberto/DeepLearningApplications/blob/main/img/exercise8/odin_results.png" />
- </p>
+  <img src="https://github.com/ZappaRoberto/DeepLearningApplications/blob/main/img/exercise8/odin-results.png" />
+</p>
  
 As observed, increasing Temperature substantially improves performance, and a small input perturbation further boosts the detection capability.
  
